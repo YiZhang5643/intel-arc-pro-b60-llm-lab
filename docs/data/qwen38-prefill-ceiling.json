@@ -1,0 +1,52 @@
+{
+  "kind": "analytical_partial_work_compute_ceiling_not_forecast",
+  "model_sha256": "29c1ae202c8f2c7d797335dcde6b51ae09a90a477552f853b2336ae2fac66582",
+  "assumed_fp16_xmx_tflops": 98.304,
+  "main_layers": 64,
+  "full_attention_layers": 16,
+  "recurrent_layers": 48,
+  "linear_gflop_per_token": {
+    "ffn": 34.22552064,
+    "full_attention_projections": 3.3554432,
+    "recurrent_projections": 11.12014848
+  },
+  "rows": [
+    {
+      "tokens": 12288,
+      "counted_gflop_per_token": 51.117228032,
+      "ideal_attention_gflop_per_token": 2.416115712,
+      "optimistic_ceiling_tok_s": 1923.1089748931713,
+      "optimistic_min_prefill_seconds": 6.389653504
+    },
+    {
+      "tokens": 32768,
+      "counted_gflop_per_token": 55.143759872,
+      "ideal_attention_gflop_per_token": 6.442647552,
+      "optimistic_ceiling_tok_s": 1782.6858420278884,
+      "optimistic_min_prefill_seconds": 18.381253290666667
+    },
+    {
+      "tokens": 98304,
+      "counted_gflop_per_token": 68.02866176,
+      "ideal_attention_gflop_per_token": 19.32754944,
+      "optimistic_ceiling_tok_s": 1445.0379804149186,
+      "optimistic_min_prefill_seconds": 68.02866176
+    }
+  ],
+  "omitted": [
+    "delta-net state/chunk operations",
+    "MTP",
+    "normalization and activations",
+    "dequantization",
+    "memory traffic",
+    "padding and masked extra work",
+    "LM head on selected outputs",
+    "launch/synchronization and host work"
+  ],
+  "assumptions": [
+    "cold prompt without prefix reuse",
+    "ideal causal attention skips future pairs",
+    "all counted work runs at FP16 XMX peak; actual kernels may use other paths",
+    "all 64 FFNs counted per token; final-layer output cropping ignored"
+  ]
+}
