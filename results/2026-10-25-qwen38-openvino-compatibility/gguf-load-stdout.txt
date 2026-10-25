@@ -1,0 +1,24 @@
+{
+  "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+  "genai": "2026.4.1.0-3408-ab01d1771e4",
+  "frontends": [
+    "ir",
+    "jax",
+    "onnx",
+    "paddle",
+    "pytorch",
+    "tf",
+    "tflite"
+  ],
+  "devices": {
+    "CPU": "12th Gen Intel(R) Core(TM) i5-12600K",
+    "GPU.0": "Intel(R) UHD Graphics 770 (iGPU)",
+    "GPU.1": "Intel(R) Arc(TM) Pro B60 Graphics (dGPU)"
+  }
+}
+{
+  "stage": "pipeline_load_or_short_generation",
+  "seconds": 0.45732379995752126,
+  "error_type": "RuntimeError",
+  "error": "Check 'data != nullptr' failed at C:\\Jenkins\\workspace\\private-ci\\ie\\build-windows-vs2022\\b\\repos\\openvino.genai\\src\\cpp\\src\\gguf_utils\\gguf.cpp:84:\n[load_gguf] gguf_tensor_to_f16 failed\n"
+}

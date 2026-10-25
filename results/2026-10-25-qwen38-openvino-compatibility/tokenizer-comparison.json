@@ -1,0 +1,14 @@
+[
+  {
+    "tokens": 32768,
+    "decode_equal": true,
+    "ov_sha256": "8b610793f5781afa0a9f3625e2f16e166b7d91ba967602dbed85e816eb2e1066",
+    "llama_sha256": "8b610793f5781afa0a9f3625e2f16e166b7d91ba967602dbed85e816eb2e1066"
+  },
+  {
+    "tokens": 98304,
+    "decode_equal": true,
+    "ov_sha256": "3782bc632fd085c4e19d4b7162ad252807d6b4136a8ff65fb780a5d2284d063d",
+    "llama_sha256": "3782bc632fd085c4e19d4b7162ad252807d6b4136a8ff65fb780a5d2284d063d"
+  }
+]

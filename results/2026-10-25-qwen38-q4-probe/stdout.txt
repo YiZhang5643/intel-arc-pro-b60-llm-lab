@@ -1,0 +1,63 @@
+device=Intel(R) Arc(TM) Pro B60 Graphics
+onednn=3.11.4
+mode,n,m,k,mean_ms,tera_ops_per_second,max_abs_diff,nrmse,nonfinite
+implementation,mode=0,n=128,m=256,k=256,jit:gemm:any
+f16_current,128,256,256,0.029133,0.576,0,0,0
+implementation,mode=1,n=128,m=256,k=256,jit:gemm:any
+f16_swapped,128,256,256,0.016000,1.049,0,0,0
+implementation,mode=2,n=128,m=256,k=256,jit:gemm:any
+q4_decompress,128,256,256,0.019933,0.842,0,0,0
+implementation,mode=3,n=128,m=256,k=256,jit:gemm:any
+q4_w4a8,128,256,256,0.029100,0.577,0,0,0
+implementation,mode=4,n=128,m=256,k=256,jit:gemm:any
+q8_w8a8,128,256,256,0.016867,0.995,0,0,0
+UNSUPPORTED mode=5 n=128 m=256 k=256 status=3 could not create a primitive descriptor for the matmul primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information.
+implementation,mode=6,n=128,m=256,k=256,jit:gemm:any
+q8_post_scale,128,256,256,0.026800,0.626,0,0,0
+implementation,mode=7,n=128,m=256,k=256,jit:gemm:any
+q8_fused_scales,128,256,256,0.019500,0.860,0,0,0
+implementation,mode=0,n=4096,m=17408,k=5120,jit:gemm:any
+f16_current,4096,17408,5120,10.265500,71.126,0,0,0
+implementation,mode=1,n=4096,m=17408,k=5120,jit:gemm:any
+f16_swapped,4096,17408,5120,10.275720,71.055,0,0,0
+implementation,mode=2,n=4096,m=17408,k=5120,jit:gemm:any
+q4_decompress,4096,17408,5120,10.656320,68.518,0,0,0
+implementation,mode=3,n=4096,m=17408,k=5120,jit:gemm:any
+q4_w4a8,4096,17408,5120,12.006920,60.810,0,0,0
+implementation,mode=4,n=4096,m=17408,k=5120,jit:gemm:any
+q8_w8a8,4096,17408,5120,5.459340,133.742,0,0,0
+UNSUPPORTED mode=5 n=4096 m=17408 k=5120 status=3 could not create a primitive descriptor for the matmul primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information.
+implementation,mode=6,n=4096,m=17408,k=5120,jit:gemm:any
+q8_post_scale,4096,17408,5120,7.353340,99.294,0,0,0
+implementation,mode=7,n=4096,m=17408,k=5120,jit:gemm:any
+q8_fused_scales,4096,17408,5120,5.581020,130.826,0,0,0
+implementation,mode=0,n=8192,m=17408,k=5120,jit:gemm:any
+f16_current,8192,17408,5120,20.497240,71.243,0,0,0
+implementation,mode=1,n=8192,m=17408,k=5120,jit:gemm:any
+f16_swapped,8192,17408,5120,20.441880,71.436,0,0,0
+implementation,mode=2,n=8192,m=17408,k=5120,jit:gemm:any
+q4_decompress,8192,17408,5120,21.326740,68.472,0,0,0
+implementation,mode=3,n=8192,m=17408,k=5120,jit:gemm:any
+q4_w4a8,8192,17408,5120,23.996980,60.853,0,0,0
+implementation,mode=4,n=8192,m=17408,k=5120,jit:gemm:any
+q8_w8a8,8192,17408,5120,10.833840,134.790,0,0,0
+UNSUPPORTED mode=5 n=8192 m=17408 k=5120 status=3 could not create a primitive descriptor for the matmul primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information.
+implementation,mode=6,n=8192,m=17408,k=5120,jit:gemm:any
+q8_post_scale,8192,17408,5120,14.594140,100.060,0,0,0
+implementation,mode=7,n=8192,m=17408,k=5120,jit:gemm:any
+q8_fused_scales,8192,17408,5120,10.931260,133.588,0,0,0
+implementation,mode=0,n=8192,m=5120,k=17408,jit:gemm:any
+f16_current,8192,5120,17408,20.308200,71.906,0,0,0
+implementation,mode=1,n=8192,m=5120,k=17408,jit:gemm:any
+f16_swapped,8192,5120,17408,20.263620,72.065,0,0,0
+implementation,mode=2,n=8192,m=5120,k=17408,jit:gemm:any
+q4_decompress,8192,5120,17408,20.185720,72.343,0,0,0
+implementation,mode=3,n=8192,m=5120,k=17408,jit:gemm:any
+q4_w4a8,8192,5120,17408,27.103340,53.879,0,0,0
+implementation,mode=4,n=8192,m=5120,k=17408,jit:gemm:any
+q8_w8a8,8192,5120,17408,10.280500,142.045,0,0,0
+UNSUPPORTED mode=5 n=8192 m=5120 k=17408 status=3 could not create a primitive descriptor for the matmul primitive. Run workload with environment variable ONEDNN_VERBOSE=all to get additional diagnostic information.
+implementation,mode=6,n=8192,m=5120,k=17408,jit:gemm:any
+q8_post_scale,8192,5120,17408,11.345800,128.707,0,0,0
+implementation,mode=7,n=8192,m=5120,k=17408,jit:gemm:any
+q8_fused_scales,8192,5120,17408,10.265020,142.259,0,0,0

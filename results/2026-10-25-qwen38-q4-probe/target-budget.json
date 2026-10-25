@@ -1,0 +1,63 @@
+{
+  "kind": "conditional_component_time_substitution_not_measured_model_performance",
+  "assumptions": [
+    "All unmodified component durations remain fixed",
+    "32K uses the new blocked-GDN trace; 96K reuses the prior trace GEMM/dequant categories, not a new 96K trace",
+    "Category durations are summed kernels and may overlap; estimates are not strict hardware bounds",
+    "Quantization, memory pressure, numerical differences and changed graph scheduling are not predicted"
+  ],
+  "rows": [
+    {
+      "tokens": 32768,
+      "measured_current_seconds": 53.711558000000004,
+      "measured_current_tps": 610.0735338937664,
+      "target_tps": 1200,
+      "target_seconds": 27.30666666666667,
+      "required_throughput_ratio": 1.9669760009765627,
+      "gemm_seconds_used": 23.26647125,
+      "dequantization_seconds_used": 4.43631775,
+      "categories_source": "results/2026-10-25-qwen38-kernels/gdn-profile-32k/analysis.json",
+      "categories_match_new_runtime": true,
+      "conditional_scenarios": {
+        "dequantization_eliminated": {
+          "seconds": 49.27524025,
+          "tps": 664.9992944478845
+        },
+        "gemm_twice_as_fast_and_dequantization_eliminated": {
+          "seconds": 37.642004625000006,
+          "tps": 870.516868759882
+        },
+        "gemm_and_dequantization_zero_cost": {
+          "seconds": 26.008769000000004,
+          "tps": 1259.882772614113
+        }
+      }
+    },
+    {
+      "tokens": 98304,
+      "measured_current_seconds": 208.16945600000003,
+      "measured_current_tps": 472.23066192765566,
+      "target_tps": 1200,
+      "target_seconds": 81.92,
+      "required_throughput_ratio": 2.5411310546875003,
+      "gemm_seconds_used": 69.78811,
+      "dequantization_seconds_used": 13.465528,
+      "categories_source": "results/2026-10-25-qwen38-profile/96k-default/analysis.json",
+      "categories_match_new_runtime": false,
+      "conditional_scenarios": {
+        "dequantization_eliminated": {
+          "seconds": 194.70392800000002,
+          "tps": 504.88965995591
+        },
+        "gemm_twice_as_fast_and_dequantization_eliminated": {
+          "seconds": 159.809873,
+          "tps": 615.130956270768
+        },
+        "gemm_and_dequantization_zero_cost": {
+          "seconds": 124.915818,
+          "tps": 786.9619842700786
+        }
+      }
+    }
+  ]
+}

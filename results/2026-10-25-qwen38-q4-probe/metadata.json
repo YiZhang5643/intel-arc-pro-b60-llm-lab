@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-25",
+  "device": "Intel Arc Pro B60 24GB",
+  "driver": "32.0.101.9033",
+  "onednn": "3.11.4",
+  "source": "tools/q4_gemm_probe.cpp",
+  "source_sha256": "a21de5dbfd06bf2c58efababd9bd75409486a95b69242d29bd382a7c51f3fe8c",
+  "dnnl_dll_sha256": "8bcee5a0f5f41bc817be89a18fb5959ec54f9fa8d17da79d062193c15164f242",
+  "supported_cases": 28,
+  "unsupported_axis_scale_descriptors": 4,
+  "repeats_per_case": {
+    "sanity": 3,
+    "large": 5
+  },
+  "quality_validation": "Synthetic exactly representable input values only; no real-model quantization quality validation",
+  "excluded_costs": [
+    "GGUF IQ/Q4 unpacking",
+    "input activation quantization and scale calculation",
+    "model attention and GatedDeltaNet",
+    "full-model memory management"
+  ],
+  "source_reference": {
+    "repository": "https://github.com/Torchit1/llama.cpp",
+    "commit": "8f09ea4166e8207c701671d77cd30b12b67a0295",
+    "branch": "sycl-b580-combined"
+  }
+}

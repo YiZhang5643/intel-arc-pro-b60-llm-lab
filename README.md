@@ -6,6 +6,8 @@
 
 新增：[Qwen3.8-27B 混合 IQ 权重调优](docs/qwen38.md)，包含 32K/96K、嵌入式 MTP 与独立草稿批量对照；新增 [算子时间线分析](docs/qwen38-profile.md)与完整 trace；后续 [内核改进实测](docs/qwen38-kernel-experiments.md)：保持 MTP 开启，32K 预填充约 53.7 秒、96K 约 208.2 秒。
 
+后续研究：[纯 Q4 与 1200 tok/s 目标](docs/qwen38-1200-target.md)、[OpenVINO 格式兼容与对照准备](docs/qwen38-openvino.md)。
+
 首个模型：**NVIDIA Nemotron 3.5 Lightning 30B-A3B，Q4_0 主模型 + 可选 Q8_0 MTP**。这不是模型能力排行榜，也没有证明它是 B60 上最聪明的模型。
 
 ## 先看结果

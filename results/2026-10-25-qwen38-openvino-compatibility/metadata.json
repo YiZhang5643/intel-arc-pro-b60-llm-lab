@@ -1,0 +1,20 @@
+{
+  "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+  "genai": "2026.4.1.0-3408-ab01d1771e4",
+  "model_sha256": "29c1ae202c8f2c7d797335dcde6b51ae09a90a477552f853b2336ae2fac66582",
+  "device": "GPU.1 Intel Arc Pro B60",
+  "result": "GGUF loader failed before inference; no performance measurement",
+  "source_release": {
+    "openvino": "e213a14725769a6a2bf86fc86650aa78a9c05d3e",
+    "genai": "ab01d1771e4adaa0e1e08e9d630def170572506c"
+  },
+  "source_master_inspected": {
+    "openvino": "fde316cf48b371dd495e2e0ce840056a6f8a8356",
+    "genai": "73c4b0db060c39b6e7c3b7bcdc43e3d69c8a5fb3"
+  },
+  "planned_ir_comparison": {
+    "model": "OpenVINO/Qwen3.8-27B-int4-ov",
+    "revision": "7b20ea8c7df7223a85ff27bab5c473f0cb038943",
+    "different_checkpoint": true
+  }
+}

@@ -1,0 +1,111 @@
+"""Cold long-text OpenVINO IR comparison; run through run_gpu_probe.py for service restoration.
+
+A decomposed VLM uses text input, so the canonical GGUF IDs are decoded and retokenized.
+The script records both token hashes and counts, and rejects any changed decoded text.
+This compares complete backends/checkpoints, not a controlled quantization-only experiment.
+"""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import time
+import numpy as np
+import openvino as ov
+import openvino_genai as genai
+
+
+def digest(tokens):
+    return hashlib.sha256(json.dumps(tokens,separators=(',', ':')).encode()).hexdigest()
+
+
+def write(path,obj):
+    path.write_text(json.dumps(obj,indent=2,ensure_ascii=False,default=str)+'\n',encoding='utf-8')
+
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--model',type=Path,required=True)
+    p.add_argument('--prompts',type=Path,action='append',required=True)
+    p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--device',default='GPU.1')
+    p.add_argument('--mtp',choices=['on','off'],default='on')
+    p.add_argument('--batch',type=int,default=8192)
+    p.add_argument('--cache-gb',type=float,default=5)
+    p.add_argument('--dq-group',type=int,default=32)
+    p.add_argument('--repeats',type=int,default=1)
+    p.add_argument('--quality-tokens',type=int,default=256)
+    a=p.parse_args()
+    if min(a.batch,a.repeats,a.quality_tokens)<=0 or a.cache_gb<=0:p.error('Positive capacities and counts required')
+    out=a.output.resolve();out.mkdir(parents=True,exist_ok=False)
+    core=ov.Core();device_name=core.get_property(a.device,'FULL_DEVICE_NAME')
+    if 'B60' not in device_name:raise RuntimeError('Selected device is not the B60')
+    tokenizer=genai.Tokenizer(a.model)
+    cases=[]
+    for path in a.prompts:
+        obj=json.loads(path.read_text());tokens=obj['cases']['cold-retrieval']['tokens']
+        text=tokenizer.decode(tokens,skip_special_tokens=False)
+        actual=tokenizer.encode(text,add_special_tokens=False).input_ids.data[0].tolist()
+        if tokenizer.decode(actual,skip_special_tokens=False)!=text:
+            raise RuntimeError('Retokenization changed decoded input text')
+        cases.append((text,actual,obj['expected']))
+        write(out/f'input-{len(tokens)}.json',{'original_tokens':len(tokens),'original_token_sha256':digest(tokens),
+            'retokenized_tokens':len(actual),'retokenized_token_sha256':digest(actual),
+            'text_sha256':hashlib.sha256(text.encode()).hexdigest()})
+    scheduler=genai.SchedulerConfig()
+    scheduler.max_num_batched_tokens=a.batch
+    scheduler.max_num_seqs=1
+    scheduler.enable_prefix_caching=False
+    scheduler.cache_size=a.cache_gb
+    props={'KV_CACHE_PRECISION':'u8','DYNAMIC_QUANTIZATION_GROUP_SIZE':a.dq_group,'PERFORMANCE_HINT':'LATENCY'}
+    write(out/'config.json',{'openvino':ov.__version__,'genai':genai.__version__,'device':a.device,
+        'device_name':device_name,'model':a.model.name,'mtp':a.mtp,'draft_tokens':3 if a.mtp=='on' else 0,
+        'scheduler':scheduler.to_string(),'properties':props,'input_mode':'same_decoded_text_retokenized',
+        'timing':'TTFT includes prefill and first-token work; throughput is input_tokens / TTFT',
+        'cache_prefix':False,'repeats':a.repeats})
+    print('LOAD_START',flush=True);start=time.perf_counter()
+    if a.mtp=='on':props['draft_model']=genai.draft_model(a.model,a.device)
+    pipe=genai.ContinuousBatchingPipeline(a.model,scheduler,a.device,props)
+    write(out/'load.json',{'seconds':time.perf_counter()-start})
+    print('LOAD_OK',flush=True)
+    def run(text,actual,expected,label,limit):
+        cfg=genai.GenerationConfig()
+        cfg.max_new_tokens=limit
+        cfg.max_length=max(131072,len(actual)+limit+1)
+        cfg.do_sample=False
+        cfg.apply_chat_template=False
+        if a.mtp=='on':cfg.num_assistant_tokens=3
+        start=time.perf_counter();first=None
+        def stream(part):
+            nonlocal first
+            if part and first is None:first=time.perf_counter()-start
+            return False
+        print('START',label,len(actual),limit,flush=True)
+        result=pipe.generate([text],[cfg],stream)[0]
+        wall=time.perf_counter()-start;perf=result.perf_metrics
+        count=perf.get_num_input_tokens();ttft=perf.get_ttft().mean/1000
+        if count!=len(actual):raise RuntimeError(f'Input token count changed: {count} != {len(actual)}')
+        output=result.m_generation_ids[0]
+        row={'label':label,'input_tokens':count,'wall_seconds':wall,'metric_ttft_seconds':ttft,
+            'callback_first_text_seconds':first,'prefill_plus_first_token_tps':count/ttft if ttft>0 else None,
+            'generated_tokens':perf.get_num_generated_tokens(),'reported_throughput':perf.get_throughput().mean,
+            'output':output,'retrieval_correct':sum(code in output for code in expected.values()),
+            'inference_duration_ms':perf.get_inference_duration().mean,
+            'raw_token_infer_durations':list(perf.raw_metrics.token_infer_durations),
+            'raw_times_to_first_token':list(perf.raw_metrics.m_times_to_first_token)}
+        write(out/(label+'.json'),row)
+        print(json.dumps({k:v for k,v in row.items() if k not in ['output','raw_token_infer_durations','raw_times_to_first_token']}),flush=True)
+        return row
+    warm=tokenizer.decode(cases[0][1][:4096],skip_special_tokens=False)
+    warm_ids=tokenizer.encode(warm,add_special_tokens=False).input_ids.data[0].tolist()
+    run(warm,warm_ids,{},'warmup',1)
+    rows=[]
+    for repeat in range(a.repeats):
+        for text,actual,expected in cases:
+            rows.append(run(text,actual,expected,f'cold-{len(actual)}-r{repeat+1}',1))
+            write(out/'summary.json',rows)
+    text,actual,expected=cases[-1]
+    rows.append(run(text,actual,expected,'cold-retrieval-quality',a.quality_tokens))
+    write(out/'summary.json',rows)
+
+
+if __name__=='__main__':main()

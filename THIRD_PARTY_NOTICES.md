@@ -20,3 +20,5 @@ The October 25 kernel experiments vendor these MIT-licensed llama.cpp changes; s
 - The standalone SDPA probe follows llama.cpp's oneDNN graph pattern; it does not contain or redistribute model weights.
 
 The optional portable Vulkan toolchain is built from Google shaderc, Khronos glslang, SPIRV-Headers, SPIRV-Tools and Vulkan-Headers. Their source is downloaded separately using pinned commits/checksums in `manifests/vulkan-toolchain-sources.json`; consult each upstream repository's licence. The build derives an import library from the Vulkan loader already installed in Windows and does not replace that loader.
+
+The standalone Q4/INT8 GEMM probe uses oneDNN primitive attributes from [Torchit1/llama.cpp](https://github.com/Torchit1/llama.cpp/tree/8f09ea4166e8207c701671d77cd30b12b67a0295), MIT; the retained llama.cpp licence above applies to that reference. Synthetic input generation and comparisons are local probe code. OpenVINO software and downloaded models remain external to the repository and retain their upstream terms.
