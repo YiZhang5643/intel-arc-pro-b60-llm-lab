@@ -1,0 +1,76 @@
+[
+  {
+    "test": "cold-retrieval",
+    "ttft_seconds": 93.23625840002205,
+    "wall_seconds": 95.70491259999108,
+    "input_tokens": 98304,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 98304,
+      "prompt_ms": 93099.13,
+      "prompt_per_token_ms": 0.9470533243815105,
+      "prompt_per_second": 1055.9067522972557,
+      "predicted_n": 71,
+      "predicted_ms": 2446.361,
+      "predicted_per_token_ms": 34.94801428571429,
+      "predicted_per_second": 28.61392901538244
+    },
+    "output": "{\n  \"PROJECT-ALPHA\": \"ARC-3FF8BD71E669\",\n  \"PROJECT-BRAVO\": \"ARC-9D69441881FF\",\n  \"PROJECT-CHARLIE\": \"ARC-EFA971B51E66\"\n}",
+    "retrieval_correct": 3
+  },
+  {
+    "test": "cached-retrieval",
+    "ttft_seconds": 0.3917226999765262,
+    "wall_seconds": 2.46286740002688,
+    "input_tokens": 98396,
+    "timings": {
+      "cache_n": 98374,
+      "prompt_n": 22,
+      "prompt_ms": 343.672,
+      "prompt_per_token_ms": 15.621454545454547,
+      "prompt_per_second": 64.01452547778113,
+      "predicted_n": 71,
+      "predicted_ms": 2054.69,
+      "predicted_per_token_ms": 29.352714285714285,
+      "predicted_per_second": 34.06839961259363
+    },
+    "output": "{\n  \"PROJECT-ALPHA\": \"ARC-3FF8BD71E669\",\n  \"PROJECT-BRAVO\": \"ARC-9D69441881FF\",\n  \"PROJECT-CHARLIE\": \"ARC-EFA971B51E66\"\n}",
+    "retrieval_correct": 3
+  },
+  {
+    "test": "cached-code",
+    "ttft_seconds": 0.705523099983111,
+    "wall_seconds": 23.37579779990483,
+    "input_tokens": 98452,
+    "timings": {
+      "cache_n": 98374,
+      "prompt_n": 78,
+      "prompt_ms": 573.175,
+      "prompt_per_token_ms": 7.348397435897435,
+      "prompt_per_second": 136.0840929907969,
+      "predicted_n": 768,
+      "predicted_ms": 22653.455,
+      "predicted_per_token_ms": 29.53514341590613,
+      "predicted_per_second": 33.85797000943123
+    },
+    "output": "```python\nimport csv\nimport dataclasses\nfrom typing import Dict, Tuple\n\n\n@dataclasses.dataclass(frozen=True)\nclass InventoryRecord:\n    sku: str\n    quantity: int\n    version: str\n\n\ndef load_inventory(csv_path: str) -> Tuple[Dict[str, InventoryRecord], list]:\n    \"\"\"\n    Load inventory from a CSV file.\n\n    Expected CSV columns: sku, quantity, version\n    - Rejects duplicate SKUs (keeps first occurrence)\n    - Rejects negative quantities\n    - Reports malformed rows (wrong column count, non-integer quantity, etc.) with line numbers\n    - Returns a dict mapping sku -> InventoryRecord and a list of error messages\n\n    The function uses only the standard library.\n    \"\"\"\n    records: Dict[str, InventoryRecord] = {}\n    errors: list = []\n\n    try:\n        with open(csv_path, newline=\"\", encoding=\"utf-8\") as f:\n            reader = csv.reader(f)\n            header = next(reader, None)  # skip header\n            if header is None:\n                errors.append(\"File is empty\")\n                return records, errors\n\n            # Normalise header names (strip, lower case) for robustness\n            header = [h.strip().lower() for h in header]\n            try:\n                sku_idx = header.index(\"sku\")\n                qty_idx = header.index(\"quantity\")\n                ver_idx = header.index(\"version\")\n            except ValueError as exc:\n                errors.append(f\"Missing required column(s): {exc}\")\n                return records, errors\n\n            for line_no, row in enumerate(reader, start=2):  # line 1 is header\n                # Check column count\n                if len(row) <= max(sku_idx, qty_idx, ver_idx):\n                    errors.append(f\"Line {line_no}: malformed row - insufficient columns\")\n                    continue\n\n                sku = row[sku_idx].strip()\n                qty_raw = row[qty_idx].strip()\n                version = row[ver_idx].strip()\n\n                # Validate quantity is an integer and non‑negative\n                try:\n                    qty = int(qty_raw)\n                except ValueError:\n                    errors.append(f\"Line {line_no}: malformed row - quantity not an integer: {qty_raw!r}\")\n                    continue\n\n                if qty < 0:\n                    errors.append(f\"Line {line_no}: negative quantity rejected: {qty}\")\n                    continue\n\n                # Reject duplicate SKUs (keep first)\n                if sku in records:\n                    errors.append(f\"Line {line_no}: duplicate SKU ignored: {sku}\")\n                    continue\n\n                records[sku] = InventoryRecord(sku=sku, quantity=qty, version=version)\n\n    except FileNotFoundError:\n        errors.append(f\"File not found: {csv_path}\")\n    except Exception as exc:  # pragma: no cover – defensive\n        errors.append(f\"Unexpected error: {exc}\")\n\n    return records, errors\n\n\n# ------------------- runnable demonstration -------------------\nif __name__ == \"__main__\":\n    import tempfile, os\n\n    # Create a temporary CSV for demonstration\n    csv_content = \"\"\"sku,quantity,version\nA123,10,v1.0\nB456,-5,v2.0\nC789,3,v1.0\nA123,7,v2.0\nD012,abc,v3.0\nE345,2\nF678,0,v1.0\n\"\"\"\n\n    with tempfile.NamedTemporaryFile(mode=\"w\", suffix=\".csv\", delete=False) as tmp:\n        tmp.write(csv_content)\n        tmp"
+  },
+  {
+    "test": "cached-prose",
+    "ttft_seconds": 0.5244574999669567,
+    "wall_seconds": 16.62166539998725,
+    "input_tokens": 98434,
+    "timings": {
+      "cache_n": 98374,
+      "prompt_n": 60,
+      "prompt_ms": 473.196,
+      "prompt_per_token_ms": 7.8866000000000005,
+      "prompt_per_second": 126.79735247128038,
+      "predicted_n": 549,
+      "predicted_ms": 16081.102,
+      "predicted_per_token_ms": 29.34507664233577,
+      "predicted_per_second": 34.077266595286815
+    },
+    "output": "Database transactions prevent lost updates by ensuring that concurrent modifications to shared state are serialized or detected before they become permanent. In an inventory service, where a sale decrements stock, lost updates occur when two transactions read the same quantity, both decrement it, and the second write overwrites the first, effectively erasing a sale.\n\n**Optimistic Concurrency Control (OCC)** assumes conflicts are rare. Each inventory item carries a version counter or timestamp. When a transaction reads the inventory, it captures the current version. Before committing, the transaction re-reads the row; if the version has changed, the transaction knows a conflict occurred and must abort or retry. This approach is efficient for read-heavy workloads because it avoids holding locks, reducing contention. However, under high concurrency, frequent retries can degrade performance, and the application logic must handle the retry loop gracefully.\n\n**Row-Level Locking** (pessimistic concurrency) takes a different approach. When a transaction intends to modify a row, it acquires an exclusive lock, preventing other transactions from reading or writing that row until the lock is released. In a database like PostgreSQL, `SELECT ... FOR UPDATE` implements this. The sale transaction locks the inventory row, ensuring that the subsequent read-modify-write sequence is atomic from the perspective of other concurrent transactions. While this guarantees consistency, it can cause bottlenecks and deadlocks if transactions lock rows in different orders.\n\n**Concrete Example:** Consider a limited-edition item with 5 units. Customer A and Customer B both attempt to purchase simultaneously. With OCC, both read version 1 and quantity 5. A commits first, updating quantity to 4 and version to 2. B attempts to commit, re-reads the row, sees version 2, detects a mismatch with its expected version 1, and must retry. With row-level locking, A acquires an exclusive lock on the row upon reading. B’s subsequent `SELECT FOR UPDATE` blocks until A commits and releases the lock. B then reads the updated quantity (4) and proceeds.\n\n**Retries and Idempotency:** Retries are essential for OCC. If a transaction fails due to a version mismatch, the system typically rolls back and restarts the logic using the latest data. Idempotency ensures that repeating a sale request does not oversell. This is achieved by generating a unique transaction ID; if the system receives the same ID again, it recognizes the operation has already been applied and returns the previous result without re-decrementing stock. Combined, optimistic checks handle conflicts efficiently, locking guarantees safety under load, and idempotent request IDs protect against duplicate processing during network retries."
+  }
+]
