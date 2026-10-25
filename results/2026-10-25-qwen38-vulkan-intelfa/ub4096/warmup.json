@@ -1,0 +1,15 @@
+{
+  "wall_seconds": 10.14999980002176,
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 4096,
+    "prompt_ms": 10135.199,
+    "prompt_per_token_ms": 2.474413818359375,
+    "prompt_per_second": 404.13612007026205,
+    "predicted_n": 1,
+    "predicted_ms": 0.001,
+    "predicted_per_token_ms": 0.0,
+    "predicted_per_second": 0.0
+  },
+  "output": ""
+}

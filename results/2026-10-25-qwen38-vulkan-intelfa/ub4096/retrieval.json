@@ -1,0 +1,46 @@
+[
+  {
+    "repeat": 1,
+    "input_tokens": 32768,
+    "wall_seconds": 4.887150099966675,
+    "retrieval_all_present": true,
+    "output": "```json\n{\n  \"PROJECT-ALPHA\": \"ARC-3FF8BD71E669\",\n  \"PROJECT-BRAVO\": \"ARC-9D69441881FF\",\n  \"PROJECT-CHARLIE\": \"ARC-EFA971B51E66\"\n}\n```",
+    "timings": {
+      "cache_n": 32764,
+      "prompt_n": 4,
+      "prompt_ms": 324.723,
+      "prompt_per_token_ms": 81.18075,
+      "prompt_per_second": 12.31819119680466,
+      "predicted_n": 77,
+      "predicted_ms": 4538.475,
+      "predicted_per_token_ms": 59.71677631578948,
+      "predicted_per_second": 16.74571304237657,
+      "draft_n": 57,
+      "draft_n_accepted": 57
+    },
+    "stop_type": "eos",
+    "truncated": false
+  },
+  {
+    "repeat": 1,
+    "input_tokens": 98304,
+    "wall_seconds": 5.4871781000401825,
+    "retrieval_all_present": true,
+    "output": "```json\n{\n  \"PROJECT-ALPHA\": \"ARC-3FF8BD71E669\",\n  \"PROJECT-BRAVO\": \"ARC-9D69441881FF\",\n  \"PROJECT-CHARLIE\": \"ARC-EFA971B51E66\"\n}\n```",
+    "timings": {
+      "cache_n": 98300,
+      "prompt_n": 4,
+      "prompt_ms": 335.631,
+      "prompt_per_token_ms": 83.90775,
+      "prompt_per_second": 11.917850258170432,
+      "predicted_n": 77,
+      "predicted_ms": 5105.446,
+      "predicted_per_token_ms": 67.17692105263158,
+      "predicted_per_second": 14.886064802173992,
+      "draft_n": 57,
+      "draft_n_accepted": 57
+    },
+    "stop_type": "eos",
+    "truncated": false
+  }
+]

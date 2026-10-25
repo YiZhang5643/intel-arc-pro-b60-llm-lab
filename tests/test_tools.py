@@ -96,6 +96,15 @@ class ToolTests(unittest.TestCase):
                 self.assertTrue(all(r['timings']['cache_n']>=3792 for r in rows[1:]))
                 hashes.append(json.loads((out/'prompt-hashes.json').read_text()))
             self.assertEqual(*hashes)
+    def test_prepare_prompts_without_inference(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            FakeLlama.previous=[987654321]
+            out=Path(tmp)/'run'
+            result=self.run_bench('bench_chat.py',out,'--size','4096','--prepare-only')
+            self.assertEqual(result.returncode,0,result.stderr)
+            self.assertTrue((out/'prompt-hashes.json').exists())
+            self.assertFalse((out/'summary.json').exists())
+            self.assertEqual(FakeLlama.previous,[987654321])
     def test_smoke_does_not_execute_by_default(self):
         with tempfile.TemporaryDirectory() as tmp:
             out=Path(tmp)/'run';res=self.run_bench('bench_smoke.py',out)
@@ -118,6 +127,8 @@ class ToolTests(unittest.TestCase):
         self.assertIn('--spec-type',cmd);self.assertNotIn('-md',cmd)
         self.assertEqual(cmd[cmd.index('--alias')+1],'qwen38-27b-local')
         self.assertEqual(environment(p)['GGML_SYCL_ENABLE_GRAPH'],'0')
+        self.assertEqual(environment(p)['GGML_SYCL_GDN_BLOCKED'],'0')
+        self.assertEqual(environment(json.loads((R/'presets/qwen38-recommended.json').read_text()))['GGML_SYCL_GDN_BLOCKED'],'1')
         p['sycl_graph']=True
         self.assertEqual(environment(p)['GGML_SYCL_ENABLE_GRAPH'],'1')
         p['mtp_mode']='unknown'
@@ -151,6 +162,43 @@ class ToolTests(unittest.TestCase):
             result=subprocess.run([sys.executable,str(deployment/'qwen26b_server.py'),'--help'],capture_output=True,text=True)
             self.assertEqual(result.returncode,0,result.stderr)
             self.assertIn('--draft-ubatch',result.stdout)
+    @unittest.skipUnless(os.name=='nt','Windows process handles')
+    def test_stop_already_exited_recorded_child(self):
+        from manage_server import stop
+        with tempfile.TemporaryDirectory() as tmp:
+            child=subprocess.Popen([sys.executable,'-c','pass'],creationflags=subprocess.CREATE_NO_WINDOW)
+            child.wait(timeout=10)
+            record=Path(tmp)/'server.json'
+            record.write_text(json.dumps({'pid':child.pid,'exe':sys.executable}))
+            stop(record)
+
+    @unittest.skipUnless(os.name=='nt','Windows process handles')
+    def test_stop_waits_for_query_denied_terminating_child(self):
+        import ctypes
+        from types import SimpleNamespace
+        from unittest.mock import patch
+        from manage_server import stop
+        real=ctypes.WinDLL('kernel32',use_last_error=True)
+        child=subprocess.Popen([sys.executable,'-c','import time; time.sleep(60)'],creationflags=subprocess.CREATE_NO_WINDOW)
+        timer=None
+        def denied_query(*args):
+            nonlocal timer
+            timer=threading.Timer(0.1,child.terminate)
+            timer.start()
+            ctypes.set_last_error(5)
+            return 0
+        proxy=SimpleNamespace(**{name:getattr(real,name) for name in ['OpenProcess','TerminateProcess','WaitForSingleObject','CloseHandle']},QueryFullProcessImageNameW=denied_query)
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                record=Path(tmp)/'server.json'
+                record.write_text(json.dumps({'pid':child.pid,'exe':sys.executable}))
+                with patch('ctypes.WinDLL',return_value=proxy):stop(record)
+                self.assertIsNotNone(child.poll())
+        finally:
+            if timer:timer.join()
+            if child.poll() is None:child.terminate()
+            child.wait(timeout=10)
+
     def test_snapshot_redacts_paths_and_verifies_bytes(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);run=root/'input'/'probe';run.mkdir(parents=True)

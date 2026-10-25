@@ -19,8 +19,16 @@ def stop(record):
         if error!=87:raise ctypes.WinError(error)
         print('Recorded server already exited');return
     try:
+        if k.WaitForSingleObject(handle,0)==0:
+            print('Recorded server already exited',flush=True);return
         n=wintypes.DWORD(32768);name=ctypes.create_unicode_buffer(n.value)
-        if not k.QueryFullProcessImageNameW(handle,0,name,ctypes.byref(n)):raise ctypes.WinError(ctypes.get_last_error())
+        if not k.QueryFullProcessImageNameW(handle,0,name,ctypes.byref(n)):
+            error=ctypes.get_last_error()
+            # Query can fail while another owner is terminating this process,
+            # before its handle becomes signaled. Wait read-only; never kill an unverified PID.
+            if error in (5,87) and k.WaitForSingleObject(handle,30000)==0:
+                print('Recorded server already exited',flush=True);return
+            raise ctypes.WinError(error)
         if os.path.normcase(os.path.abspath(name.value))!=os.path.normcase(os.path.abspath(expected)):raise RuntimeError('Recorded PID belongs to a different executable')
         if not k.TerminateProcess(handle,0):raise ctypes.WinError(ctypes.get_last_error())
         if k.WaitForSingleObject(handle,30000)!=0:raise RuntimeError('Server stop timeout')
@@ -35,7 +43,7 @@ def start(a,record):
         if value is not None:preset[key]=value
     if a.spec is not None:preset['mtp']=a.spec=='on'
     if a.q4_reorder is not None:preset['q4_reorder']=a.q4_reorder=='on'
-    deployment=a.deployment_dir.resolve();runtime=deployment/a.runtime
+    deployment=a.deployment_dir.resolve();runtime=deployment/(a.runtime or preset.get('runtime','runtime-patched-f16'))
     try:
         with socket.create_connection(('127.0.0.1',a.port),timeout=1):pass
     except OSError:pass
@@ -72,7 +80,7 @@ def start(a,record):
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('action',choices=['start','stop','status','restart'])
     p.add_argument('--deployment-dir',type=Path,required=True);p.add_argument('--preset',type=Path)
-    p.add_argument('--runtime',default='runtime-patched-f16');p.add_argument('--host',default='0.0.0.0');p.add_argument('--port',type=int,default=5001)
+    p.add_argument('--runtime',help='Override the preset runtime directory; fallback: runtime-patched-f16');p.add_argument('--host',default='0.0.0.0');p.add_argument('--port',type=int,default=5001)
     p.add_argument('--device',default='SYCL0');p.add_argument('--device-selector',default='level_zero:0')
     for key in ['context','batch','ubatch','draft-max','draft-ubatch']:p.add_argument('--'+key,type=int)
     p.add_argument('--kv-type',choices=['f16','q8_0']);p.add_argument('--spec',choices=['on','off'])

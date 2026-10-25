@@ -79,6 +79,7 @@ def environment(preset, device_selector='level_zero:0'):
             'GGML_SYCL_ENABLE_HOST_PINNED_MEM':'0',
             'GGML_SYCL_MOE_Q4_REORDER':'1' if preset['q4_reorder'] else '0',
             'GGML_SYCL_ENABLE_GRAPH':'1' if preset.get('sycl_graph',False) else '0',
+            'GGML_SYCL_GDN_BLOCKED':'1' if preset.get('sycl_gdn_blocked',False) else '0',
             'GGML_SYCL_FA_ONEDNN':'1' if preset.get('sycl_fa_onednn',True) else '0'}
 
 

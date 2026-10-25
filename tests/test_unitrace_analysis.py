@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'scripts'))
-from analyze_unitrace import analyze, union_us
+from analyze_unitrace import analyze, category, union_us
 
 
 class TraceAnalysisTests(unittest.TestCase):
@@ -27,6 +27,10 @@ class TraceAnalysisTests(unittest.TestCase):
         # Category sums can exceed their union when kernels run concurrently.
         total = sum(v['seconds'] for k,v in result['categories'].items() if k!='memory_command')
         self.assertAlmostEqual(total, 70/1e6)
+
+    def test_blocked_gdn_is_counted_with_original_gdn(self):
+        self.assertEqual(category('gdn_blocked_sycl<8, 16, 8, true>'), 'gated_delta_net')
+        self.assertEqual(category('gated_delta_net_sycl<128>'), 'gated_delta_net')
 
     def test_union_handles_nested_disjoint_and_adjacent_ranges(self):
         self.assertEqual(union_us([]), 0)

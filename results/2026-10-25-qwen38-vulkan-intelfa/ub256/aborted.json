@@ -1,0 +1,5 @@
+{
+  "after_completed_case": 32768,
+  "incomplete_case": 98304,
+  "reason": "ubatch256 cold32K took 96.57s, far slower than SYCL; explicitly stopped the 96K request to prioritize a larger microbatch given measured VRAM headroom. No 96K timing claimed for this arm."
+}

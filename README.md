@@ -4,7 +4,7 @@
 
 在一台普通 Windows 电脑上，记录 B60 运行本地大模型时真正需要等多久。重点是 **32K–96K 长输入、首字等待、连续对话缓存和 MTP**。每个结论附配置、原始测量和复现脚本，后续可增加不同模型。
 
-新增：[Qwen3.8-27B 混合 IQ 权重调优](docs/qwen38.md)，包含 32K/96K、嵌入式 MTP 与独立草稿批量对照；新增 [算子时间线分析](docs/qwen38-profile.md)与完整 trace。
+新增：[Qwen3.8-27B 混合 IQ 权重调优](docs/qwen38.md)，包含 32K/96K、嵌入式 MTP 与独立草稿批量对照；新增 [算子时间线分析](docs/qwen38-profile.md)与完整 trace；后续 [内核改进实测](docs/qwen38-kernel-experiments.md)：保持 MTP 开启，32K 预填充约 53.7 秒、96K 约 208.2 秒。
 
 首个模型：**NVIDIA Nemotron 3.5 Lightning 30B-A3B，Q4_0 主模型 + 可选 Q8_0 MTP**。这不是模型能力排行榜，也没有证明它是 B60 上最聪明的模型。
 
@@ -52,6 +52,6 @@ python scripts/bench_prefill.py --label prefill --output runs/prefill --sizes 12
 - [完整调优记录](docs/nemotron.md)：12K batch 扫描、MTP 对照、数值验证及未采用的实验。
 - [新增模型指南](CONTRIBUTING.md) 和 [结果模板](templates/model-result.md)。不同 tokenizer 的 tok/s 不直接代表相同文字吞吐。
 
-Windows Vulkan 超过 32K 的历史问题本轮**没有回归测试**，不能据此宣称已修复。Intel 专用框架的适配调查见 [工具与来源](docs/tools.md)。未做算子时间线分析，尚不能断定预填充的最终瓶颈。
+新增 [Intel Vulkan FA 补丁的本机实测](docs/qwen38-kernel-experiments.md)：当前混合 IQ 权重上仍慢于 SYCL；没有对未打补丁的上游做独立回归。Intel 专用框架的适配调查见 [工具与来源](docs/tools.md)。Qwen 的算子时间线已定位主要耗时，但尚未证明预填充已到硬件极限。
 
 代码许可：MIT；第三方补丁、模型和二进制的范围见 [来源说明](THIRD_PARTY_NOTICES.md)。

@@ -1,0 +1,21 @@
+--- a/ggml/src/ggml-vulkan/ggml-vulkan.cpp
++++ b/ggml/src/ggml-vulkan/ggml-vulkan.cpp
+@@ -1,4 +1,5 @@
+ #include "ggml-vulkan-common.h"
++#include <mutex>
+ 
+ static vk_device_architecture get_device_architecture(const vk::PhysicalDevice& device) {
+     vk::PhysicalDeviceProperties props = device.getProperties();
+@@ -8341,6 +8342,12 @@
+ 
+         if (xe_fa_opt) {
+             if (neq1 > 8) {
++                // One warmup-time diagnostic; verifies actual dispatch rather than build capability.
++                static std::once_flag reported;
++                std::call_once(reported, [&]() {
++                    GGML_LOG_INFO("Intel FA prefill active: D=%lld, Q=%lld, KV=%lld, GQA=%u\n",
++                                  (long long) neq0, (long long) neq1, (long long) nek1, qk_ratio);
++                });
+                 xe_fa_use_2phases = false;
+                 auto& xe_fa_pipelines = ctx->device->pipeline_xe_fa_prefill;
+                 auto it = xe_fa_pipelines.find({ (uint32_t)neq0, uint32_t(nev0), (uint32_t)qk_ratio, (uint32_t)nem0 });

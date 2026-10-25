@@ -1,5 +1,7 @@
 # Qwen3.8-27B：B60 预填充算子时间线
 
+后续：[分块 GDN 改进](qwen38-kernel-experiments.md)已实测并采用；以下保留最初的瓶颈定位与参数对照。
+
 2026-10-25，Windows / SYCL / 当前混合 IQ 权重。**长上下文最值得改进的是注意力内核；这轮两个参数对照没有带来明显提速，默认配置保持不变。**
 
 [逐次计时](../results/2026-10-25-qwen38-profile/measurements.csv) · [版本与采集局限](../results/2026-10-25-qwen38-profile/metadata.json) · [32K 分析](../results/2026-10-25-qwen38-profile/32k-default/analysis.json) · [96K 分析](../results/2026-10-25-qwen38-profile/96k-default/analysis.json)

@@ -1,0 +1,78 @@
+{
+  "hardware": {
+    "gpu": "Intel Arc Pro B60",
+    "vram_gib": 24,
+    "cpu": "Intel Core i5-12600K",
+    "cores": 10,
+    "threads": 16,
+    "ram_gib": 32,
+    "ram": "DDR4, 2133 MT/s observed",
+    "motherboard": "ASUS PRIME Z690M-PLUS D4",
+    "os": "Windows 11 Pro, build 26300",
+    "b60_driver": "32.0.101.9033",
+    "igpu": "UHD 770",
+    "igpu_driver": "32.0.101.7092"
+  },
+  "model": {
+    "name": "Huihui-Qwen3.8-27B-abliterated-Swift-1.5-GSQ-RCO-IQ3_S-mtp.gguf",
+    "bytes": 12120017024,
+    "sha256": "29c1ae202c8f2c7d797335dcde6b51ae09a90a477552f853b2336ae2fac66582",
+    "matches_hf_lfs_sha256": true
+  },
+  "unitrace": {
+    "version": "2.4.1",
+    "commit": "307d457292976823546d3b30b141402de44f724f",
+    "repository": "https://github.com/intel/pti-gpu",
+    "configuration": "Level Zero only; no XPTI, ITT, OpenCL, MPI, OMP or Perfetto protobuf",
+    "sha256": {
+      "unitrace.exe": "062d35acc673e2e6e881373d05b4de727120ef34ee8ce5fbc3f92a65d73d279d",
+      "unitrace_tool.dll": "33ca291f8666981f08a46f5607c2875c09e42369a58a7c6474b3d63c855e7ca2"
+    }
+  },
+  "date": "2026-10-25",
+  "base_runtime": {
+    "tag": "b11869",
+    "commit": "d327bf1f0780f87b8c01b367b61853b0c291d7c4",
+    "official_archive_sha256": "6acd664fb580ed672785bb89e37d7f2246daef92439cfb6f697359899e7b2806",
+    "optimized_sycl_dll_sha256": "c12dab95d5db6414dd7856dd150b720569656589cea825756afcdd2295456b7b",
+    "compiler": "Intel oneAPI DPC++ 2026.1.1",
+    "onednn": "2026.0.2",
+    "level_zero_sdk": "1.32.0",
+    "GGML_SYCL_F16": true,
+    "GGML_SYCL_DNN": true,
+    "patch": "External Q4_0 expert reorder adapted to b11869",
+    "original_patch_sha256": "5150ad8b8655ae80cd3f921a17605a5586fc8d976f43f3ce555ef92568885b87"
+  },
+  "experimental_runtime": {
+    "runtime": "runtime-qwen-gdn-blocked",
+    "ggml_sycl_sha256": "e57461061b9c3759285ead533819290739c6e8b3880dfbd651e5d187129c423f",
+    "order": [
+      0,
+      1,
+      1,
+      0
+    ]
+  },
+  "source_patch": {
+    "base_sha256": "3a00c05738073061574bcc99711fafbd2dd7a339543dc628120b33239c82e9c7",
+    "patched_sha256": "61b3df37234eeba9d04c3969ca65f05e8e470ab1cfd813168447e2544e3d8705",
+    "patch_sha256": "935469ac5ebe260fcf609782129c27b26e6fc5a7538672a70f634003a4a47c15",
+    "upstream_commit": "ff6c13e692f06cfc9e55e26b088f74aca48c7e7a",
+    "base_llama_commit": "d327bf1f0780f87b8c01b367b61853b0c291d7c4",
+    "upstream_repository": "https://github.com/Torchit1/llama.cpp",
+    "local_switch": "GGML_SYCL_GDN_BLOCKED=1",
+    "default_in_source": false,
+    "scope": "non-KDA, state dimension 128, n_tokens >= 16",
+    "preserves": "current upstream cache fusion and MTP state snapshots",
+    "source_hash_normalization": "UTF-8 with CRLF normalized to LF; patch_sha256 is raw patch bytes",
+    "patched_file_raw_sha256": "6e6e81627224b516561b261daab8352ffb1d08cb6fd48d657c427189bfacf111"
+  },
+  "method": "Same experimental DLL with GGML_SYCL_GDN_BLOCKED 0,1,1,0, separate process each run; 4096-token warmup, fixed saved token arrays, n_predict=1, cache_n=0; cached 256-token-limit retrieval after each cold request, greedy, embedded MTP on. No simultaneous build or other benchmark during these runs.",
+  "limitations": [
+    "Two timings per arm/length; no confidence interval or independent-day replication",
+    "Cached retrieval and 58 operator tests are not a broad model quality evaluation",
+    "One 32K trace per kernel implementation; category durations may overlap",
+    "SDPA layout probe is a standalone microbenchmark; 4D/5D outputs agree but are not independently CPU-validated"
+  ],
+  "previous_profile_reference": "../2026-10-25-qwen38-profile/32k-default/analysis.json"
+}

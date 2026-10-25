@@ -1,0 +1,14 @@
+{
+  "base_sha256": "3a00c05738073061574bcc99711fafbd2dd7a339543dc628120b33239c82e9c7",
+  "patched_sha256": "61b3df37234eeba9d04c3969ca65f05e8e470ab1cfd813168447e2544e3d8705",
+  "patch_sha256": "935469ac5ebe260fcf609782129c27b26e6fc5a7538672a70f634003a4a47c15",
+  "upstream_commit": "ff6c13e692f06cfc9e55e26b088f74aca48c7e7a",
+  "base_llama_commit": "d327bf1f0780f87b8c01b367b61853b0c291d7c4",
+  "upstream_repository": "https://github.com/Torchit1/llama.cpp",
+  "local_switch": "GGML_SYCL_GDN_BLOCKED=1",
+  "default_in_source": false,
+  "scope": "non-KDA, state dimension 128, n_tokens >= 16",
+  "preserves": "current upstream cache fusion and MTP state snapshots",
+  "source_hash_normalization": "UTF-8 with CRLF normalized to LF; patch_sha256 is raw patch bytes",
+  "patched_file_raw_sha256": "6e6e81627224b516561b261daab8352ffb1d08cb6fd48d657c427189bfacf111"
+}

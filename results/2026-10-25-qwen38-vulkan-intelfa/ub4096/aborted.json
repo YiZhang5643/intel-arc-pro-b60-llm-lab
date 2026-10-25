@@ -1,0 +1,5 @@
+{
+  "completed_repeats": 1,
+  "requested_repeats": 2,
+  "reason": "Both full lengths and retrieval completed once. First 32K is substantially slower than SYCL; stopped the second repetition to avoid repeating a noncompetitive configuration. No second-repetition timing claimed."
+}

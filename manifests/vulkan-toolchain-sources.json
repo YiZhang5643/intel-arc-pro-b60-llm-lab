@@ -1,0 +1,38 @@
+[
+  {
+    "repo": "google/shaderc",
+    "ref": "2737994b552137a85545f956e303d620e6ff232c",
+    "url": "https://api.github.com/repos/google/shaderc/tarball/2737994b552137a85545f956e303d620e6ff232c",
+    "archive_sha256": "65e9bb35e76983b96ad0e46b2b0a5567f72fce3ce00793e8c5048b6cff4aa822"
+  },
+  {
+    "repo": "KhronosGroup/glslang",
+    "ref": "73b25650df6dc4545966674531e6b7cc8f5d2407",
+    "url": "https://api.github.com/repos/KhronosGroup/glslang/tarball/73b25650df6dc4545966674531e6b7cc8f5d2407",
+    "archive_sha256": "7443286528f4dd2aae7633dd36ac6b463d3d05acf8c907e3a65ebc524e3e4bbc"
+  },
+  {
+    "repo": "KhronosGroup/SPIRV-Headers",
+    "ref": "86f980c731e62ae4eaf383d320449d71687936bf",
+    "url": "https://api.github.com/repos/KhronosGroup/SPIRV-Headers/tarball/86f980c731e62ae4eaf383d320449d71687936bf",
+    "archive_sha256": "249aadee301877ac5a7c9e35aa5743f11cf1c7c0455f94edd89a0129a9bc458a"
+  },
+  {
+    "repo": "KhronosGroup/SPIRV-Tools",
+    "ref": "71f287f18ed78d496e724fbfb1c3feae3a2af75a",
+    "url": "https://api.github.com/repos/KhronosGroup/SPIRV-Tools/tarball/71f287f18ed78d496e724fbfb1c3feae3a2af75a",
+    "archive_sha256": "9f1aa5e7b4c7d4cbb58aaf04a4d85440246c468543f24ca5adc87bb762bc7684"
+  },
+  {
+    "repo": "KhronosGroup/Vulkan-Headers",
+    "ref": "73814d006638aa00bd553215b054f0f02e457e22",
+    "url": "https://api.github.com/repos/KhronosGroup/Vulkan-Headers/tarball/73814d006638aa00bd553215b054f0f02e457e22",
+    "archive_sha256": "ac9d61021b29b5c282a8f720fcdf9653ff614edd5f1f35a1bb5e09d5defbf56b"
+  },
+  {
+    "repo": "ggml-org/llama.cpp",
+    "ref": "d327bf1f0780f87b8c01b367b61853b0c291d7c4",
+    "url": "https://api.github.com/repos/ggml-org/llama.cpp/tarball/d327bf1f0780f87b8c01b367b61853b0c291d7c4",
+    "archive_sha256": "a8ca4c4f64626d166b4075d19881c1d5416f0d9e06c366df16da248df3fa9cf0"
+  }
+]

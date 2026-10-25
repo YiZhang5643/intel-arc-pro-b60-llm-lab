@@ -27,7 +27,7 @@ def category(name):
         return 'mkl_gemm'
     if 'micro_sdpa' in name or 'flash_attn' in name or 'mkl_fa_' in name:
         return 'attention'
-    if 'gated_delta_net' in name:
+    if 'gated_delta_net' in name or 'gdn_blocked_sycl' in name:
         return 'gated_delta_net'
     if 'dequantize' in name:
         return 'weight_dequantization'

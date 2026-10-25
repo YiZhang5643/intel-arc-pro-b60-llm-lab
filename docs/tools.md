@@ -27,4 +27,4 @@
 
 未验证不代表永远不支持。没有为了本轮调查更换系统或启用 WSL/Docker。新的框架结果应附可复现命令、模型格式及端到端 TTFT。
 
-Windows Vulkan 的 >32K 历史退化没有本机重测。[Intel FA PR #29357](https://github.com/ggml-org/llama.cpp/pull/29357) 和 [PR #30351](https://github.com/ggml-org/llama.cpp/pull/30351) 可追踪进展，但 PR 状态不能证明问题已在本机解决。
+新增 [Intel Vulkan FA 补丁配置实测](qwen38-kernel-experiments.md)：本机混合 IQ + MTP 下未超过 SYCL；未重新对比未打补丁的上游。[Intel FA PR #29357](https://github.com/ggml-org/llama.cpp/pull/29357) 和 [PR #30351](https://github.com/ggml-org/llama.cpp/pull/30351) 可追踪进展，但 PR 状态不能证明问题已在本机解决。

@@ -1,0 +1,24 @@
+[
+  {
+    "repeat": 1,
+    "input_tokens": 32768,
+    "wall_seconds": 5.278490800061263,
+    "retrieval_all_present": true,
+    "output": "```json\n{\n  \"PROJECT-ALPHA\": \"ARC-3FF8BD71E669\",\n  \"PROJECT-BRAVO\": \"ARC-9D69441881FF\",\n  \"PROJECT-CHARLIE\": \"ARC-EFA971B51E66\"\n}\n```",
+    "timings": {
+      "cache_n": 32764,
+      "prompt_n": 4,
+      "prompt_ms": 313.013,
+      "prompt_per_token_ms": 78.25325,
+      "prompt_per_second": 12.77902195755448,
+      "predicted_n": 77,
+      "predicted_ms": 4953.788,
+      "predicted_per_token_ms": 65.18142105263158,
+      "predicted_per_second": 15.34179500616498,
+      "draft_n": 57,
+      "draft_n_accepted": 57
+    },
+    "stop_type": "eos",
+    "truncated": false
+  }
+]

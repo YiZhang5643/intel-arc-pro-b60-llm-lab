@@ -1,0 +1,17 @@
+{
+  "wall_seconds": 53.976470199995674,
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 32768,
+    "prompt_ms": 53954.774,
+    "prompt_per_token_ms": 1.6465690307617187,
+    "prompt_per_second": 607.3234594588423,
+    "predicted_n": 1,
+    "predicted_ms": 0.001,
+    "predicted_per_token_ms": 0.0,
+    "predicted_per_second": 0.0
+  },
+  "output": "```",
+  "client_start_unix_ns": 1792955463416029100,
+  "client_end_unix_ns": 1792955517393151900
+}

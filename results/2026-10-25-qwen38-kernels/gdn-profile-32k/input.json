@@ -1,0 +1,6 @@
+{
+  "tokens": 32768,
+  "token_sha256": "544bdfff74498e529fef8566b93f7357dbbb7db314908b3066a38193a1c2c810",
+  "case": "cold-retrieval",
+  "synthetic_source": "long-mtp3-q8-32k"
+}

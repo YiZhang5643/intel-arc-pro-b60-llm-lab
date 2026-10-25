@@ -1,0 +1,36 @@
+[
+  {
+    "repeat": 1,
+    "input_tokens": 32768,
+    "wall_seconds": 90.47260920004919,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 32768,
+      "prompt_ms": 90449.136,
+      "prompt_per_token_ms": 2.76028857421875,
+      "prompt_per_second": 362.2809619762427,
+      "predicted_n": 1,
+      "predicted_ms": 0.001,
+      "predicted_per_token_ms": 0.0,
+      "predicted_per_second": 0.0
+    },
+    "output": "```"
+  },
+  {
+    "repeat": 1,
+    "input_tokens": 98304,
+    "wall_seconds": 385.44417059991974,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 98304,
+      "prompt_ms": 385398.835,
+      "prompt_per_token_ms": 3.920479685465495,
+      "prompt_per_second": 255.0708281201732,
+      "predicted_n": 1,
+      "predicted_ms": 0.001,
+      "predicted_per_token_ms": 0.0,
+      "predicted_per_second": 0.0
+    },
+    "output": "```"
+  }
+]

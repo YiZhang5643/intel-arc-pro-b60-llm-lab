@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-25",
+  "hardware": {
+    "gpu": "Intel Arc Pro B60",
+    "vram_gib": 24,
+    "cpu": "Intel Core i5-12600K",
+    "cores": 10,
+    "threads": 16,
+    "ram_gib": 32,
+    "ram": "DDR4, 2133 MT/s observed",
+    "motherboard": "ASUS PRIME Z690M-PLUS D4",
+    "os": "Windows 11 Pro, build 26300",
+    "b60_driver": "32.0.101.9033",
+    "igpu": "UHD 770",
+    "igpu_driver": "32.0.101.7092"
+  },
+  "model": {
+    "name": "Huihui-Qwen3.8-27B-abliterated-Swift-1.5-GSQ-RCO-IQ3_S-mtp.gguf",
+    "bytes": 12120017024,
+    "sha256": "29c1ae202c8f2c7d797335dcde6b51ae09a90a477552f853b2336ae2fac66582",
+    "matches_hf_lfs_sha256": true
+  },
+  "base_llama_commit": "d327bf1f0780f87b8c01b367b61853b0c291d7c4",
+  "reference_project_commit": "6d26bb1980854b7dfde77817653f0e10b123818a",
+  "source_toolchain_manifest": "../../manifests/vulkan-toolchain-sources.json",
+  "upstream_patches": [
+    "0ea89aa76253dc37e655e4612e480bd46fdb673671c5c161ef8e6a4e847e64ec  0001-vulkan-Intel-customized-FA-shader-for-prefill-usage.patch",
+    "a6389b3571e9a6f08c4630e948beb1c0d82488cc3b84b9ba18be5998741f14f2  0002-vulkan-adding-check-of-max_bias-logit_softcap-for-In.patch"
+  ],
+  "local_diagnostic_patch": [
+    "ba7520bab92319c2c4b1bbe498a62089295dcdf2ab4ff3894c055afecf0aac0e  0003-local-prefill-dispatch-diagnostic.patch"
+  ],
+  "method": "Same saved 32768/98304 token arrays and one-token cold requests as SYCL. F16 KV, MTP3, draft ubatch512, context114688. Warmup4096. No simultaneous build during timed requests. GPU counter sampling uses a configured 5-second sleep; collecting counters adds time.",
+  "limitations": [
+    "Whole configurations differ: backend, KV type, microbatch and compiler; no isolated stock-Vulkan comparison",
+    "Only one timing per completed arm/length; no confidence interval",
+    "ubatch256 96K was interrupted to prioritize the larger microbatch",
+    "ubatch4096 second repetition was interrupted after one complete 32K/96K pair because it was slower",
+    "Memory observations are samples, not instrumented peaks or proof about WDDM paging",
+    "No Vulkan operator timeline was collected; reason for remaining gap is not established"
+  ],
+  "arms": {
+    "ub256": {
+      "memory": {
+        "sample_count": 17,
+        "maximum_observed_dedicated_gib": 19.44525146484375,
+        "maximum_observed_shared_mib": 385.53125,
+        "sampling_covers": "Subset of intervals during this PID lifetime; warmup, full request windows and instantaneous peaks are not guaranteed to be covered",
+        "median_observed_sample_interval_seconds": 9.446635127067566
+      },
+      "retrieval_all_present": true,
+      "completed_retrieval_cases": 1
+    },
+    "ub4096": {
+      "memory": {
+        "sample_count": 44,
+        "maximum_observed_dedicated_gib": 21.602397918701172,
+        "maximum_observed_shared_mib": 630.95703125,
+        "sampling_covers": "Subset of intervals during this PID lifetime; warmup, full request windows and instantaneous peaks are not guaranteed to be covered",
+        "median_observed_sample_interval_seconds": 9.721730947494507
+      },
+      "retrieval_all_present": true,
+      "completed_retrieval_cases": 2
+    }
+  }
+}

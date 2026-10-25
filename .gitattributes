@@ -1,1 +1,4 @@
 results/** -text
+
+# Patch checksums must survive checkout on Windows.
+*.patch -text whitespace=-blank-at-eol

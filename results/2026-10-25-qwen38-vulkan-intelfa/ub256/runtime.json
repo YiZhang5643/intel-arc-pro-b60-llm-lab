@@ -1,0 +1,33 @@
+{
+  "runtime": "runtime-vulkan-intelfa",
+  "preset": {
+    "model": "Huihui-Qwen3.8-27B-abliterated-Swift-1.5-GSQ-RCO-IQ3_S-mtp.gguf",
+    "alias": "qwen38-27b-vulkan-experiment",
+    "context": 114688,
+    "batch": 8192,
+    "ubatch": 256,
+    "mtp": true,
+    "mtp_mode": "embedded",
+    "kv_type": "f16",
+    "draft_max": 3,
+    "draft_p_min": 0.6,
+    "q4_reorder": false,
+    "sycl_graph": false,
+    "draft_ubatch": 512,
+    "ui_mcp_proxy": true
+  },
+  "device": "Vulkan1",
+  "sha256": {
+    "ggml-base.dll": "abfac076a281b41fb33bdbdfe0a49db2f5d3e2a495221b42c5503a174c696854",
+    "ggml-cpu.dll": "f0577df6679cdda129676942885db5df790fdb4ff66b403f0438d1c7c36a132b",
+    "ggml-vulkan.dll": "c1da90cb3986cbc50f5fa063cba8489d47cb3d6c04cb09e919731d109fb19e00",
+    "ggml.dll": "ffd1695f421a912fc1e67c4578b08316d43816372e34b22197120a981aafacfc",
+    "llama-bench-impl.dll": "291865a8bbb564e0626a3e37ca9ebf14acb4b7a72fc91229f2f1a16e7ee9a0ca",
+    "llama-bench.exe": "14e777e0f483dc7e0ffa7256bb6f7085de7f0bc1cd82cc6c0372ad56b891ce0a",
+    "llama-common.dll": "4e2ba589d8bcc4b61733cdacdb739622c1d98f472427a4a9376465a72168e3da",
+    "llama-server-impl.dll": "f2c90f910cc76e55d639117d84d72cc4fbe12870bdc01b7cb940c1cad19e78ab",
+    "llama-server.exe": "9932bbcd954f09f75f54b397ee2d5cf971d34059b701bd82fe41073644bf7f6a",
+    "llama.dll": "7ab6e088bee64a4e26fac6b46748be53b904b032a4af2df0c436b342a7598194",
+    "mtmd.dll": "e22b3cac4261675d450a81273e0a3ecdc688279440ab26206ed3f6b928c8c71d"
+  }
+}
