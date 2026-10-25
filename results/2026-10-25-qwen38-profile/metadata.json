@@ -1,0 +1,93 @@
+{
+  "analysis_date": "2026-10-25",
+  "hardware": {
+    "gpu": "Intel Arc Pro B60",
+    "vram_gib": 24,
+    "cpu": "Intel Core i5-12600K",
+    "cores": 10,
+    "threads": 16,
+    "ram_gib": 32,
+    "ram": "DDR4, 2133 MT/s observed",
+    "motherboard": "ASUS PRIME Z690M-PLUS D4",
+    "os": "Windows 11 Pro, build 26300",
+    "b60_driver": "32.0.101.9033",
+    "igpu": "UHD 770",
+    "igpu_driver": "32.0.101.7092"
+  },
+  "runtime": {
+    "tag": "b11869",
+    "commit": "d327bf1f0780f87b8c01b367b61853b0c291d7c4",
+    "official_archive_sha256": "6acd664fb580ed672785bb89e37d7f2246daef92439cfb6f697359899e7b2806",
+    "optimized_sycl_dll_sha256": "c12dab95d5db6414dd7856dd150b720569656589cea825756afcdd2295456b7b",
+    "compiler": "Intel oneAPI DPC++ 2026.1.1",
+    "onednn": "2026.0.2",
+    "level_zero_sdk": "1.32.0",
+    "GGML_SYCL_F16": true,
+    "GGML_SYCL_DNN": true,
+    "patch": "External Q4_0 expert reorder adapted to b11869",
+    "original_patch_sha256": "5150ad8b8655ae80cd3f921a17605a5586fc8d976f43f3ce555ef92568885b87"
+  },
+  "model": {
+    "name": "Huihui-Qwen3.8-27B-abliterated-Swift-1.5-GSQ-RCO-IQ3_S-mtp.gguf",
+    "bytes": 12120017024,
+    "sha256": "29c1ae202c8f2c7d797335dcde6b51ae09a90a477552f853b2336ae2fac66582",
+    "matches_hf_lfs_sha256": true
+  },
+  "unitrace": {
+    "version": "2.4.1",
+    "commit": "307d457292976823546d3b30b141402de44f724f",
+    "repository": "https://github.com/intel/pti-gpu",
+    "configuration": "Level Zero only; no XPTI, ITT, OpenCL, MPI, OMP or Perfetto protobuf",
+    "sha256": {
+      "unitrace.exe": "062d35acc673e2e6e881373d05b4de727120ef34ee8ce5fbc3f92a65d73d279d",
+      "unitrace_tool.dll": "33ca291f8666981f08a46f5607c2875c09e42369a58a7c6474b3d63c855e7ca2"
+    }
+  },
+  "method": "One cold request per arm, n_predict=1, exact saved synthetic token arrays, no prefix reuse. 4096-token warmup while collection paused.",
+  "trace_sanitization": "Machine labels HOST<...> and DEVICE<...> changed to local. Timestamps, durations, operation names and dependencies preserved. gzip is deterministic.",
+  "limitations": [
+    "No hardware XMX occupancy, bandwidth, frequency, power or stall counters",
+    "No repeated timing distribution or controlled thermal/power study",
+    "96K has no new unprofiled paired request; compare prior saved run only",
+    "Timing-only one-token output is not a model quality test",
+    "Memory counters are samples; do not treat observed maximum as instrumented peak",
+    "32K memory samples cover part of each collection window; no 96K memory sampling in this snapshot."
+  ],
+  "arms": {
+    "32k-default": {
+      "tokens": 32768,
+      "raw_trace_sha256": "6c3eef38b401e50ca10288db7b6137f8cd0b1be4d1604e90fb8dfa6785abe5a7",
+      "memory_sample_count": 14,
+      "observed_max_dedicated_bytes": 22067875840.0,
+      "observed_max_shared_bytes": 123981824.0
+    },
+    "96k-default": {
+      "tokens": 98304,
+      "raw_trace_sha256": "b73c5e20136023fd26f8e0487d48ab76e187f2d560bfda13678517c7550d7a86",
+      "memory_sample_count": 0
+    },
+    "32k-native-attention": {
+      "tokens": 32768,
+      "raw_trace_sha256": "bfbc2e35855a80a00554aa21eb189988e123b7905e2a500d52ed24f098d4282c",
+      "memory_sample_count": 12,
+      "observed_max_dedicated_bytes": 22085251072.0,
+      "observed_max_shared_bytes": 123981824.0
+    },
+    "32k-ub12288": {
+      "tokens": 32768,
+      "raw_trace_sha256": "6b097acba2934f5ccf429a7ad297858d4e046b3ee0b64d4379e5d7d91682d17c",
+      "memory_sample_count": 11,
+      "observed_max_dedicated_bytes": 24341196800.0,
+      "observed_max_shared_bytes": 123981824.0
+    }
+  },
+  "tool_script_sha256": {
+    "profile_prefill.py": "8834fdf055b0911a110071feb4cdb1f8349923a248dd4229711b08c474ea1002",
+    "analyze_unitrace.py": "fae1374af4bb874fca7044905fcf8029c4d65bd51ee266b18c9b0974593baf92",
+    "build_unitrace.cmd": "0b09e6ff8bdbc9226c802530cd57a394a79be1246ea8b38e241876daa2575e02",
+    "sample_gpu_memory.ps1": "ac27d8cb3eae7d01e70d1e9767583d377bc41f1ca7c9c9184000738c8a7f9c2b",
+    "plot_unitrace.py": "b5d43004728dc2671a8ca32566473a38549ddaa58d9b5d489c5f901c8476132b",
+    "snapshot_unitrace.py": "3256a9da28a133dfeb17dd73c8d5f57482dc7661f8394436e633704b605ca459"
+  },
+  "text_normalization": "Generated SVG and human-readable text reports have trailing whitespace and excess terminal blank lines removed. Numeric data and trace timestamps are unchanged."
+}

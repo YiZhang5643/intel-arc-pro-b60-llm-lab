@@ -1,0 +1,123 @@
+{
+  "client_wall_seconds": 57.17371875,
+  "kernel_union_seconds": 53.72916225,
+  "kernel_union_percent": 93.97527994451121,
+  "memory_command_union_seconds": 52.09818575,
+  "memory_commands_outside_kernel_union_seconds": 0.7008185,
+  "outside_kernel_union_seconds": 3.4445565,
+  "categories": {
+    "memory_command": {
+      "calls": 1256,
+      "seconds": 52.09818575,
+      "percent_of_client_wall": 91.12261173321004
+    },
+    "other_kernels": {
+      "calls": 7062,
+      "seconds": 7.14530475,
+      "percent_of_client_wall": 12.49753366794949
+    },
+    "type_conversion": {
+      "calls": 2096,
+      "seconds": 3.1178335,
+      "percent_of_client_wall": 5.453263436707973
+    },
+    "weight_dequantization": {
+      "calls": 1840,
+      "seconds": 3.4809515,
+      "percent_of_client_wall": 6.088376925805618
+    },
+    "gemm": {
+      "calls": 2096,
+      "seconds": 22.8232175,
+      "percent_of_client_wall": 39.91907120787032
+    },
+    "gated_delta_net": {
+      "calls": 192,
+      "seconds": 7.6842085,
+      "percent_of_client_wall": 13.44010616766117
+    },
+    "attention": {
+      "calls": 258,
+      "seconds": 9.4776465,
+      "percent_of_client_wall": 16.57692853851666
+    }
+  },
+  "host_api": [
+    {
+      "name": "zeCommandListAppendMemoryCopy",
+      "calls": 1256,
+      "seconds": 51.78247725
+    },
+    {
+      "name": "zeCommandListHostSynchronize",
+      "calls": 21810,
+      "seconds": 1.2119225
+    },
+    {
+      "name": "zeCommandListAppendLaunchKernelWithArguments",
+      "calls": 13544,
+      "seconds": 0.076262
+    },
+    {
+      "name": "zeVirtualMemMap",
+      "calls": 2,
+      "seconds": 0.00523175
+    },
+    {
+      "name": "zeEventHostSynchronize",
+      "calls": 1251,
+      "seconds": 0.002443
+    },
+    {
+      "name": "zeModuleCreate",
+      "calls": 4,
+      "seconds": 0.0012895
+    },
+    {
+      "name": "zeKernelSetGroupSize",
+      "calls": 1983,
+      "seconds": 0.00072075
+    },
+    {
+      "name": "zeMemGetAllocProperties",
+      "calls": 1361,
+      "seconds": 0.000512
+    },
+    {
+      "name": "zeKernelSuggestGroupSize",
+      "calls": 224,
+      "seconds": 0.00023675
+    },
+    {
+      "name": "zePhysicalMemCreate",
+      "calls": 2,
+      "seconds": 0.0001865
+    },
+    {
+      "name": "zeDeviceGetProperties",
+      "calls": 3,
+      "seconds": 0.00018575
+    },
+    {
+      "name": "zeCommandListIsGraphCaptureEnabledExt",
+      "calls": 229,
+      "seconds": 7.9e-05
+    },
+    {
+      "name": "zeKernelCreate",
+      "calls": 4,
+      "seconds": 3.625e-05
+    },
+    {
+      "name": "zeKernelGetName",
+      "calls": 4,
+      "seconds": 1e-06
+    },
+    {
+      "name": "zeKernelGetProperties",
+      "calls": 1,
+      "seconds": 2.5e-07
+    }
+  ],
+  "note": "Memory-command timestamps can include waits and overlap kernels. Do not add their duration to kernel time or infer DMA bandwidth from it. Category times are summed kernel durations, not additive critical-path attribution if kernels overlap."
+}

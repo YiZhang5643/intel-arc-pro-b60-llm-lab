@@ -4,7 +4,7 @@
 
 在一台普通 Windows 电脑上，记录 B60 运行本地大模型时真正需要等多久。重点是 **32K–96K 长输入、首字等待、连续对话缓存和 MTP**。每个结论附配置、原始测量和复现脚本，后续可增加不同模型。
 
-新增：[Qwen3.8-27B 混合 IQ 权重调优](docs/qwen38.md)，包含 32K/96K、嵌入式 MTP 与独立草稿批量对照。
+新增：[Qwen3.8-27B 混合 IQ 权重调优](docs/qwen38.md)，包含 32K/96K、嵌入式 MTP 与独立草稿批量对照；新增 [算子时间线分析](docs/qwen38-profile.md)与完整 trace。
 
 首个模型：**NVIDIA Nemotron 3.5 Lightning 30B-A3B，Q4_0 主模型 + 可选 Q8_0 MTP**。这不是模型能力排行榜，也没有证明它是 B60 上最聪明的模型。
 
@@ -32,7 +32,7 @@
 
 ## 复现
 
-需要 Python 3.10+，脚本只用标准库；模型和运行库另行下载，见 [安装步骤](docs/setup-windows.md)。
+需要 Python 3.10+，基准脚本只用标准库，可选绘图需 Matplotlib；模型和运行库另行下载，见 [安装步骤](docs/setup-windows.md)。
 
 ```powershell
 # 默认前台运行，MTP 开启；--dry-run 可先检查命令

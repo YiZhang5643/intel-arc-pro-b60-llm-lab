@@ -7,6 +7,8 @@ This repository's original scripts and documentation use the MIT license. Model 
 - [Bartowski's Nemotron GGUF](https://huggingface.co/bartowski/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF): the model card declares `openmdw-1.1`. Consult that card and the original model terms.
 - Intel oneAPI, oneDNN, Level Zero SDK and graphics drivers: obtain from their official sources and follow their respective terms.
 
-Historical output samples are machine-generated benchmark responses, not verified reference explanations. Local paths, process IDs and unrelated files have been excluded. This is an independent community experiment, not an Intel or NVIDIA project.
+Historical output samples are machine-generated benchmark responses, not verified reference explanations. Local filesystem paths and unrelated files have been excluded; profiling traces retain process/thread IDs to correlate events. This is an independent community experiment, not an Intel or NVIDIA project.
 
 Qwen experiment weights are the [Huihui Swift-1.5 GGUF derivative](https://huggingface.co/huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF). This particular file embeds a reference to the [Swift upstream license](https://huggingface.co/ukisai/Swift-1.5-Qwen3.8-27b/blob/main/LICENSE); its metadata is preserved in the experiment snapshot. These model weights are not distributed or relicensed by this repository.
+
+GPU profiling uses [Intel PTI / unitrace](https://github.com/intel/pti-gpu), whose tool source carries MIT SPDX notices. Source commit, tool hashes and measured configuration are recorded with the traces. Its source and compiled binaries are not vendored here.

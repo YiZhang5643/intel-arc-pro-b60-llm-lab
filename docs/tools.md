@@ -13,7 +13,8 @@
 | Visual Studio C++ | [官方 Build Tools](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022)；需要 x64 MSVC/Windows SDK |
 | CMake / Ninja | [CMake 下载](https://cmake.org/download/)、[Ninja 发布](https://github.com/ninja-build/ninja/releases) |
 | Intel 驱动 | [官方驱动下载入口](https://www.intel.com/content/www/us/en/download-center/home.html)；已测 B60 版本 32.0.101.9033 |
-| Python / Git | [Python](https://www.python.org/downloads/)、[Git for Windows](https://gitforwindows.org/)；脚本仅用标准库 |
+| Python / Git | [Python](https://www.python.org/downloads/)、[Git for Windows](https://gitforwindows.org/)；基准和分析脚本仅用标准库；可选绘图需 Matplotlib |
+| Intel unitrace | [固定源码与使用说明](https://github.com/intel/pti-gpu/tree/307d457292976823546d3b30b141402de44f724f/tools/unitrace)，本机编译2.4.1，采集Windows Level Zero内核/API时间线；[本机分析](qwen38-profile.md) |
 
 ## Intel 专用框架是否更合适
 

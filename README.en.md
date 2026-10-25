@@ -2,7 +2,7 @@
 
 [中文](README.md) · [Windows setup](docs/setup-windows.md) · [Measurements](docs/nemotron.md) · [Methodology](docs/methodology.md) · [Tools](docs/tools.md)
 
-New: [Qwen3.8-27B mixed-IQ tuning](docs/qwen38.md), including 32K/96K inputs, embedded MTP and independent draft microbatch sizing.
+New: [Qwen3.8-27B mixed-IQ tuning](docs/qwen38.md), including 32K/96K inputs, embedded MTP and independent draft microbatch sizing. New: [operator timelines and traces](docs/qwen38-profile.md).
 
 Reproducible community experiments on a single B60: long prompt prefill, time to first content, prefix reuse and MTP. First model: Nemotron 3.5 Lightning 30B-A3B Q4_0, optional Q8_0 MTP. More models can be added using the contribution template. This is not an intelligence leaderboard.
 
@@ -19,7 +19,7 @@ A fair 96K MTP comparison uses identical token arrays and batch/ubatch 2048 on t
 
 Two explicit profiles are included: MTP on for long conversations; MTP off with batch/ubatch 8192 for processing fresh long documents. Cached continuation TTFT was below one second in the measured 96K conversation. MTP is workload-dependent, not universally beneficial at long context.
 
-Python 3.10+; no Python packages required. Download runtime and weights separately following the setup guide.
+Python 3.10+; benchmark scripts need no Python packages; optional plots need Matplotlib. Download runtime and weights separately following the setup guide.
 
 ```powershell
 python scripts/serve.py --preset presets/nemotron-long-chat-mtp.json --runtime-dir D:/llm/runtime --model-dir D:/llm/models --host 0.0.0.0 --port 5001
