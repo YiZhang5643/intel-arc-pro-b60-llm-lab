@@ -1,0 +1,18 @@
+{
+  "cold-retrieval": {
+    "tokens": 98304,
+    "sha256": "68bd9ba6e2974af05537a0694ba270dfa805285bc043061ecaf49e5a2f281684"
+  },
+  "cached-retrieval": {
+    "tokens": 98396,
+    "sha256": "2ba721a7fcab8cf48613faba83bed06655483ec15b7bfffb3f16cf706ce66dc9"
+  },
+  "cached-code": {
+    "tokens": 98452,
+    "sha256": "1c96293bbd1840ef1f92c4bb9c752ac19aa4c8702841cbdc0ac69228580eccd4"
+  },
+  "cached-prose": {
+    "tokens": 98434,
+    "sha256": "7f5ee80e378c8c8c61025e04de487f9ebeac4336ac2f2095fccbe32db08967f0"
+  }
+}

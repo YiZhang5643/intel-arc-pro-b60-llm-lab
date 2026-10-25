@@ -1,0 +1,73 @@
+{
+  "measured_date": "2026-10-24",
+  "published_date": "2026-10-25",
+  "hardware": {
+    "gpu": "Intel Arc Pro B60",
+    "vram_gib": 24,
+    "cpu": "Intel Core i5-12600K",
+    "cores": 10,
+    "threads": 16,
+    "ram_gib": 32,
+    "ram": "DDR4, 2133 MT/s observed",
+    "motherboard": "ASUS PRIME Z690M-PLUS D4",
+    "os": "Windows 11 Pro, build 26300",
+    "b60_driver": "32.0.101.9033",
+    "igpu": "UHD 770",
+    "igpu_driver": "32.0.101.7092"
+  },
+  "runtime": {
+    "tag": "b11869",
+    "commit": "d327bf1f0780f87b8c01b367b61853b0c291d7c4",
+    "official_archive_sha256": "6acd664fb580ed672785bb89e37d7f2246daef92439cfb6f697359899e7b2806",
+    "optimized_sycl_dll_sha256": "c12dab95d5db6414dd7856dd150b720569656589cea825756afcdd2295456b7b",
+    "compiler": "Intel oneAPI DPC++ 2026.1.1",
+    "onednn": "2026.0.2",
+    "level_zero_sdk": "1.32.0",
+    "GGML_SYCL_F16": true,
+    "GGML_SYCL_DNN": true,
+    "patch": "External Q4_0 expert reorder adapted to b11869",
+    "original_patch_sha256": "5150ad8b8655ae80cd3f921a17605a5586fc8d976f43f3ce555ef92568885b87"
+  },
+  "models": [
+    {
+      "name": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q4_0.gguf",
+      "bytes": 19063900128,
+      "sha256": "cf548e9348b829334e8fc8512224a284e1df2b1e6e7203f20ee9826800ab5525",
+      "url": "https://huggingface.co/bartowski/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF/resolve/main/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q4_0.gguf"
+    },
+    {
+      "name": "mtp-NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q8_0.gguf",
+      "bytes": 2175713312,
+      "sha256": "a8be9bdeafd1503e73bf2d335b3ee1e2577822af7b4761b14322fc7c7546c886",
+      "url": "https://huggingface.co/bartowski/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF/resolve/main/mtp-NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q8_0.gguf"
+    }
+  ],
+  "hf_metadata_revision": "f0eec2267ae843d9eb21ea3926ab0046da0a8628",
+  "all_main_model_layers_offloaded": "54/54 reported",
+  "numerical_test": {
+    "command": "test-backend-ops.exe -b SYCL0 -o MUL_MAT_ID -p type_a=q4_0",
+    "passed": 106,
+    "total": 106
+  },
+  "memory_sample": {
+    "label": "prefill-final-ub8192",
+    "peak_dedicated_gpu_gib": 21.25285,
+    "peak_shared_gpu_mib": 121.5,
+    "minimum_available_ram_gib": 18.71777,
+    "note": "Sampled after startup, not an allocation guarantee; loading pages trimmed once."
+  },
+  "limitations": [
+    "Mostly one measurement per task/length; 12K sweeps two repetitions",
+    "No current Vulkan regression test",
+    "No operator timeline or hardware ceiling analysis",
+    "No broad capability benchmark",
+    "Portable scripts derived from historical workloads, offline-tested only in this publication pass"
+  ],
+  "historical_script_sha256": {
+    "benchmark.py": "8064c72219cd2b31edad4937bb3e2c0decab011859e22aa20440e98ce5692776",
+    "prefill_benchmark.py": "6de6ab36dbe666220ead71333a9c9ef8908d5e2ac639a7a3ce402e54b5506f1d",
+    "long_mtp_compare.py": "4c05cde8ed4f1370588492f05ca7cd48782f2b3d322ed753378d6ea8d53afcad",
+    "short_benchmark.py": "63a119eb575f96fc614b5395212ea6990eeafdbbe5e607fd9273857371c90f9d",
+    "quality.py": "9b2e1116238ce02d46a441819ec986a98294875dbb9961dec61444068bd72245"
+  }
+}

@@ -1,0 +1,116 @@
+[
+  {
+    "file": "official-sycl/summary.json",
+    "original_sha256": "397da6cf4f8edfae4de8d393532868fbee020aa365a91a70458a443ab2795501",
+    "published_sha256": "ba90554ad117df743fdf3bdd9a0223dd2c89e38fd96958554186eea5aea4fde6",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "official-sycl/short-summary.json",
+    "original_sha256": "f366097e939ba797378f0d475291f681e3cf4987f361732225c6142ed9a6bbd3",
+    "published_sha256": "a7591784790c2e1bbe6675cde128f53ba18eeac8f7a7090b99dfd77fcaae1e1f",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "patched-reorder-off/short-summary.json",
+    "original_sha256": "95f8380163883e42f124c30e85cea4b8a50b36631afe336323c69d6ad29c2672",
+    "published_sha256": "235ef57c02231aa4a7d0954630765411e1a4c247d7b8355e0f3607f138658fcd",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "patched-reorder-on/summary.json",
+    "original_sha256": "b2982afeddb1a4a332095aa770e56a482a19bcf8068748d133f5036d60ed0180",
+    "published_sha256": "f3139de2d538ffba6d974fafa3c7573ad0fd0e417abfcc613705e06ad8008d75",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "patched-reorder-on/short-summary.json",
+    "original_sha256": "1bca09d0af7cd7d260108fbecdc6f86c38ef5a004351bd534548830bc4f74370",
+    "published_sha256": "29abb2b4c6274289b71fb63343a390792b3211f5bec79de2696a01791b1f49ee",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "patched-no-mtp/short-summary.json",
+    "original_sha256": "fe925cd0f539a5bd6cfafc67b32745568a0db5abcaa9ed00b5f5eb400860ce48",
+    "published_sha256": "d761ac50115b5643b6aee46d3349292de8c784b0c8a61a3bf3613685e1a9c209",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "patched-mtp-3/short-summary.json",
+    "original_sha256": "c79b1f5c4941ca220bf209905f5d52dd33074ae0d0b2dd7207874476c54fc0ff",
+    "published_sha256": "5ef5125ff3135f7a2de5781a78009519336df52593565b1d367a2f13a235c725",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "patched-no-mtp-96k/summary.json",
+    "original_sha256": "7e8a33f952189efca22c54ab41eacd0f1ba3eae547e805a4508a8597fd930e96",
+    "published_sha256": "170e62a1757a412c9b09884b70af2a494283a0ccac436d174b32ed0cb887ce05",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "prefill-q8-ub1024/prefill-summary.json",
+    "original_sha256": "084446429250620afa6cfec2aff501bb1eabcd48da227221fb201e0d5c373b26",
+    "published_sha256": "c5228ad64a5190659f71d758eb727ce1286a5c310e12c77426bd3f3a0650bd52",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "prefill-q8_0-ub2048/prefill-summary.json",
+    "original_sha256": "779a5656613c937fed550cb5ac2f5bf3ef622cd91dfdd6631a2c9ef1244c0cb3",
+    "published_sha256": "cbdb8ecce16106e5c0447173e7e6ab7d533af74712930f53159df6d08102b763",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "prefill-q8_0-ub4096/prefill-summary.json",
+    "original_sha256": "bf774cfb6cbba44f0a8d15c3c30b965b69bd480bc5af56f329c4fb3f5e8b89a6",
+    "published_sha256": "60e545827ff05d63b0529873acd505a4ce9dffbe7e15b3cd6fc1c0b5c4beefb9",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "prefill-q8_0-ub8192/prefill-summary.json",
+    "original_sha256": "1de80e50f810a7e81f8902a7a1a6bef295c19caa682d28f6acc4510b6cde5cfd",
+    "published_sha256": "7a710cca6408917b19dcc0272075b0df02d4b09a8fc9e4bc6efd33b139a29a6c",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "prefill-f16-ub4096/prefill-summary.json",
+    "original_sha256": "c5e4b75641759c2b91b98828545fad369e8105c8f462ce7a61a65c7f8a897f76",
+    "published_sha256": "ff13d80523478965aaafa0a13ca3fbaeee80d668f9fb05d86e344710cf0803bb",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "prefill-experimental-q4-xmx-ub1024/prefill-summary.json",
+    "original_sha256": "29752d4b74b8fa927659aebafa0dd1044d755033767f76c1397b48877ef5f967",
+    "published_sha256": "4f20657a5ca70d5b2f70e4bd8217bd39176983d68eb35f991031ae48236b1ea3",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "prefill-final-ub8192/summary.json",
+    "original_sha256": "7a4ccfc3176bd897a2949c683a8cc67e3a1a45fd150b69f4e0c74bdca55d19dc",
+    "published_sha256": "fdf41a342a89392c7e69db57efbb3ee8f2160ea35e3ce83b737dd7242e20fa53",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "long-mtp-off-ub2048/summary.json",
+    "original_sha256": "b6551a705f279d673956e320883da257bcd557274615a5b200fa1edbe98ff6c1",
+    "published_sha256": "822c6a9b318fff98bebd464648688879b8931448fbee6428c0222548fb43f7be",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "long-mtp-on-ub2048/summary.json",
+    "original_sha256": "fc5d49b5bab6c3600efa3678b04fd121855c91fb28fa6f724921966f7b8d44c1",
+    "published_sha256": "5b821fe0555104f051fdca8e193b801b2d4aca736186d9a15fe27f813772fbe7",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "quality-long-mtp-default/summary.json",
+    "original_sha256": "d03d11d2a2ee95c1a5c0384103f88224c0dc821a70549d46a22a6bcfff459f42",
+    "published_sha256": "99d86b73f5ec98ada6b178ec549c7ab5dbe9543ac18bacf38e63513637b68684",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  },
+  {
+    "file": "quality-prefill-ub8192/summary.json",
+    "original_sha256": "0e528a4abf63ea79a55e9baf60c4afaae9ff33c2e232664d34cff4a69ac91651",
+    "published_sha256": "c405cdaaa84b3e439a6cbdc7731f92627825835478a71fa0d7336af062f1da37",
+    "processing": "JSON reserialization and explicit field allowlist; timings and outputs retained"
+  }
+]
