@@ -1,0 +1,31 @@
+# Intel Arc Pro B60 24GB Local LLM Lab
+
+[中文](README.md) · [Windows setup](docs/setup-windows.md) · [Measurements](docs/nemotron.md) · [Methodology](docs/methodology.md) · [Tools](docs/tools.md)
+
+Reproducible community experiments on a single B60: long prompt prefill, time to first content, prefix reuse and MTP. First model: Nemotron 3.5 Lightning 30B-A3B Q4_0, optional Q8_0 MTP. More models can be added using the contribution template. This is not an intelligence leaderboard.
+
+Windows 11, i5-12600K, 32GB DDR4, B60 24GB, driver 32.0.101.9033. Measured October 24, 2026.
+
+| Cold prompt | Official SYCL baseline | Tuned cold-prefill profile |
+|---|---:|---:|
+| 32,768 tokens | 482 prompt tok/s; 69.38 s total | 1,454 prompt tok/s; 22.61 s TTFT; 24.08 s total |
+| 98,304 tokens | 455 prompt tok/s; 218.00 s total | 1,184 prompt tok/s; 83.30 s TTFT; 85.28 s total |
+
+These are **whole-profile comparisons**, not isolated patch effects: FP16/oneDNN, local Q4 expert reorder, batch/ubatch and MTP settings differ. Retrieval found all three needles in both profiles. One run per length; no confidence intervals.
+
+A fair 96K MTP comparison uses identical token arrays and batch/ubatch 2048 on the same optimized build. MTP improved cached retrieval generation by 45%, code by 3%, but reduced English prose generation throughput by 20%. Cold TTFT increased from 93.24 to 104.65 seconds. Prose lengths differed, so total durations are not a fixed-output comparison.
+
+Two explicit profiles are included: MTP on for long conversations; MTP off with batch/ubatch 8192 for processing fresh long documents. Cached continuation TTFT was below one second in the measured 96K conversation. MTP is workload-dependent, not universally beneficial at long context.
+
+Python 3.10+; no Python packages required. Download runtime and weights separately following the setup guide.
+
+```powershell
+python scripts/serve.py --preset presets/nemotron-long-chat-mtp.json --runtime-dir D:/llm/runtime --model-dir D:/llm/models --host 0.0.0.0 --port 5001
+python scripts/bench_chat.py --label mtp-on --output runs/mtp-on --preset presets/nemotron-long-chat-mtp.json
+```
+
+The launcher defaults to 127.0.0.1:5001. Explicitly use 0.0.0.0 for LAN access. It runs in the foreground and does not change firewall settings or stop other services.
+
+Historical measurements, sanitized configurations and response samples are under `results/`. Scripts rebuild prompts with the current server tokenizer and save input hashes. For MTP A/B tests, compare those hashes. Numerical Q4 tests passed 106/106; small model smoke checks are not broad capability evaluations. Vulkan's historical >32K slowdown was not retested. No operator-level profiling has established a hardware ceiling.
+
+Original code: MIT. External models, binaries and patch implementations retain their own terms; see [attribution](THIRD_PARTY_NOTICES.md).
