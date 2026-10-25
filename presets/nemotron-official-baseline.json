@@ -1,0 +1,12 @@
+{
+  "model": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q4_0.gguf",
+  "draft_model": "mtp-NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q8_0.gguf",
+  "context": 114688,
+  "batch": 2048,
+  "ubatch": 1024,
+  "mtp": true,
+  "kv_type": "q8_0",
+  "draft_max": 7,
+  "draft_p_min": 0.6,
+  "q4_reorder": false
+}
