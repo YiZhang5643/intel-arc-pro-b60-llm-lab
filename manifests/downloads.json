@@ -1,0 +1,20 @@
+[
+  {
+    "name": "llama-b11869-bin-win-sycl-x64.zip",
+    "bytes": 155076311,
+    "sha256": "6acd664fb580ed672785bb89e37d7f2246daef92439cfb6f697359899e7b2806",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/download/b11869/llama-b11869-bin-win-sycl-x64.zip"
+  },
+  {
+    "name": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q4_0.gguf",
+    "bytes": 19063900128,
+    "sha256": "cf548e9348b829334e8fc8512224a284e1df2b1e6e7203f20ee9826800ab5525",
+    "url": "https://huggingface.co/bartowski/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF/resolve/main/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q4_0.gguf"
+  },
+  {
+    "name": "mtp-NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q8_0.gguf",
+    "bytes": 2175713312,
+    "sha256": "a8be9bdeafd1503e73bf2d335b3ee1e2577822af7b4761b14322fc7c7546c886",
+    "url": "https://huggingface.co/bartowski/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF/resolve/main/mtp-NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q8_0.gguf"
+  }
+]
