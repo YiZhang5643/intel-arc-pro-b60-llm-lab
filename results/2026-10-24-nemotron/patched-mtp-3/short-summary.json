@@ -1,0 +1,38 @@
+[
+  {
+    "test": "code",
+    "wall_seconds": 8.391000000061467,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 64,
+      "prompt_ms": 285.793,
+      "prompt_per_token_ms": 4.465515625,
+      "prompt_per_second": 223.93830499697333,
+      "predicted_n": 512,
+      "predicted_ms": 8038.555,
+      "predicted_per_token_ms": 15.731027397260274,
+      "predicted_per_second": 63.56863889094495,
+      "draft_n": 419,
+      "draft_n_accepted": 346
+    },
+    "output": "```python\nfrom collections import OrderedDict\n\nclass LRUCache:\n    \"\"\"\n    LRU (Least Recently Used) Cache with O(1) get and put.\n    Uses OrderedDict which maintains insertion order and\n    supports move_to_end and popitem in O(1).\n    \"\"\"\n\n    def __init__(self, capacity: int):\n        if capacity <= 0:\n            raise ValueError(\"capacity must be a positive integer\")\n        self.cap = capacity\n        self.cache = OrderedDict()\n\n    def get(self, key):\n        \"\"\"Return value for key, or -1 if not present. Access updates recency.\"\"\"\n        if key not in self.cache:\n            return -1\n        # Move the accessed key to the end (most recently used)\n        self.cache.move_to_end(key)\n        return self.cache[key]\n\n    def put(self, key, value):\n        \"\"\"Insert or update the value for key. Evicts LRU item if over capacity.\"\"\"\n        if key in self.cache:\n            # Update value and move to end\n            self.cache[key] = value\n            self.cache.move_to_end(key)\n            return\n        # Insert new item\n        self.cache[key] = value\n        # If we exceeded capacity, pop the least recently used item (first item)\n        if len(self.cache) > self.cap:\n            self.cache.popitem(last=False)\n\n\n# ------------------- Demonstration -------------------\nif __name__ == \"__main__\":\n    # Capacity 2 cache\n    cache = LRUCache(2)\n\n    # Fill cache\n    cache.put(1, \"a\")\n    cache.put(2, \"b\")\n    print(f\"After inserts: {dict(cache.cache)}\")  # {1: 'a', 2: 'b'}\n\n    # Access key 1 -> makes 1 MRU, 2 becomes LRU\n    print(f\"get(1) = {cache.get(1)}\")  # 'a'\n\n    # Insert new key 3 -> evicts key 2 (LRU)\n    cache.put(3, \"c\")\n    print(f\"After put(3,'c'): {dict(cache.cache)}\")  # {1: 'a', 3: 'c'}\n\n    # Access key 2 -> not present\n    print(f\"get(2) = {cache.get(2)}\")  # -1\n\n    # Update existing key 1\n    cache.put(1, \""
+  },
+  {
+    "test": "prose",
+    "wall_seconds": 8.937000000034459,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 62,
+      "prompt_ms": 334.368,
+      "prompt_per_token_ms": 5.393032258064516,
+      "prompt_per_second": 185.42444253038568,
+      "predicted_n": 445,
+      "predicted_ms": 8546.176,
+      "predicted_per_token_ms": 19.248144144144142,
+      "predicted_per_second": 51.953060643731185,
+      "draft_n": 363,
+      "draft_n_accepted": 242
+    },
+    "output": "In a small inventory service, database transactions prevent lost updates by ensuring that concurrent modifications to the same record are serialized correctly. Without transactions, two users could read the same stock quantity, both decrement it, and save their changes, resulting in one update being silently overwritten.\n\n**Optimistic Concurrency Control (Version Checks)**\nThis approach assumes conflicts are rare. Each inventory item has a version number or timestamp. When a client reads an item, it receives the current version. Upon saving changes, the client sends the new quantity *and* the expected version. The database updates the row only if the version in the database matches the expected version; otherwise, it throws a conflict error. The application must then reload the data and retry the update. This method is efficient for read-heavy workloads but requires application-level retry logic.\n\n**Row-Level Locking (Pessimistic Concurrency)**\nThis approach assumes conflicts are common. When a transaction begins reading an inventory row, it acquires a lock (e.g., `SELECT ... FOR UPDATE`). This prevents other transactions from modifying the row until the lock is released. While simple to implement, locking reduces concurrency and can lead to deadlocks if transactions lock rows in different orders.\n\n**Concrete Example**\nImagine two warehouse workers simultaneously receive 5 units of Product A. Both read the current stock of 50. Worker A decrements to 45 and saves. Worker B also decrements to 45 and saves. Without protection, the final stock is 45, losing 5 units. With **optimistic locking**, the second save fails because the version changed; the system retries. With **row-level locking**, the second worker waits for the first to commit before reading the updated stock, resulting in 40.\n\n**When Retries Are Needed**\nRetries are necessary whenever a transaction fails due to a conflict. In optimistic locking, this happens on version mismatch. In locking, retries may be needed if a deadlock occurs (detected via error codes) or if a lock timeout expires. In both cases, the application must refresh the data and re-apply the business logic before retrying to maintain data integrity."
+  }
+]
