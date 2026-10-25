@@ -1,0 +1,84 @@
+[
+  {
+    "test": "cold-retrieval",
+    "ttft_seconds": 104.64540479995776,
+    "wall_seconds": 106.21373319998384,
+    "input_tokens": 98304,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 98304,
+      "prompt_ms": 104509.693,
+      "prompt_per_token_ms": 1.0631275736490886,
+      "prompt_per_second": 940.6208857584147,
+      "predicted_n": 71,
+      "predicted_ms": 1545.681,
+      "predicted_per_token_ms": 22.081157142857144,
+      "predicted_per_second": 45.28748169900516,
+      "draft_n": 67,
+      "draft_n_accepted": 60
+    },
+    "output": "{\n  \"PROJECT-ALPHA\": \"ARC-3FF8BD71E669\",\n  \"PROJECT-BRAVO\": \"ARC-9D69441881FF\",\n  \"PROJECT-CHARLIE\": \"ARC-EFA971B51E66\"\n}",
+    "retrieval_correct": 3
+  },
+  {
+    "test": "cached-retrieval",
+    "ttft_seconds": 0.4994957000017166,
+    "wall_seconds": 1.9463194999843836,
+    "input_tokens": 98396,
+    "timings": {
+      "cache_n": 98374,
+      "prompt_n": 22,
+      "prompt_ms": 448.422,
+      "prompt_per_token_ms": 20.382818181818184,
+      "prompt_per_second": 49.06092921399931,
+      "predicted_n": 71,
+      "predicted_ms": 1421.5,
+      "predicted_per_token_ms": 20.307142857142857,
+      "predicted_per_second": 49.24375659514597,
+      "draft_n": 63,
+      "draft_n_accepted": 61
+    },
+    "output": "{\n  \"PROJECT-ALPHA\": \"ARC-3FF8BD71E669\",\n  \"PROJECT-BRAVO\": \"ARC-9D69441881FF\",\n  \"PROJECT-CHARLIE\": \"ARC-EFA971B51E66\"\n}",
+    "retrieval_correct": 3
+  },
+  {
+    "test": "cached-code",
+    "ttft_seconds": 0.7708309999434277,
+    "wall_seconds": 22.86027840001043,
+    "input_tokens": 98452,
+    "timings": {
+      "cache_n": 98374,
+      "prompt_n": 78,
+      "prompt_ms": 717.12,
+      "prompt_per_token_ms": 9.193846153846154,
+      "prompt_per_second": 108.76840696117804,
+      "predicted_n": 768,
+      "predicted_ms": 22072.384,
+      "predicted_per_token_ms": 28.77755410691004,
+      "predicted_per_second": 34.74930483268142,
+      "draft_n": 834,
+      "draft_n_accepted": 561
+    },
+    "output": "```python\nimport csv\nimport dataclasses\nfrom typing import Dict, Tuple\n\n\n@dataclasses.dataclass(frozen=True)\nclass InventoryRecord:\n    sku: str\n    quantity: int\n    version: str\n\n\ndef load_inventory(csv_path: str) -> Tuple[Dict[str, InventoryRecord], list]:\n    \"\"\"\n    Load inventory from a CSV file.\n\n    Expected CSV columns: sku, quantity, version\n    - Rejects duplicate SKUs (keeps first occurrence)\n    - Rejects negative quantities\n    - Reports malformed rows (missing columns, non-integer quantity) with line numbers\n    - Returns a dict mapping sku -> InventoryRecord and a list of error messages.\n\n    Raises FileNotFoundError if the file does not exist.\n    \"\"\"\n    records: Dict[str, InventoryRecord] = {}\n    errors: list = []\n\n    with open(csv_path, newline=\"\", encoding=\"utf-8\") as f:\n        reader = csv.reader(f)\n        header = next(reader)  # skip header\n        # Normalise header names to lower-case for robustness\n        header = [h.strip().lower() for h in header]\n        try:\n            sku_idx = header.index(\"sku\")\n            qty_idx = header.index(\"quantity\")\n            ver_idx = header.index(\"version\")\n        except ValueError as exc:\n            raise ValueError(\"CSV must contain sku, quantity, version columns\") from exc\n\n        line_number = 2  # first data row after header\n        for row in reader:\n            line_number += 1\n            # Skip rows that don't have enough columns\n            if len(row) <= max(sku_idx, qty_idx, ver_idx):\n                errors.append(f\"Line {line_number}: malformed row (missing columns)\")\n                continue\n\n            sku = row[sku_idx].strip()\n            qty_raw = row[qty_idx].strip()\n            version = row[ver_idx].strip()\n\n            # Validate quantity: must be a non-negative integer\n            try:\n                qty = int(qty_raw)\n            except ValueError:\n                errors.append(f\"Line {line_number}: invalid quantity '{qty_raw}' for sku '{sku}'\")\n                continue\n\n            if qty < 0:\n                errors.append(f\"Line {line_number}: negative quantity {qty} for sku '{sku}'\")\n                continue\n\n            # Reject duplicate SKUs (keep first occurrence)\n            if sku in records:\n                errors.append(f\"Line {line_number}: duplicate sku '{sku}'\")\n                continue\n\n            record = InventoryRecord(sku=sku, quantity=qty, version=version)\n            records[sku] = record\n\n    return records, errors\n\n\n# --- Runnable demonstration ---\nif __name__ == \"__main__\":\n    import pathlib\n    import tempfile\n    import json\n\n    # Create a temporary CSV for demonstration\n    csv_content = \"\"\"sku,quantity,version\nA123,10,v1.0\nB456,-5,v2.0\nC789,3,v1.0\nA123,7,v2.0\nD012,abc,v3.0\nE345,0,v1.0\n\"\"\"\n\n    with tempfile.NamedTemporaryFile(mode=\"w\", suffix=\".csv\", delete=False) as tmp:\n        tmp.write(csv_content)\n        tmp_path = tmp.name\n\n    try:\n        records, errors = load_inventory(tmp_path)\n        print(\"Loaded records:\")\n        for sku, rec in records.items():\n            print(f\"  {sku}: qty={rec.quantity}, version={rec.version}\")\n        print(\"\\nErrors:\")\n        for e in"
+  },
+  {
+    "test": "cached-prose",
+    "ttft_seconds": 0.5596686000935733,
+    "wall_seconds": 26.806763200089335,
+    "input_tokens": 98434,
+    "timings": {
+      "cache_n": 98374,
+      "prompt_n": 60,
+      "prompt_ms": 472.104,
+      "prompt_per_token_ms": 7.868399999999999,
+      "prompt_per_second": 127.09064104519344,
+      "predicted_n": 712,
+      "predicted_ms": 26230.993,
+      "predicted_per_token_ms": 36.89309845288326,
+      "predicted_per_second": 27.105340617490157,
+      "draft_n": 757,
+      "draft_n_accepted": 415
+    },
+    "output": "Database transactions prevent lost updates in an inventory service by ensuring that concurrent modifications to shared resources are serialized or detected before they become permanent. In a high-throughput system like an e-commerce platform, two primary mechanisms are used: optimistic concurrency control and pessimistic row-level locking. Both aim to maintain data integrity, but they differ significantly in performance characteristics and failure handling.\n\nOptimistic concurrency control (OCC) assumes that conflicts are rare. It works by adding a version column or timestamp to each inventory record. When a client reads an item, it captures the current version. When it attempts to update the quantity, it includes a `WHERE` clause checking that the version hasn't changed: `UPDATE inventory SET quantity = 5, version = 6 WHERE id = 1 AND version = 5`. If the database returns zero rows affected, it means another transaction modified the record between the read and the write. The client must then re-read the data, recalculate the new quantity, and retry the update. This approach offers high throughput under low contention because it avoids holding database locks, which would block other readers and writers. However, under high contention, clients may experience repeated retries, increasing latency.\n\nIn contrast, row-level locking (pessimistic concurrency) explicitly prevents conflicts by acquiring a lock on the inventory row at the start of a transaction. Using `SELECT ... FOR UPDATE` in SQL, a transaction locks the row, blocking any other transaction from reading or writing to it until the lock is released. This guarantees that the update will succeed without conflict, making it ideal for high-contention scenarios, such as flash sales where thousands of users attempt to purchase the last unit of a product simultaneously. The trade-off is reduced concurrency; while one transaction holds the lock, others wait, potentially causing timeouts or deadlocks if transactions lock resources in different orders.\n\n**Concrete Example: Flash Sale**\nConsider a limited-edition watch with a stock of 1. User A and User B both add the watch to their cart at the same time. User A’s application reads the stock (quantity=1, version=1). User B’s application also reads the stock (quantity=1, version=1). Both calculate `quantity - 1 = 0` and attempt to update. With OCC, User A’s `UPDATE ... WHERE version = 1` succeeds, setting version to 2 and quantity to 0. User B’s update finds version has changed to 2, returns 0 rows, and retries. It re-reads (now quantity=0) and aborts or informs the user the item is sold out. With row-level locking, User A’s `SELECT ... FOR UPDATE` acquires the lock. User B’s subsequent `SELECT ... FOR UPDATE` blocks until User A commits, ensuring only one user successfully purchases the watch.\n\n**Retries and Idempotency**\nRetries are essential for OCC but must be implemented carefully to avoid double-charging or double-reserving. To ensure idempotency, systems often use unique request IDs. If a client retries an update due to a version mismatch, the server can check if a request with that ID already processed the change, skipping the update if so. This prevents the \"thundering herd\" problem and ensures that even if network glitches cause repeated attempts, the final state remains consistent. Row-level locking inherently avoids this specific retry complexity but shifts the burden to managing deadlocks and wait times."
+  }
+]
