@@ -1,0 +1,116 @@
+[
+  {
+    "test": "warmup",
+    "wall_seconds": 0.281,
+    "ttft_seconds": 0.25,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 22,
+      "prompt_ms": 179.551,
+      "prompt_per_token_ms": 8.16140909090909,
+      "prompt_per_second": 122.52786116479442,
+      "predicted_n": 3,
+      "predicted_ms": 33.513,
+      "predicted_per_token_ms": 16.7565,
+      "predicted_per_second": 59.67833378092084
+    },
+    "output": "READY",
+    "expected": null
+  },
+  {
+    "test": "cold-32768",
+    "wall_seconds": 24.078,
+    "ttft_seconds": 22.608999999938533,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 32768,
+      "prompt_ms": 22538.079,
+      "prompt_per_token_ms": 0.6878075866699219,
+      "prompt_per_second": 1453.8949836851666,
+      "predicted_n": 70,
+      "predicted_ms": 1446.037,
+      "predicted_per_token_ms": 20.957057971014493,
+      "predicted_per_second": 47.71662135892788
+    },
+    "output": "{\n  \"PROJECT-ALPHA\": \"ARC-10DBDFB38B84\",\n  \"PROJECT-BRAVO\": \"ARC-250902C8CA92\",\n  \"PROJECT-CHARLIE\": \"ARC-9DFCE717FD99\"\n}",
+    "expected": {
+      "PROJECT-ALPHA": "ARC-10DBDFB38B84",
+      "PROJECT-BRAVO": "ARC-250902C8CA92",
+      "PROJECT-CHARLIE": "ARC-9DFCE717FD99"
+    },
+    "retrieval_correct": 3,
+    "retrieval_total": 3
+  },
+  {
+    "test": "cached-32768",
+    "wall_seconds": 1.625,
+    "ttft_seconds": 0.28100000007543713,
+    "timings": {
+      "cache_n": 32764,
+      "prompt_n": 19,
+      "prompt_ms": 253.438,
+      "prompt_per_token_ms": 13.338842105263158,
+      "prompt_per_second": 74.96902595506593,
+      "predicted_n": 65,
+      "predicted_ms": 1313.366,
+      "predicted_per_token_ms": 20.52134375,
+      "predicted_per_second": 48.72975240717363
+    },
+    "output": " {\"PROJECT-ALPHA\": \"ARC-10DBDFB38B84\", \"PROJECT-BRAVO\": \"ARC-250902C8CA92\", \"PROJECT-CHARLIE\": \"ARC-9DFCE717FD99\"}",
+    "expected": {
+      "PROJECT-ALPHA": "ARC-10DBDFB38B84",
+      "PROJECT-BRAVO": "ARC-250902C8CA92",
+      "PROJECT-CHARLIE": "ARC-9DFCE717FD99"
+    },
+    "retrieval_correct": 3,
+    "retrieval_total": 3
+  },
+  {
+    "test": "cold-98304",
+    "wall_seconds": 85.281,
+    "ttft_seconds": 83.29699999990407,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 98304,
+      "prompt_ms": 83040.003,
+      "prompt_per_token_ms": 0.8447265930175781,
+      "prompt_per_second": 1183.8149861338516,
+      "predicted_n": 69,
+      "predicted_ms": 1965.076,
+      "predicted_per_token_ms": 28.898176470588236,
+      "predicted_per_second": 34.60425958079993
+    },
+    "output": "{\n  \"PROJECT-ALPHA\": \"ARC-21379C5FC0AA\",\n  \"PROJECT-BRAVO\": \"ARC-AE590EA348F5\",\n  \"PROJECT-CHARLIE\": \"ARC-CF297BC94FB2\"\n}",
+    "expected": {
+      "PROJECT-ALPHA": "ARC-21379C5FC0AA",
+      "PROJECT-BRAVO": "ARC-AE590EA348F5",
+      "PROJECT-CHARLIE": "ARC-CF297BC94FB2"
+    },
+    "retrieval_correct": 3,
+    "retrieval_total": 3
+  },
+  {
+    "test": "cached-98304",
+    "wall_seconds": 2.36,
+    "ttft_seconds": 0.43799999996554106,
+    "timings": {
+      "cache_n": 98300,
+      "prompt_n": 19,
+      "prompt_ms": 341.759,
+      "prompt_per_token_ms": 17.987315789473683,
+      "prompt_per_second": 55.594731960240985,
+      "predicted_n": 64,
+      "predicted_ms": 1894.291,
+      "predicted_per_token_ms": 30.06811111111111,
+      "predicted_per_second": 33.257825751164944
+    },
+    "output": " {\"PROJECT-ALPHA\": \"ARC-21379C5FC0AA\", \"PROJECT-BRAVO\": \"ARC-AE590EA348F5\", \"PROJECT-CHARLIE\": \"ARC-CF297BC94FB2\"}",
+    "expected": {
+      "PROJECT-ALPHA": "ARC-21379C5FC0AA",
+      "PROJECT-BRAVO": "ARC-AE590EA348F5",
+      "PROJECT-CHARLIE": "ARC-CF297BC94FB2"
+    },
+    "retrieval_correct": 3,
+    "retrieval_total": 3
+  }
+]
