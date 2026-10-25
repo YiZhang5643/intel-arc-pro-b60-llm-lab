@@ -2,12 +2,13 @@ import json, time, urllib.request, re, subprocess, sys, argparse
 from pathlib import Path
 from common import parser, prepare
 p = parser('Small model smoke checks')
+p.add_argument('--model',default='nemotron-local')
 p.add_argument('--execute-generated-code', action='store_true')
 args = p.parse_args()
 out = prepare(args)
 
 def chat(name, prompt):
-    data = {'model': 'nemotron-local', 'messages': [{'role': 'user', 'content': prompt}], 'temperature': 0, 'max_tokens': 1200, 'stream': False, 'chat_template_kwargs': {'enable_thinking': False}}
+    data = {'model': args.model, 'messages': [{'role': 'user', 'content': prompt}], 'temperature': 0, 'max_tokens': 1200, 'stream': False, 'chat_template_kwargs': {'enable_thinking': False}}
     req = urllib.request.Request(args.base_url + '/v1/chat/completions', data=json.dumps(data).encode(), headers={'Content-Type': 'application/json'})
     t = time.monotonic()
     with urllib.request.urlopen(req, timeout=300) as r:

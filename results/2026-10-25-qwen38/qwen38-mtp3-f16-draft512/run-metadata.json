@@ -1,0 +1,24 @@
+{
+  "label": "qwen38-mtp3-f16-draft512",
+  "declared_preset": {
+    "model": "Huihui-Qwen3.8-27B-abliterated-Swift-1.5-GSQ-RCO-IQ3_S-mtp.gguf",
+    "alias": "qwen38-27b-local",
+    "context": 114688,
+    "batch": 8192,
+    "ubatch": 4096,
+    "mtp": true,
+    "mtp_mode": "embedded",
+    "kv_type": "f16",
+    "draft_max": 3,
+    "draft_p_min": 0.6,
+    "q4_reorder": false,
+    "sycl_graph": false,
+    "draft_ubatch": 512
+  },
+  "preset_verified_against_running_process": false,
+  "observed_generation_defaults": {
+    "n_ctx": 114688
+  },
+  "observed_slots": 1,
+  "note": "Keep server launch/version/hardware evidence separately; declaration alone is not verification."
+}

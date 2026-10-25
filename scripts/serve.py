@@ -26,11 +26,20 @@ def command(preset, runtime_dir, model_dir, host, port, device):
            '-b', str(preset['batch']), '-ub', str(preset['ubatch']), '--cache-ram', '2048',
            '--fit', 'off', '--jinja', '--reasoning', 'off', '--temp', '0.2',
            '--top-p', '0.9', '--top-k', '20', '--min-p', '0',
-           '--host', host, '--port', str(port), '--metrics', '--alias', 'nemotron-local', '-lv', '3']
+           '--host', host, '--port', str(port), '--metrics', '--alias', preset.get('alias', 'nemotron-local'), '-lv', '3']
+    if preset.get('ui_mcp_proxy',False):
+        cmd += ['--ui-mcp-proxy']
     if preset['mtp']:
-        cmd += ['-md', model_path(preset['draft_model']), '--device-draft', device, '-ngld', '99',
+        if preset.get('mtp_mode', 'external') == 'external':
+            cmd += ['-md', model_path(preset['draft_model'])]
+        elif preset['mtp_mode'] != 'embedded':
+            raise ValueError('mtp_mode must be external or embedded')
+        cmd += ['--device-draft', device, '-ngld', '99',
                 '--spec-type', 'draft-mtp', '--spec-draft-n-max', str(preset['draft_max']),
                 '--spec-draft-p-min', str(preset['draft_p_min'])]
+    if preset['mtp'] and preset.get('draft_ubatch') is not None:
+        if preset['draft_ubatch'] < 1: raise ValueError('draft_ubatch must be positive')
+        cmd += ['--spec-draft-n-ubatch',str(preset['draft_ubatch'])]
     return cmd
 
 
@@ -56,8 +65,21 @@ def trim_after_ready(child, port):
     ps.EmptyWorkingSet.restype = wintypes.BOOL
     handle = k.OpenProcess(0x100 | 0x400, False, child.pid)
     if handle:
-        try: print('Post-load working-set trim:', bool(ps.EmptyWorkingSet(handle)), flush=True)
+        try:
+            trimmed=bool(ps.EmptyWorkingSet(handle))
+            print('Post-load working-set trim:', trimmed, flush=True)
+            return trimmed
         finally: k.CloseHandle(handle)
+    return False
+
+
+def environment(preset, device_selector='level_zero:0'):
+    return {'ONEAPI_DEVICE_SELECTOR':device_selector, 'ZES_ENABLE_SYSMAN':'1',
+            'SYCL_CACHE_PERSISTENT':'1', 'GGML_SYCL_SPARSE_FA':'0',
+            'GGML_SYCL_ENABLE_HOST_PINNED_MEM':'0',
+            'GGML_SYCL_MOE_Q4_REORDER':'1' if preset['q4_reorder'] else '0',
+            'GGML_SYCL_ENABLE_GRAPH':'1' if preset.get('sycl_graph',False) else '0',
+            'GGML_SYCL_FA_ONEDNN':'1' if preset.get('sycl_fa_onednn',True) else '0'}
 
 
 def main():
@@ -76,13 +98,10 @@ def main():
     if a.trim_working_set and os.name != 'nt': p.error('Working-set trim is Windows only')
     preset = json.loads(a.preset.read_text(encoding='utf-8'))
     cmd = command(preset, a.runtime_dir, a.model_dir, a.host, a.port, a.device)
-    overrides = {'ONEAPI_DEVICE_SELECTOR': a.device_selector, 'ZES_ENABLE_SYSMAN': '1',
-                 'SYCL_CACHE_PERSISTENT': '1', 'GGML_SYCL_SPARSE_FA': '0',
-                 'GGML_SYCL_ENABLE_HOST_PINNED_MEM': '0',
-                 'GGML_SYCL_MOE_Q4_REORDER': '1' if preset['q4_reorder'] else '0'}
+    overrides = environment(preset, a.device_selector)
     print(json.dumps({'command': cmd, 'environment_overrides': overrides}, indent=2), flush=True)
     if a.dry_run: return
-    for path in [cmd[0], str(a.model_dir/preset['model'])] + ([str(a.model_dir/preset['draft_model'])] if preset['mtp'] else []):
+    for path in [cmd[0], str(a.model_dir/preset['model'])] + ([str(a.model_dir/preset['draft_model'])] if preset['mtp'] and preset.get('mtp_mode','external')=='external' else []):
         if not Path(path).is_file(): p.error('Missing file: '+path)
     child = subprocess.Popen(cmd, cwd=a.runtime_dir.resolve(), env={**os.environ, **overrides})
     if a.trim_working_set:

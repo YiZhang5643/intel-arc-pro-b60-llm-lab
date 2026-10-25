@@ -1,0 +1,65 @@
+[
+  {
+    "test": "pp512",
+    "warmup": true,
+    "input_tokens": 512,
+    "ttft_seconds": 2.229369799955748,
+    "wall_seconds": 3.2046404000138864,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 512,
+      "prompt_ms": 2218.002,
+      "prompt_per_token_ms": 4.33203515625,
+      "prompt_per_second": 230.8383851772902,
+      "predicted_n": 16,
+      "predicted_ms": 975.068,
+      "predicted_per_token_ms": 65.00453333333333,
+      "predicted_per_second": 15.383542481139777,
+      "draft_n": 13,
+      "draft_n_accepted": 8
+    },
+    "output": "Optimistic version checks (also known as optimistic locking) are a concurrency control"
+  },
+  {
+    "test": "pp1024",
+    "warmup": false,
+    "input_tokens": 1024,
+    "ttft_seconds": 2.708434799918905,
+    "wall_seconds": 7.82761749997735,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 1024,
+      "prompt_ms": 2707.016,
+      "prompt_per_token_ms": 2.6435703125,
+      "prompt_per_second": 378.2763012852528,
+      "predicted_n": 96,
+      "predicted_ms": 5118.595,
+      "predicted_per_token_ms": 53.87994736842106,
+      "predicted_per_second": 18.55978056478389,
+      "draft_n": 73,
+      "draft_n_accepted": 57
+    },
+    "output": "Based on the ledger provided, here is a detailed explanation of how optimistic version checks prevent lost inventory updates, followed by a specific numbered example using the data, and an explanation of retries and idempotency.\n\n### How Optimistic Version Checks Prevent Lost Updates\n\nIn a concurrent system, multiple processes might attempt to update the same inventory record simultaneously. Without concurrency control, this leads to the **Lost Update Problem**:\n1.  Process A reads quantity `Q`.\n2"
+  },
+  {
+    "test": "pp12288",
+    "warmup": false,
+    "input_tokens": 12288,
+    "ttft_seconds": 22.48634870001115,
+    "wall_seconds": 27.96910989994649,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 12288,
+      "prompt_ms": 22365.774,
+      "prompt_per_token_ms": 1.8201313476562502,
+      "prompt_per_second": 549.4108989923621,
+      "predicted_n": 96,
+      "predicted_ms": 5482.109,
+      "predicted_per_token_ms": 57.70641052631579,
+      "predicted_per_second": 17.32909725071136,
+      "draft_n": 65,
+      "draft_n_accepted": 57
+    },
+    "output": "Based on the ledger provided, here is a detailed explanation of how optimistic version checks prevent lost inventory updates, followed by a specific numbered example using the data from the ledger.\n\n### How Optimistic Version Checks Prevent Lost Updates\n\nIn a concurrent system, a \"lost update\" occurs when two processes read the same data, modify it, and write it back without knowing the other process has also modified it. The last write wins, and the first change is lost.\n\n**Opt"
+  }
+]

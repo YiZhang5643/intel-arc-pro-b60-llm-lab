@@ -1,0 +1,12 @@
+{
+  "arithmetic": {
+    "strict_json_pass": false,
+    "values_correct_after_removing_outer_markdown_fence": true,
+    "raw_content": "```json\n{\n  \"total_remaining\": 189,\n  \"sellable_remaining\": 172\n}\n```"
+  },
+  "precedence": {
+    "strict_json_pass": false,
+    "values_correct_after_removing_outer_markdown_fence": true,
+    "raw_content": "```json\n{\n  \"timeout\": 60,\n  \"retries\": 1\n}\n```"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "qwen38-default-smoke",
+  "declared_preset": null,
+  "preset_verified_against_running_process": false,
+  "observed_generation_defaults": {
+    "n_ctx": 114688
+  },
+  "observed_slots": 1,
+  "note": "Keep server launch/version/hardware evidence separately; declaration alone is not verification."
+}

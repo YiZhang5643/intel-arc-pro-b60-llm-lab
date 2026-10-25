@@ -3,7 +3,9 @@ from pathlib import Path
 from common import parser, prepare, token_hash
 p = parser('Canonical long-chat MTP comparison')
 p.add_argument('--size', type=int, default=98304)
+p.add_argument('--generation-tokens', type=int, default=768)
 a = p.parse_args()
+if a.generation_tokens < 1: p.error('generation-tokens must be positive')
 if a.size < 4096:
     p.error('size must be >=4096')
 out = prepare(a)
@@ -49,7 +51,7 @@ else:
     for name, question2 in followups.items():
         pre2, post2 = render([system, user, reference, {'role': 'user', 'content': question2}]).split(marker)
         assert tokenize(pre2, True) == pre_t
-        prompts['cases'][name] = {'tokens': pre_t + body + tokenize(post2), 'cache': True, 'max_tokens': 256 if name == 'cached-retrieval' else 768, 'check': name == 'cached-retrieval'}
+        prompts['cases'][name] = {'tokens': pre_t + body + tokenize(post2), 'cache': True, 'max_tokens': 256 if name == 'cached-retrieval' else a.generation_tokens, 'check': name == 'cached-retrieval'}
     saved.write_text(json.dumps(prompts))
 (out / 'prompt-hashes.json').write_text(json.dumps({k: token_hash(v['tokens']) for k, v in prompts['cases'].items()}, indent=2))
 call('/completion', {'prompt': prompts['cases']['cold-retrieval']['tokens'][:4096], 'n_predict': 1, 'temperature': 0, 'cache_prompt': False})

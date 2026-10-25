@@ -1,0 +1,212 @@
+{
+  "measured_date": "2026-10-25",
+  "hardware": {
+    "gpu": "Intel Arc Pro B60",
+    "vram_gib": 24,
+    "cpu": "Intel Core i5-12600K",
+    "cores": 10,
+    "threads": 16,
+    "ram_gib": 32,
+    "ram": "DDR4, 2133 MT/s observed",
+    "motherboard": "ASUS PRIME Z690M-PLUS D4",
+    "os": "Windows 11 Pro, build 26300",
+    "b60_driver": "32.0.101.9033",
+    "igpu": "UHD 770",
+    "igpu_driver": "32.0.101.7092"
+  },
+  "runtime": {
+    "tag": "b11869",
+    "commit": "d327bf1f0780f87b8c01b367b61853b0c291d7c4",
+    "official_archive_sha256": "6acd664fb580ed672785bb89e37d7f2246daef92439cfb6f697359899e7b2806",
+    "optimized_sycl_dll_sha256": "c12dab95d5db6414dd7856dd150b720569656589cea825756afcdd2295456b7b",
+    "compiler": "Intel oneAPI DPC++ 2026.1.1",
+    "onednn": "2026.0.2",
+    "level_zero_sdk": "1.32.0",
+    "GGML_SYCL_F16": true,
+    "GGML_SYCL_DNN": true,
+    "patch": "External Q4_0 expert reorder adapted to b11869",
+    "original_patch_sha256": "5150ad8b8655ae80cd3f921a17605a5586fc8d976f43f3ce555ef92568885b87"
+  },
+  "model": {
+    "name": "Huihui-Qwen3.8-27B-abliterated-Swift-1.5-GSQ-RCO-IQ3_S-mtp.gguf",
+    "bytes": 12120017024,
+    "sha256": "29c1ae202c8f2c7d797335dcde6b51ae09a90a477552f853b2336ae2fac66582",
+    "matches_hf_lfs_sha256": true
+  },
+  "gguf_inspection": {
+    "gguf_version": 3,
+    "tensor_count": 866,
+    "file_bytes": 12120017024,
+    "metadata": {
+      "general.architecture": "qwen35",
+      "general.type": "model",
+      "general.sampling.top_k": 20,
+      "general.sampling.top_p": 0.949999988079071,
+      "general.sampling.temp": 1.0,
+      "general.name": "Swift15-GSQ-V1MIX-ISTAalloc-IQ3_S MTP",
+      "general.version": "1.5",
+      "general.basename": "Swift",
+      "general.size_label": "27B",
+      "general.license": "other",
+      "general.license.name": "swift-open-license-1.0",
+      "general.license.link": "https://huggingface.co/ukisai/Swift-1.5-Qwen3.8-27b/blob/main/LICENSE",
+      "general.base_model.count": 1,
+      "general.base_model.0.name": "Qwen3.8 27B",
+      "general.base_model.0.organization": "Qwen",
+      "general.base_model.0.repo_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "general.tags": {
+        "array_type": 8,
+        "count": 7
+      },
+      "qwen35.block_count": 65,
+      "qwen35.context_length": 262144,
+      "qwen35.embedding_length": 5120,
+      "qwen35.feed_forward_length": 17408,
+      "qwen35.attention.head_count": 24,
+      "qwen35.attention.head_count_kv": 4,
+      "qwen35.rope.dimension_sections": {
+        "array_type": 5,
+        "count": 4
+      },
+      "qwen35.rope.freq_base": 10000000.0,
+      "qwen35.attention.layer_norm_rms_epsilon": 9.999999974752427e-07,
+      "qwen35.attention.key_length": 256,
+      "qwen35.attention.value_length": 256,
+      "general.file_type": 32,
+      "qwen35.nextn_predict_layers": 1,
+      "qwen35.ssm.conv_kernel": 4,
+      "qwen35.ssm.state_size": 128,
+      "qwen35.ssm.group_count": 16,
+      "qwen35.ssm.time_step_rank": 48,
+      "qwen35.ssm.inner_size": 6144,
+      "qwen35.attention.recurrent_layers": {
+        "array_type": 7,
+        "count": 65
+      },
+      "qwen35.full_attention_interval": 4,
+      "qwen35.rope.dimension_count": 64,
+      "general.quantization_version": 2,
+      "general.abliterated_by": "Huihui.ai",
+      "general.abliterated_url": "https://huggingface.co/huihui-ai"
+    },
+    "tensor_type_counts": {
+      "12": 39,
+      "0": 360,
+      "22": 17,
+      "23": 96,
+      "17": 9,
+      "16": 5,
+      "30": 96,
+      "18": 78,
+      "21": 144,
+      "10": 13,
+      "29": 1,
+      "14": 8
+    },
+    "parameter_counts_by_type": {
+      "12": 2812805120,
+      "0": 2671616,
+      "22": 2498232320,
+      "23": 5688524800,
+      "17": 765460480,
+      "16": 382730240,
+      "30": 23592960,
+      "18": 5421137920,
+      "21": 8477736960,
+      "10": 734003200,
+      "29": 89128960,
+      "14": 424673280
+    },
+    "nextn_tensors": [
+      {
+        "name": "blk.64.nextn.eh_proj.weight",
+        "shape": [
+          10240,
+          5120
+        ],
+        "ggml_type": 14
+      },
+      {
+        "name": "blk.64.nextn.enorm.weight",
+        "shape": [
+          5120
+        ],
+        "ggml_type": 0
+      },
+      {
+        "name": "blk.64.nextn.hnorm.weight",
+        "shape": [
+          5120
+        ],
+        "ggml_type": 0
+      },
+      {
+        "name": "blk.64.nextn.shared_head_norm.weight",
+        "shape": [
+          5120
+        ],
+        "ggml_type": 0
+      }
+    ]
+  },
+  "default_preset": "presets/qwen38-recommended.json",
+  "default_profile": {
+    "model": "Huihui-Qwen3.8-27B-abliterated-Swift-1.5-GSQ-RCO-IQ3_S-mtp.gguf",
+    "alias": "qwen38-27b-local",
+    "context": 114688,
+    "batch": 8192,
+    "ubatch": 8192,
+    "mtp": true,
+    "mtp_mode": "embedded",
+    "kv_type": "q8_0",
+    "draft_max": 3,
+    "draft_p_min": 0.6,
+    "q4_reorder": false,
+    "sycl_graph": false,
+    "draft_ubatch": 512,
+    "ui_mcp_proxy": true
+  },
+  "input_hash_groups_verified": true,
+  "benchmark_sampling": {
+    "probe": "temperature=0, seed=20261025, 96 generated token cap, 512-token warmup",
+    "long_chat": "temperature=0.2, top_p=0.9, top_k=20, min_p=0, seed=20261026; retrieval cap 256, code/prose cap 128; thinking disabled"
+  },
+  "memory_observations": [
+    {
+      "profile": "original no MTP",
+      "dedicated_bytes": 20135665664,
+      "shared_bytes": 123981824
+    },
+    {
+      "profile": "MTP3, main/draft ubatch8192 (rejected)",
+      "dedicated_bytes": 24802525184,
+      "shared_bytes": 532926464
+    },
+    {
+      "profile": "MTP3, main8192/draft512 Q8 KV",
+      "dedicated_bytes": 22067027968,
+      "shared_bytes": 123981824
+    },
+    {
+      "profile": "MTP3, main4096/draft512 F16 KV, long-input observation",
+      "dedicated_bytes": 23315705856,
+      "shared_bytes": 157536256
+    }
+  ],
+  "source_sha256": {
+    "bench_probe.py": "25b3767144139c1091be00d6779243f937f5319c8cdda61610c7b8a1bd7c756b",
+    "bench_chat.py": "37a37a5ea0bb321317a9f3f122798eac73e05063c0361d7c270aca92ae25796f",
+    "bench_smoke.py": "a4f2eba490a8df47012d71de05712ad980c0b260dd585c010e1c67c638d644ae",
+    "serve.py": "f73dc20474a9d33db849c36584f12684908686a973976e9d5e8b81911b27eefc",
+    "manage_server.py": "45d0027ecd902383a7a4d66e42ebef4b969c0157c1013f28bfebff335dbd3309",
+    "inspect_gguf.py": "eb3896d56ade92e5b16fd0bd32a17b492b079c543f6594e045b2904b26c011b8"
+  },
+  "limitations": [
+    "One measurement per scenario/profile; no random-order confidence interval or controlled thermal/power experiment",
+    "Original no-MTP profile measured at 32K, not at 96K; no claimed original-to-default 96K speedup",
+    "Memory figures are point observations, not sampled peaks or proof of page migration",
+    "No operator timeline or alternate-quant/backend benchmark",
+    "Strict JSON arithmetic/precedence format checks failed despite correct values; code passed 8/8",
+    "MCP tool execution latency is outside these direct inference measurements; original MCP proxy restored for deployment"
+  ]
+}

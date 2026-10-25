@@ -1,0 +1,39 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "def compress_ranges(nums):\n    unique = sorted(set(nums))\n    if not unique:\n        return []\n    ranges = []\n    start = unique[0]\n    prev = unique[0]\n    for num in unique[1:]:\n        if num == prev + 1:\n            prev = num\n        else:\n            ranges.append((start, prev))\n            start = num\n            prev = num\n    ranges.append((start, prev))\n    return ranges"
+      }
+    }
+  ],
+  "created": 1792940687,
+  "model": "qwen38-27b-local",
+  "system_fingerprint": "b11869-d327bf1f0",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 106,
+    "prompt_tokens": 123,
+    "total_tokens": 229,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-bwvFOODIBQTiDpPQvDOMkNvj08UuYCpl",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 123,
+    "prompt_ms": 1403.202,
+    "prompt_per_token_ms": 11.408146341463414,
+    "prompt_per_second": 87.6566595543621,
+    "predicted_n": 106,
+    "predicted_ms": 4012.666,
+    "predicted_per_token_ms": 38.21586666666667,
+    "predicted_per_second": 26.16714174566236,
+    "draft_n": 83,
+    "draft_n_accepted": 78
+  },
+  "wall_seconds": 5.5
+}

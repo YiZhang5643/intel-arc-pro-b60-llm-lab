@@ -2,6 +2,8 @@
 
 [中文](README.md) · [Windows setup](docs/setup-windows.md) · [Measurements](docs/nemotron.md) · [Methodology](docs/methodology.md) · [Tools](docs/tools.md)
 
+New: [Qwen3.8-27B mixed-IQ tuning](docs/qwen38.md), including 32K/96K inputs, embedded MTP and independent draft microbatch sizing.
+
 Reproducible community experiments on a single B60: long prompt prefill, time to first content, prefix reuse and MTP. First model: Nemotron 3.5 Lightning 30B-A3B Q4_0, optional Q8_0 MTP. More models can be added using the contribution template. This is not an intelligence leaderboard.
 
 Windows 11, i5-12600K, 32GB DDR4, B60 24GB, driver 32.0.101.9033. Measured October 24, 2026.

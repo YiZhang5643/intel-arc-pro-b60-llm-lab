@@ -1,0 +1,5 @@
+{
+  "status": "interrupted",
+  "test": "pp12288",
+  "reason": "Severe regression with main and draft ubatch both 8192. Startup reserves 4064.58 MiB target compute plus 3072.25 MiB draft compute. GPU sample dedicated 24802525184 bytes and shared 532926464 bytes. First 4096 tokens took 63.88 seconds (64.12 tok/s). Stopped after recording the regression; this is not a completed 12K measurement."
+}

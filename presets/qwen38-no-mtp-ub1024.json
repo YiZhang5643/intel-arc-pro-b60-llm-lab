@@ -1,0 +1,14 @@
+{
+  "model": "Huihui-Qwen3.8-27B-abliterated-Swift-1.5-GSQ-RCO-IQ3_S-mtp.gguf",
+  "alias": "qwen38-27b-local",
+  "context": 114688,
+  "batch": 4096,
+  "ubatch": 1024,
+  "mtp": false,
+  "mtp_mode": "embedded",
+  "kv_type": "q8_0",
+  "draft_max": 3,
+  "draft_p_min": 0.6,
+  "q4_reorder": false,
+  "sycl_graph": false
+}

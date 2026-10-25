@@ -1,0 +1,10 @@
+{
+  "arithmetic": false,
+  "precedence": false,
+  "coding": {
+    "passed": true,
+    "stdout": "{\"passed\": 8, \"total\": 8}\n",
+    "stderr": ""
+  },
+  "chinese_response": "因为两者的计算性质不同：\n\n1.  **预填充（Prefill）是“并行”的**：模型一次性处理整个输入提示词，利用 GPU 强大的矩阵运算能力同时计算所有 token 的注意力，因此速度极快，主要受**计算量（Compute-bound）**限制。\n2.  **逐字生成（Decode）是“串行”的**：模型必须逐个生成 token，每一步都依赖上一步的结果，无法并行。此时瓶颈在于从显存中读取巨大的模型权重，因此速度较慢，主要受**内存带宽（Memory-bound）**限制。\n\n简而言之：预填充是“批量处理”，生成是“逐个读取”，硬件瓶颈不同，所以速度差异巨大。"
+}

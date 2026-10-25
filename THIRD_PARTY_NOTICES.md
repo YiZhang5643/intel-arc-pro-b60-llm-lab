@@ -8,3 +8,5 @@ This repository's original scripts and documentation use the MIT license. Model 
 - Intel oneAPI, oneDNN, Level Zero SDK and graphics drivers: obtain from their official sources and follow their respective terms.
 
 Historical output samples are machine-generated benchmark responses, not verified reference explanations. Local paths, process IDs and unrelated files have been excluded. This is an independent community experiment, not an Intel or NVIDIA project.
+
+Qwen experiment weights are the [Huihui Swift-1.5 GGUF derivative](https://huggingface.co/huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF). This particular file embeds a reference to the [Swift upstream license](https://huggingface.co/ukisai/Swift-1.5-Qwen3.8-27b/blob/main/LICENSE); its metadata is preserved in the experiment snapshot. These model weights are not distributed or relicensed by this repository.

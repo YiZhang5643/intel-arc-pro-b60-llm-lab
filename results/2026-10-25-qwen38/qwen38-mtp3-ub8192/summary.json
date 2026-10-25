@@ -1,0 +1,44 @@
+[
+  {
+    "test": "pp512",
+    "warmup": true,
+    "input_tokens": 512,
+    "ttft_seconds": 3.627703099977225,
+    "wall_seconds": 4.768414899939671,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 512,
+      "prompt_ms": 3626.025,
+      "prompt_per_token_ms": 7.082080078125,
+      "prompt_per_second": 141.20145338214712,
+      "predicted_n": 16,
+      "predicted_ms": 1140.195,
+      "predicted_per_token_ms": 76.01299999999999,
+      "predicted_per_second": 13.155644429242367,
+      "draft_n": 11,
+      "draft_n_accepted": 11
+    },
+    "output": "Based on the ledger provided, here is a detailed explanation of how optimistic version checks"
+  },
+  {
+    "test": "pp1024",
+    "warmup": false,
+    "input_tokens": 1024,
+    "ttft_seconds": 4.2018723000073805,
+    "wall_seconds": 13.607807400054298,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 1024,
+      "prompt_ms": 4200.278,
+      "prompt_per_token_ms": 4.101833984375,
+      "prompt_per_second": 243.79338700914556,
+      "predicted_n": 96,
+      "predicted_ms": 9405.223,
+      "predicted_per_token_ms": 99.00234736842106,
+      "predicted_per_second": 10.100770603737946,
+      "draft_n": 75,
+      "draft_n_accepted": 57
+    },
+    "output": "Based on the ledger provided, here is a detailed explanation of how optimistic version checks prevent lost inventory updates, followed by a specific numbered example using the data, and an explanation of retries and idempotency.\n\n### How Optimistic Version Checks Prevent Lost Updates\n\nIn a concurrent system, multiple processes might attempt to update the same inventory record simultaneously. Without concurrency control, this leads to the **Lost Update Problem**:\n1.  Process A reads quantity `Q`.\n2"
+  }
+]

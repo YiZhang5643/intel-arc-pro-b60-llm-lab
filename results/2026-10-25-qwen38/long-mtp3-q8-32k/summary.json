@@ -1,0 +1,84 @@
+[
+  {
+    "test": "cold-retrieval",
+    "ttft_seconds": 57.35851559997536,
+    "wall_seconds": 61.00859520002268,
+    "input_tokens": 32768,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 32768,
+      "prompt_ms": 57341.464,
+      "prompt_per_token_ms": 1.749922607421875,
+      "prompt_per_second": 571.4538435921343,
+      "predicted_n": 77,
+      "predicted_ms": 3648.308,
+      "predicted_per_token_ms": 48.00405263157895,
+      "predicted_per_second": 20.831574527150668,
+      "draft_n": 57,
+      "draft_n_accepted": 57
+    },
+    "output": "```json\n{\n  \"PROJECT-ALPHA\": \"ARC-3FF8BD71E669\",\n  \"PROJECT-BRAVO\": \"ARC-9D69441881FF\",\n  \"PROJECT-CHARLIE\": \"ARC-EFA971B51E66\"\n}\n```",
+    "retrieval_correct": 3
+  },
+  {
+    "test": "cached-retrieval",
+    "ttft_seconds": 1.650052799959667,
+    "wall_seconds": 5.064246700028889,
+    "input_tokens": 32862,
+    "timings": {
+      "cache_n": 32764,
+      "prompt_n": 98,
+      "prompt_ms": 1642.476,
+      "prompt_per_token_ms": 16.75995918367347,
+      "prompt_per_second": 59.66601642885497,
+      "predicted_n": 72,
+      "predicted_ms": 3412.734,
+      "predicted_per_token_ms": 48.066676056338025,
+      "predicted_per_second": 20.804434216085987,
+      "draft_n": 54,
+      "draft_n_accepted": 54
+    },
+    "output": "{\n  \"PROJECT-ALPHA\": \"ARC-3FF8BD71E669\",\n  \"PROJECT-BRAVO\": \"ARC-9D69441881FF\",\n  \"PROJECT-CHARLIE\": \"ARC-EFA971B51E66\"\n}",
+    "retrieval_correct": 3
+  },
+  {
+    "test": "cached-code",
+    "ttft_seconds": 1.7232955999206752,
+    "wall_seconds": 9.58559409994632,
+    "input_tokens": 32914,
+    "timings": {
+      "cache_n": 32764,
+      "prompt_n": 150,
+      "prompt_ms": 1715.72,
+      "prompt_per_token_ms": 11.438133333333333,
+      "prompt_per_second": 87.42685286643508,
+      "predicted_n": 128,
+      "predicted_ms": 7861.109,
+      "predicted_per_token_ms": 61.89849606299213,
+      "predicted_per_second": 16.15548137037662,
+      "draft_n": 94,
+      "draft_n_accepted": 82
+    },
+    "output": "```python\nimport csv\nimport sys\nfrom typing import Dict, Tuple\n\n\ndef load_inventory(csv_path: str) -> Dict[str, Tuple[int, str]]:\n    \"\"\"\n    Load inventory from a CSV file with columns: sku, quantity, version.\n    \n    - Rejects duplicate SKUs.\n    - Rejects negative quantities.\n    - Reports malformed rows with line numbers to stderr.\n    - Returns a dictionary mapping SKU -> (quantity, version) where values are immutable tuples.\n    \n    Raises:\n        ValueError: If there are duplicate SKUs or negative quantities.\n        FileNotFoundError: If"
+  },
+  {
+    "test": "cached-prose",
+    "ttft_seconds": 1.6751351999118924,
+    "wall_seconds": 11.18313269992359,
+    "input_tokens": 32899,
+    "timings": {
+      "cache_n": 32764,
+      "prompt_n": 135,
+      "prompt_ms": 1667.558,
+      "prompt_per_token_ms": 12.352281481481482,
+      "prompt_per_second": 80.9567043545112,
+      "predicted_n": 128,
+      "predicted_ms": 9495.823,
+      "predicted_per_token_ms": 74.77025984251969,
+      "predicted_per_second": 13.37430152183755,
+      "draft_n": 92,
+      "draft_n_accepted": 70
+    },
+    "output": "In an inventory service, the \"lost update\" problem occurs when two concurrent transactions read the same stock level, both attempt to decrement it, and the second write overwrites the first, causing inventory to drift from reality. Database transactions prevent this by ensuring that concurrent modifications are either serialized or validated against a consistent state. Two primary strategies exist: optimistic concurrency control and pessimistic locking.\n\nOptimistic concurrency control assumes conflicts are rare. It uses a version column or a `WHERE` clause check to detect changes. For example, a sale might execute: `UPDATE inventory SET count = count - 1, version = version + 1"
+  }
+]

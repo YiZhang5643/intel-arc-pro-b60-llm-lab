@@ -13,7 +13,9 @@ from pathlib import Path
 
 R=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(R/'scripts'))
-from serve import command
+from serve import command, environment
+from inspect_gguf import inspect
+import struct
 from common import token_hash
 
 class FakeLlama(BaseHTTPRequestHandler):
@@ -109,6 +111,61 @@ class ToolTests(unittest.TestCase):
             self.assertEqual('--spec-type' in cmd,p['mtp'])
         p=json.loads((R/'presets/nemotron-long-chat-mtp.json').read_text());p['ubatch']=p['batch']+1
         with self.assertRaises(ValueError):command(p,'runtime','models','127.0.0.1',5001,'SYCL0')
+
+    def test_embedded_mtp_uses_main_weights(self):
+        p=json.loads((R/'presets/qwen38-mtp3.json').read_text())
+        cmd=command(p,'runtime','models','0.0.0.0',5001,'SYCL0')
+        self.assertIn('--spec-type',cmd);self.assertNotIn('-md',cmd)
+        self.assertEqual(cmd[cmd.index('--alias')+1],'qwen38-27b-local')
+        self.assertEqual(environment(p)['GGML_SYCL_ENABLE_GRAPH'],'0')
+        p['sycl_graph']=True
+        self.assertEqual(environment(p)['GGML_SYCL_ENABLE_GRAPH'],'1')
+        p['mtp_mode']='unknown'
+        with self.assertRaises(ValueError):command(p,'runtime','models','0.0.0.0',5001,'SYCL0')
+    def test_gguf_inspection_skips_arrays_and_reads_tensors(self):
+        def text(s):
+            b=s.encode();return struct.pack('<Q',len(b))+b
+        metadata=text('general.architecture')+struct.pack('<I',8)+text('qwen35')
+        metadata+=text('tokenizer.ggml.tokens')+struct.pack('<IIQ',9,8,2)+text('a')+text('b')
+        metadata+=text('qwen35.nextn_predict_layers')+struct.pack('<II',4,1)
+        tensor=text('blk.64.nextn.eh_proj.weight')+struct.pack('<IQQIQ',2,32,64,21,0)
+        raw=b'GGUF'+struct.pack('<IQQ',3,1,3)+metadata+tensor
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp)/'test.gguf';p.write_bytes(raw);result=inspect(p)
+            self.assertEqual(result['metadata']['general.architecture'],'qwen35')
+            self.assertNotIn('tokenizer.ggml.tokens',result['metadata'])
+            self.assertEqual(result['tensor_type_counts'],{'21':1})
+            self.assertEqual(result['parameter_counts_by_type'],{'21':2048})
+            self.assertEqual(len(result['nextn_tensors']),1)
+
+
+    def test_installer_preserves_user_files_and_forwarder_help(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            deployment=Path(tmp)/'deployment with spaces';(deployment/'models').mkdir(parents=True)
+            (deployment/'Start-Qwen.cmd').write_text('original cmd')
+            (deployment/'qwen26b_server.py').write_text('original python')
+            result=subprocess.run([sys.executable,str(R/'scripts/install_qwen_launcher.py'),'--deployment-dir',str(deployment)],capture_output=True,text=True)
+            self.assertEqual(result.returncode,0,result.stderr)
+            self.assertEqual(next(deployment.glob('Start-Qwen.before-tuning-*.cmd')).read_text(),'original cmd')
+            self.assertEqual(next(deployment.glob('qwen26b_server.before-tuning-*.py')).read_text(),'original python')
+            result=subprocess.run([sys.executable,str(deployment/'qwen26b_server.py'),'--help'],capture_output=True,text=True)
+            self.assertEqual(result.returncode,0,result.stderr)
+            self.assertIn('--draft-ubatch',result.stdout)
+    def test_snapshot_redacts_paths_and_verifies_bytes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);run=root/'input'/'probe';run.mkdir(parents=True)
+            (run/'summary.json').write_text(json.dumps([{'test':'cold','timings':{'cache_n':0}}]))
+            (run/'actual-launch.local.json').write_text(json.dumps({'args':['C:\\Users\\private\\llama-server.exe','-m','C:\\models\\model.gguf'],'environment_overrides':{}}))
+            out=root/'snapshot'
+            result=subprocess.run([sys.executable,str(R/'scripts/record_snapshot.py'),'--input-root',str(root/'input'),'--output',str(out),'--labels','probe'],capture_output=True,text=True)
+            self.assertEqual(result.returncode,0,result.stderr)
+            self.assertNotIn('private',(out/'probe/config.json').read_text())
+            result=subprocess.run([sys.executable,str(R/'scripts/check_evidence.py'),'--directory',str(out)],capture_output=True,text=True)
+            self.assertEqual(result.returncode,0,result.stderr)
+            (out/'probe/summary.json').write_text('tampered')
+            result=subprocess.run([sys.executable,str(R/'scripts/check_evidence.py'),'--directory',str(out)],capture_output=True,text=True)
+            self.assertNotEqual(result.returncode,0)
+
     def test_hash_and_published_evidence(self):
         self.assertEqual(token_hash([1,2]),hashlib.sha256(b'[1,2]').hexdigest())
         res=subprocess.run([sys.executable,str(R/'scripts/check_evidence.py')],capture_output=True,text=True)

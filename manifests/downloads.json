@@ -16,5 +16,11 @@
     "bytes": 2175713312,
     "sha256": "a8be9bdeafd1503e73bf2d335b3ee1e2577822af7b4761b14322fc7c7546c886",
     "url": "https://huggingface.co/bartowski/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF/resolve/main/mtp-NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q8_0.gguf"
+  },
+  {
+    "name": "Huihui-Qwen3.8-27B-abliterated-Swift-1.5-GSQ-RCO-IQ3_S-mtp.gguf",
+    "bytes": 12120017024,
+    "sha256": "29c1ae202c8f2c7d797335dcde6b51ae09a90a477552f853b2336ae2fac66582",
+    "url": "https://huggingface.co/huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF/resolve/main/Huihui-Qwen3.8-27B-abliterated-Swift-1.5-GSQ-RCO-IQ3_S-mtp.gguf"
   }
 ]
