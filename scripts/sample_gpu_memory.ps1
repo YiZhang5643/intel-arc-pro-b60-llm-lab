@@ -1,13 +1,14 @@
 param(
     [Parameter(Mandatory=$true)][string]$OutputPath,
     [int]$Seconds=240,
-    [int]$Interval=2
+    [int]$Interval=2,
+    [int]$ProbeProcessId=0
 )
 $ErrorActionPreference='Stop'
 if (Test-Path -LiteralPath $OutputPath) { throw 'Output already exists' }
 $until = (Get-Date).AddSeconds($Seconds)
 while ((Get-Date) -lt $until) {
-    $processes = @(Get-Process -Name llama-server -ErrorAction SilentlyContinue)
+    $processes = if ($ProbeProcessId -gt 0) { @(Get-Process -Id $ProbeProcessId -ErrorAction SilentlyContinue) } else { @(Get-Process -Name llama-server -ErrorAction SilentlyContinue) }
     $ids = @($processes | ForEach-Object { $_.Id })
     $counters = Get-Counter '\GPU Process Memory(*)\Dedicated Usage','\GPU Process Memory(*)\Shared Usage','\GPU Engine(*)\Utilization Percentage' -ErrorAction SilentlyContinue
     $samples = @($counters.CounterSamples | Where-Object {

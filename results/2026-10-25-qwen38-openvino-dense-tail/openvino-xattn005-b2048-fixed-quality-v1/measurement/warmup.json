@@ -1,0 +1,31 @@
+{
+  "label": "warmup",
+  "input_tokens": 4096,
+  "wall_seconds": 3.6957682999782264,
+  "metric_ttft_seconds": 3.68851953125,
+  "callback_first_text_seconds": 3.6904974000062793,
+  "prefill_plus_first_token_tps": 1110.4726341551755,
+  "effective_tps_to_first_text": 1109.8774923924973,
+  "input_tokens_per_wall_second": 1108.2945865475742,
+  "generated_tokens": 1,
+  "reported_throughput": null,
+  "output": "b",
+  "retrieval_correct": null,
+  "quality": {
+    "matched": 0,
+    "total": 0,
+    "all_correct": false,
+    "matched_keys": [],
+    "missing_keys": [],
+    "wrong": {},
+    "answer": null,
+    "format_exact_json": false
+  },
+  "inference_duration_ms": 3461.824951171875,
+  "raw_token_infer_durations": [
+    1615399.0
+  ],
+  "raw_times_to_first_token": [
+    3688519.5
+  ]
+}

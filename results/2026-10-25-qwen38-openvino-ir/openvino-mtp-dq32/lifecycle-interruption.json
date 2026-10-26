@@ -1,0 +1,7 @@
+{
+  "reason": "96K cold request exceeded five minutes without first text; memory-heavy configuration stopped",
+  "quality_validated": false,
+  "request_seconds_lower_bound": 337.3146122,
+  "completed_input_tokens": 32767,
+  "incomplete_input_tokens": 98304
+}

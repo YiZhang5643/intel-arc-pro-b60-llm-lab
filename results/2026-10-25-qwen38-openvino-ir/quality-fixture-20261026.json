@@ -1,0 +1,298 @@
+{
+  "suite": "joins-revisions-state-v1",
+  "seed": 20261026,
+  "target_tokens": 98304,
+  "retokenized_tokens": 98301,
+  "token_sha256": "9c17d11c78d6abd222a2a2ccc5dfc7191c72212c605f1afa5ea91f88abe80e69",
+  "retokenized_token_sha256": "c637af9610ef411636739208ff5f83a63cf30abffc911d516c1e584cdf4a7b83",
+  "text_sha256": "df47bc5b883f0dc7370a9ae2009503716e5328ac41cf7f3e0621f952a8de55ce",
+  "template": "unmodified model native rendered by Jinja2; enable_thinking=false",
+  "template_sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041",
+  "expected": {
+    "chain_1": "RECOVERY-677C6DCA51",
+    "chain_2": "RECOVERY-545ACB6473",
+    "chain_3": "RECOVERY-FD7F84525E",
+    "chain_4": "RECOVERY-F40D8AEDA0",
+    "revision_1": "VALUE-C5210B9C5C",
+    "revision_2": "VALUE-5611EC10C7",
+    "revision_3": "VALUE-E7B75DA3F6",
+    "revision_4": "VALUE-32568A71A7",
+    "stock_1": 251,
+    "stock_2": 170,
+    "stock_3": 307,
+    "stock_4": 194
+  },
+  "tasks": {
+    "chain_1": {
+      "type": "three_hop_join",
+      "project": "PROJ-CC1D0CC456"
+    },
+    "chain_2": {
+      "type": "three_hop_join",
+      "project": "PROJ-168ABD75DA"
+    },
+    "chain_3": {
+      "type": "three_hop_join",
+      "project": "PROJ-315770DA53"
+    },
+    "chain_4": {
+      "type": "three_hop_join",
+      "project": "PROJ-B157741C54"
+    },
+    "revision_1": {
+      "type": "max_revision",
+      "asset": "ASSET-5F37FF0CF3"
+    },
+    "revision_2": {
+      "type": "max_revision",
+      "asset": "ASSET-C4E71CBEBC"
+    },
+    "revision_3": {
+      "type": "max_revision",
+      "asset": "ASSET-DCCBE88A55"
+    },
+    "revision_4": {
+      "type": "max_revision",
+      "asset": "ASSET-ECEB193E1A"
+    },
+    "stock_1": {
+      "type": "ordered_state_with_reset",
+      "warehouse": "WH-90345EEE45"
+    },
+    "stock_2": {
+      "type": "ordered_state_with_reset",
+      "warehouse": "WH-0FC134FA40"
+    },
+    "stock_3": {
+      "type": "ordered_state_with_reset",
+      "warehouse": "WH-A0FA743474"
+    },
+    "stock_4": {
+      "type": "ordered_state_with_reset",
+      "warehouse": "WH-7311A06CD1"
+    }
+  },
+  "positions": [
+    {
+      "body_token_offset": 2446,
+      "fraction": 0.024993613651458642,
+      "record": "STOCK_EVENT warehouse=WH-90345EEE45 sequence=1 operation=SET quantity=139."
+    },
+    {
+      "body_token_offset": 4608,
+      "fraction": 0.04708527052572421,
+      "record": "STOCK_EVENT warehouse=WH-0FC134FA40 sequence=3 operation=SET quantity=178."
+    },
+    {
+      "body_token_offset": 6770,
+      "fraction": 0.06917692739998978,
+      "record": "STOCK_EVENT warehouse=WH-A0FA743474 sequence=4 operation=SUBTRACT quantity=26."
+    },
+    {
+      "body_token_offset": 8933,
+      "fraction": 0.09127880243192152,
+      "record": "ASSET_REVISION asset=ASSET-DCCBE88A55 revision=48 approved_value=VALUE-4E52431964."
+    },
+    {
+      "body_token_offset": 11095,
+      "fraction": 0.1133704593061871,
+      "record": "KEY_OWNER signing_key=KEY-9BA59DCC67 owner_team=TEAM-FF45634580."
+    },
+    {
+      "body_token_offset": 13257,
+      "fraction": 0.13546211618045267,
+      "record": "PROJECT_BINDING project=PROJ-168ABD75DA signing_key=KEY-D50238C1A9."
+    },
+    {
+      "body_token_offset": 15419,
+      "fraction": 0.15755377305471824,
+      "record": "STOCK_EVENT warehouse=WH-7311A06CD1 sequence=3 operation=SET quantity=192."
+    },
+    {
+      "body_token_offset": 17581,
+      "fraction": 0.1796454299289838,
+      "record": "ASSET_REVISION asset=ASSET-DCCBE88A55 revision=55 approved_value=VALUE-E7B75DA3F6."
+    },
+    {
+      "body_token_offset": 19743,
+      "fraction": 0.20173708680324937,
+      "record": "PROJECT_BINDING project=PROJ-CC1D0CC456 signing_key=KEY-AC3A456CC0."
+    },
+    {
+      "body_token_offset": 21905,
+      "fraction": 0.22382874367751496,
+      "record": "KEY_OWNER signing_key=KEY-AEE2A76364 owner_team=TEAM-5FF3626BAB."
+    },
+    {
+      "body_token_offset": 24067,
+      "fraction": 0.24592040055178052,
+      "record": "STOCK_EVENT warehouse=WH-0FC134FA40 sequence=1 operation=SET quantity=208."
+    },
+    {
+      "body_token_offset": 26230,
+      "fraction": 0.2680222755837123,
+      "record": "STOCK_EVENT warehouse=WH-0FC134FA40 sequence=5 operation=ADD quantity=14."
+    },
+    {
+      "body_token_offset": 28392,
+      "fraction": 0.29011393245797784,
+      "record": "STOCK_EVENT warehouse=WH-A0FA743474 sequence=2 operation=ADD quantity=20."
+    },
+    {
+      "body_token_offset": 30554,
+      "fraction": 0.3122055893322434,
+      "record": "ASSET_REVISION asset=ASSET-5F37FF0CF3 revision=64 approved_value=VALUE-7FF445EB5B."
+    },
+    {
+      "body_token_offset": 32716,
+      "fraction": 0.33429724620650897,
+      "record": "STOCK_EVENT warehouse=WH-A0FA743474 sequence=1 operation=SET quantity=236."
+    },
+    {
+      "body_token_offset": 34878,
+      "fraction": 0.35638890308077453,
+      "record": "TEAM_RECOVERY owner_team=TEAM-D2220BDDEB recovery_code=RECOVERY-677C6DCA51."
+    },
+    {
+      "body_token_offset": 37040,
+      "fraction": 0.3784805599550401,
+      "record": "STOCK_EVENT warehouse=WH-A0FA743474 sequence=3 operation=SET quantity=321."
+    },
+    {
+      "body_token_offset": 39202,
+      "fraction": 0.40057221682930566,
+      "record": "TEAM_RECOVERY owner_team=TEAM-FF45634580 recovery_code=RECOVERY-FD7F84525E."
+    },
+    {
+      "body_token_offset": 41365,
+      "fraction": 0.42267409186123744,
+      "record": "STOCK_EVENT warehouse=WH-A0FA743474 sequence=5 operation=ADD quantity=12."
+    },
+    {
+      "body_token_offset": 43527,
+      "fraction": 0.444765748735503,
+      "record": "PROJECT_BINDING project=PROJ-315770DA53 signing_key=KEY-9BA59DCC67."
+    },
+    {
+      "body_token_offset": 45689,
+      "fraction": 0.46685740560976857,
+      "record": "ASSET_REVISION asset=ASSET-5F37FF0CF3 revision=80 approved_value=VALUE-C5210B9C5C."
+    },
+    {
+      "body_token_offset": 47851,
+      "fraction": 0.48894906248403414,
+      "record": "ASSET_REVISION asset=ASSET-DCCBE88A55 revision=19 approved_value=VALUE-DA9598F3D3."
+    },
+    {
+      "body_token_offset": 50013,
+      "fraction": 0.5110407193582996,
+      "record": "ASSET_REVISION asset=ASSET-C4E71CBEBC revision=68 approved_value=VALUE-5611EC10C7."
+    },
+    {
+      "body_token_offset": 52175,
+      "fraction": 0.5331323762325653,
+      "record": "STOCK_EVENT warehouse=WH-7311A06CD1 sequence=2 operation=ADD quantity=45."
+    },
+    {
+      "body_token_offset": 54337,
+      "fraction": 0.5552240331068309,
+      "record": "ASSET_REVISION asset=ASSET-ECEB193E1A revision=62 approved_value=VALUE-32568A71A7."
+    },
+    {
+      "body_token_offset": 56499,
+      "fraction": 0.5773156899810964,
+      "record": "STOCK_EVENT warehouse=WH-0FC134FA40 sequence=4 operation=SUBTRACT quantity=22."
+    },
+    {
+      "body_token_offset": 58662,
+      "fraction": 0.5994175650130281,
+      "record": "STOCK_EVENT warehouse=WH-90345EEE45 sequence=5 operation=ADD quantity=12."
+    },
+    {
+      "body_token_offset": 60824,
+      "fraction": 0.6215092218872937,
+      "record": "STOCK_EVENT warehouse=WH-7311A06CD1 sequence=1 operation=SET quantity=132."
+    },
+    {
+      "body_token_offset": 62986,
+      "fraction": 0.6436008787615592,
+      "record": "ASSET_REVISION asset=ASSET-C4E71CBEBC revision=40 approved_value=VALUE-6E6451BB9A."
+    },
+    {
+      "body_token_offset": 65148,
+      "fraction": 0.6656925356358249,
+      "record": "KEY_OWNER signing_key=KEY-D50238C1A9 owner_team=TEAM-94668A70D1."
+    },
+    {
+      "body_token_offset": 67310,
+      "fraction": 0.6877841925100904,
+      "record": "ASSET_REVISION asset=ASSET-ECEB193E1A revision=48 approved_value=VALUE-0EEF27E7D7."
+    },
+    {
+      "body_token_offset": 69472,
+      "fraction": 0.709875849384356,
+      "record": "PROJECT_BINDING project=PROJ-B157741C54 signing_key=KEY-AEE2A76364."
+    },
+    {
+      "body_token_offset": 71634,
+      "fraction": 0.7319675062586216,
+      "record": "STOCK_EVENT warehouse=WH-90345EEE45 sequence=4 operation=SUBTRACT quantity=32."
+    },
+    {
+      "body_token_offset": 73797,
+      "fraction": 0.7540693812905533,
+      "record": "ASSET_REVISION asset=ASSET-ECEB193E1A revision=60 approved_value=VALUE-8C271CF9D7."
+    },
+    {
+      "body_token_offset": 75959,
+      "fraction": 0.7761610381648189,
+      "record": "STOCK_EVENT warehouse=WH-90345EEE45 sequence=3 operation=SET quantity=271."
+    },
+    {
+      "body_token_offset": 78121,
+      "fraction": 0.7982526950390845,
+      "record": "STOCK_EVENT warehouse=WH-90345EEE45 sequence=2 operation=ADD quantity=34."
+    },
+    {
+      "body_token_offset": 80283,
+      "fraction": 0.82034435191335,
+      "record": "STOCK_EVENT warehouse=WH-0FC134FA40 sequence=2 operation=ADD quantity=45."
+    },
+    {
+      "body_token_offset": 82445,
+      "fraction": 0.8424360087876156,
+      "record": "TEAM_RECOVERY owner_team=TEAM-5FF3626BAB recovery_code=RECOVERY-F40D8AEDA0."
+    },
+    {
+      "body_token_offset": 84607,
+      "fraction": 0.8645276656618812,
+      "record": "STOCK_EVENT warehouse=WH-7311A06CD1 sequence=4 operation=SUBTRACT quantity=11."
+    },
+    {
+      "body_token_offset": 86769,
+      "fraction": 0.8866193225361467,
+      "record": "ASSET_REVISION asset=ASSET-C4E71CBEBC revision=28 approved_value=VALUE-485294581A."
+    },
+    {
+      "body_token_offset": 88931,
+      "fraction": 0.9087109794104123,
+      "record": "TEAM_RECOVERY owner_team=TEAM-94668A70D1 recovery_code=RECOVERY-545ACB6473."
+    },
+    {
+      "body_token_offset": 91094,
+      "fraction": 0.9308128544423441,
+      "record": "STOCK_EVENT warehouse=WH-7311A06CD1 sequence=5 operation=ADD quantity=13."
+    },
+    {
+      "body_token_offset": 93256,
+      "fraction": 0.9529045113166096,
+      "record": "ASSET_REVISION asset=ASSET-5F37FF0CF3 revision=27 approved_value=VALUE-68633A3D59."
+    },
+    {
+      "body_token_offset": 95418,
+      "fraction": 0.9749961681908752,
+      "record": "KEY_OWNER signing_key=KEY-AC3A456CC0 owner_team=TEAM-D2220BDDEB."
+    }
+  ],
+  "model_snapshot": "7b20ea8c7df7223a85ff27bab5c473f0cb038943"
+}

@@ -11,6 +11,24 @@ from profile_prefill import call, write
 
 ROOT=Path(__file__).resolve().parents[1]
 
+
+def run_process(command, log, env, timeout):
+    """Keep an owned process alive until its entire Windows child tree is cleaned up."""
+    with subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, env=env) as process:
+        try:
+            return process.wait(timeout=timeout)
+        finally:
+            if process.poll() is None:
+                if os.name == 'nt':
+                    result=subprocess.run(['taskkill','/PID',str(process.pid),'/T','/F'],
+                        stdout=subprocess.DEVNULL,stderr=subprocess.PIPE,timeout=30)
+                    if result.returncode and process.poll() is None:
+                        raise RuntimeError('Could not stop the owned probe process tree')
+                else:
+                    process.kill()
+                process.wait(timeout=30)
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--deployment-dir',type=Path,required=True)
@@ -36,9 +54,9 @@ def main():
     try:
         stop(record)
         with (out/'stdout.txt').open('wb') as f:
-            result=subprocess.run([str(exe),*a.argument],stdout=f,stderr=subprocess.STDOUT,env=env,timeout=a.timeout)
-        write(out/'status.json',{'returncode':result.returncode})
-        if result.returncode:raise RuntimeError('Probe failed; see stdout.txt')
+            returncode=run_process([str(exe),*a.argument],f,env,a.timeout)
+        write(out/'status.json',{'returncode':returncode})
+        if returncode:raise RuntimeError('Probe failed; see stdout.txt')
     finally:
         subprocess.run([sys.executable,str(ROOT/'scripts/manage_server.py'),'start','--deployment-dir',str(dep),'--preset',state['preset'],'--runtime',Path(state['exe']).parent.name,'--host',state['host'],'--port',str(state['port']),'--device',state['args'][state['args'].index('--device')+1]],check=True,timeout=650)
         print('Original service restored',flush=True)

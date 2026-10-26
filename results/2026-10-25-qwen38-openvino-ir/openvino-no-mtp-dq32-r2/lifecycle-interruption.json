@@ -1,0 +1,7 @@
+{
+  "completed_input_tokens": 32767,
+  "unfinished_request_seconds_lower_bound": 71.6150167,
+  "quality_validated": false,
+  "reason": "32K measured with MTP off; paused remaining tests to tune OpenVINO batching and dynamic quantization",
+  "incomplete_input_tokens": 98304
+}

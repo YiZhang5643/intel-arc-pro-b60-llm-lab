@@ -1,0 +1,6 @@
+LOAD_START
+LOAD_OK
+START warmup 4096 1
+{"label": "warmup", "input_tokens": 4096, "wall_seconds": 3.916749899974093, "metric_ttft_seconds": 3.909322509765625, "callback_first_text_seconds": 3.9110728000523522, "prefill_plus_first_token_tps": 1047.7518776637253, "effective_tps_to_first_text": 1047.2829858715932, "input_tokens_per_wall_second": 1045.7650104304828, "generated_tokens": 1, "reported_throughput": null, "retrieval_correct": 0, "inference_duration_ms": 3687.4951171875}
+START cold-32767-r1 32767 256
+{"label": "cold-32767-r1", "input_tokens": 32767, "wall_seconds": 50.46770709997509, "metric_ttft_seconds": 35.47987109375, "callback_first_text_seconds": 35.68994620000012, "prefill_plus_first_token_tps": 923.5377409748287, "effective_tps_to_first_text": 918.1016921790678, "input_tokens_per_wall_second": 649.2666673976194, "generated_tokens": 256, "reported_throughput": 17.08999252319336, "retrieval_correct": 3, "inference_duration_ms": 49651.3671875}

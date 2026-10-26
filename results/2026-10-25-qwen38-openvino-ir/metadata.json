@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-25",
+  "hardware": {
+    "gpu": "Intel Arc Pro B60 24GB",
+    "cpu": "Intel Core i5-12600K",
+    "host_ram_gb": 32,
+    "os": "Windows 11 Pro build 26300",
+    "driver": "32.0.101.9033"
+  },
+  "model": {
+    "repository": "OpenVINO/Qwen3.8-27B-int4-ov",
+    "revision": "7b20ea8c7df7223a85ff27bab5c473f0cb038943",
+    "weights": "U4 asymmetric group 128, FP16 scales; verified main IR MLP tensors",
+    "snapshot": "model-snapshot.json",
+    "comparison_limit": "Original Qwen IR checkpoint differs from the Swift/Huihui mixed-IQ GGUF baseline"
+  },
+  "runtime": {
+    "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+    "genai": "2026.4.1.0-3408-ab01d1771e4",
+    "device": "GPU.1 (B60); GPU.0 is UHD 770"
+  },
+  "method": {
+    "primary_metric": "Actual retokenized input tokens / first nonempty streaming text time, seconds",
+    "prefix_caching": false,
+    "requests": "Fresh generate calls; full decoded document retained",
+    "warmup_tokens": 4096,
+    "repetitions_per_configuration_and_length": 1,
+    "uncertainty": "No confidence intervals; screening results and synthetic quality checks only",
+    "canonical_token_hashes": {
+      "32768": "544bdfff74498e529fef8566b93f7357dbbb7db314908b3066a38193a1c2c810",
+      "98304": "f4c41311331ec729f2f0fd82d624f0edd8101d1e97fa2b07719d1c8552f25197"
+    },
+    "retokenized_canonical_counts": [
+      32767,
+      98304
+    ]
+  },
+  "attention": {
+    "threshold_1": "All attention blocks retained. Kernel/cache layout/quantization rounding differ from ordinary paged attention; not bitwise-equivalence evidence.",
+    "threshold_below_1": "Approximate attention; threshold is estimated cumulative mass, not a fixed keep percentage. KV is preserved; decode uses full KV.",
+    "xattention_kv_block_tokens": 256,
+    "ordinary_kv_block_tokens": 16,
+    "default_last_dense_tokens": 100,
+    "mtp": "Disabled in all XAttention experiments; current release MTP path disallows XAttention."
+  },
+  "incomplete_runs": {
+    "openvino-mtp-dq32": "96K interrupted after >337.3146 seconds without first text; not a completed throughput.",
+    "openvino-no-mtp-dq32-r2": "96K interrupted to change tuning direction after >71.6150 seconds; not a throughput result."
+  },
+  "setup_errors_excluded": [
+    "First MTP-off controller run passed float cache_size to an integer API; no model inference.",
+    "First quality controller invocation happened while the prior service was loading; slots returned HTTP 503 and no experiment was started."
+  ],
+  "source_provenance": "New controller runs include executed source copies and hashes. Early scouting runs have saved config and runtime/model pins but do not all have complete source snapshots.",
+  "memory": "Windows shared GPU memory counters do not alone prove VRAM paging. Samples cover part of each run, not guaranteed full-run peaks.",
+  "default_service": "Original SYCL blocked-GDN + MTP, 0.0.0.0:5001; not replaced by experiment presets.",
+  "early_metadata_correction": "Early MTP-off scout config files incorrectly label cache_budget_scope as combined_main_and_default_draft. MTP was off; actual scheduler fields are preserved and determine capacity. Later script fixes the label.",
+  "input_quality_suite": {
+    "seeds": [
+      20261025,
+      20261026
+    ],
+    "questions_per_seed": 12,
+    "tasks": [
+      "three_hop_join",
+      "max_revision",
+      "ordered_state_with_reset"
+    ],
+    "scoring": "Strict first JSON answer, exact values and JSON types; format tracked separately. Compare matching retokenized full-input hashes.",
+    "generator": "scripts/prepare_openvino_quality.py",
+    "renderer": "Jinja2 3.1.6, unmodified native template; GenAI Minja cannot parse its is-undefined syntax."
+  }
+}

@@ -1,0 +1,10 @@
+LOAD_START
+Spill memory used = 5184 bytes for kernel pa_single_token_cm_762596648791698064__sa
+ Compiling kernel with spill code may degrade performance. Please consider rewriting the kernel to use less registers.
+LOAD_OK
+START warmup 4096 1
+{"label": "warmup", "input_tokens": 4096, "wall_seconds": 3.7099984999513254, "metric_ttft_seconds": 3.703795166015625, "callback_first_text_seconds": 3.705369699979201, "prefill_plus_first_token_tps": 1105.8926901744112, "effective_tps_to_first_text": 1105.4227598457967, "input_tokens_per_wall_second": 1104.043573077924, "generated_tokens": 1, "reported_throughput": null, "retrieval_correct": 0, "inference_duration_ms": 3487.39599609375}
+START cold-32767-r1 32767 1
+{"label": "cold-32767-r1", "input_tokens": 32767, "wall_seconds": 33.444583599921316, "metric_ttft_seconds": 33.36790234375, "callback_first_text_seconds": 33.369195199920796, "prefill_plus_first_token_tps": 981.9916056586471, "effective_tps_to_first_text": 981.9535593737596, "input_tokens_per_wall_second": 979.7401095487728, "generated_tokens": 1, "reported_throughput": null, "retrieval_correct": 0, "inference_duration_ms": 32799.5546875}
+START cold-98304-r1 98304 256
+{"label": "cold-98304-r1", "input_tokens": 98304, "wall_seconds": 158.63942799996585, "metric_ttft_seconds": 151.907796875, "callback_first_text_seconds": 152.19384560000617, "prefill_plus_first_token_tps": 647.1293904742175, "effective_tps_to_first_text": 645.9131091171798, "input_tokens_per_wall_second": 619.6694052629915, "generated_tokens": 77, "reported_throughput": 11.720956802368164, "retrieval_correct": 3, "inference_duration_ms": 156237.8125}

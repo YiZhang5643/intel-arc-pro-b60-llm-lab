@@ -1,0 +1,21 @@
+{
+  "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+  "genai": "2026.4.1.0-3408-ab01d1771e4",
+  "device": "GPU.1",
+  "device_name": "Intel(R) Arc(TM) Pro B60 Graphics (dGPU)",
+  "model": "Qwen3.8-27B-int4-ov",
+  "mtp": "off",
+  "draft_tokens": 0,
+  "scheduler": "SchedulerConfig { \n  max_num_batched_tokens: 8192\n  num_kv_blocks: 0\n  cache_size: 4\n  num_linear_attention_blocks: 0\n  cache_interval_multiplier: unset\n  dynamic_split_fuse: true\n  use_cache_eviction: false\n  max_num_seqs: 1\n  enable_prefix_caching: false\n  use_sparse_attention: false\n }",
+  "properties": {
+    "KV_CACHE_PRECISION": "u8",
+    "DYNAMIC_QUANTIZATION_GROUP_SIZE": 32,
+    "PERFORMANCE_HINT": "LATENCY"
+  },
+  "input_mode": "same_decoded_text_retokenized",
+  "timing": "TTFT includes prefill and first-token work; throughput is input_tokens / TTFT",
+  "cache_prefix": false,
+  "repeats": 1,
+  "draft_kv_blocks": null,
+  "cache_budget_scope": "combined_main_and_default_draft"
+}

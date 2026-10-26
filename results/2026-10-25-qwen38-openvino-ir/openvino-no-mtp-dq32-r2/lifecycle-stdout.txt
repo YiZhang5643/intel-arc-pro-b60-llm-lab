@@ -1,0 +1,7 @@
+LOAD_START
+LOAD_OK
+START warmup 4096 1
+{"label": "warmup", "input_tokens": 4096, "wall_seconds": 5.639607799937949, "metric_ttft_seconds": 5.63357568359375, "callback_first_text_seconds": 5.6352864999789745, "prefill_plus_first_token_tps": 727.0693126442733, "effective_tps_to_first_text": 726.8485817030389, "input_tokens_per_wall_second": 726.2916403592936, "generated_tokens": 1, "reported_throughput": -1000.0, "retrieval_correct": 0, "inference_duration_ms": 5314.330078125}
+START cold-32767-r1 32767 1
+{"label": "cold-32767-r1", "input_tokens": 32767, "wall_seconds": 59.35929359996226, "metric_ttft_seconds": 59.28162890625, "callback_first_text_seconds": 59.28263939998578, "prefill_plus_first_token_tps": 552.7344744831296, "effective_tps_to_first_text": 552.7250529268415, "input_tokens_per_wall_second": 552.0112860645773, "generated_tokens": 1, "reported_throughput": -1000.0, "retrieval_correct": 0, "inference_duration_ms": 58733.23046875}
+START cold-98304-r1 98304 1

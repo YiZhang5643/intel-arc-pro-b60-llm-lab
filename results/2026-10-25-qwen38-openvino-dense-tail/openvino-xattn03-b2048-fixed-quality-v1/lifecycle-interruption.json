@@ -1,0 +1,7 @@
+{
+  "reason": "Stopped on user direction: abandon sparse-threshold tuning due to disproportionate quality regression.",
+  "utc": "2026-10-26T00:47:34.001102+00:00",
+  "completed_quality_cases": 1,
+  "incomplete_case": "second native 96K quality prompt; no completed throughput or quality score",
+  "adopted": false
+}

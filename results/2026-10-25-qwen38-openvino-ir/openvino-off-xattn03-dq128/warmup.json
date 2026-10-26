@@ -1,0 +1,21 @@
+{
+  "label": "warmup",
+  "input_tokens": 4096,
+  "wall_seconds": 3.617630699998699,
+  "metric_ttft_seconds": 3.61081787109375,
+  "callback_first_text_seconds": null,
+  "prefill_plus_first_token_tps": 1134.3690394329649,
+  "effective_tps_to_first_text": null,
+  "input_tokens_per_wall_second": 1132.2327621781496,
+  "generated_tokens": 1,
+  "reported_throughput": null,
+  "output": "",
+  "retrieval_correct": 0,
+  "inference_duration_ms": 3401.06494140625,
+  "raw_token_infer_durations": [
+    1549240.0
+  ],
+  "raw_times_to_first_token": [
+    3610817.75
+  ]
+}

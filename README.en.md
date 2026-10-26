@@ -1,5 +1,7 @@
 # Intel Arc Pro B60 24GB Local LLM Lab
 
+
+Milestone: [Qwen3.8-27B with all attention blocks retained](docs/2026-10-25-stage-summary.md): **982 tok/s at 32K (33.37 s to first text)** and **646 tok/s at 96K (152.19 s)**. Sparse candidates with substantial quality regressions were rejected. The quality-constrained 1200 tok/s target remains open.
 [中文](README.md) · [Windows setup](docs/setup-windows.md) · [Measurements](docs/nemotron.md) · [Methodology](docs/methodology.md) · [Tools](docs/tools.md)
 
 New: [Qwen3.8-27B mixed-IQ tuning](docs/qwen38.md), including 32K/96K inputs, embedded MTP and independent draft microbatch sizing. New: [operator timelines and traces](docs/qwen38-profile.md). Follow-up [kernel experiments](docs/qwen38-kernel-experiments.md): MTP stays on; blocked GDN reduces mean cold prefill to 53.71 s at 32K and 208.17 s at 96K (two timings per arm).
@@ -31,3 +33,7 @@ The launcher defaults to 127.0.0.1:5001. Explicitly use 0.0.0.0 for LAN access. 
 Historical measurements, sanitized configurations and response samples are under `results/`. Scripts rebuild prompts with the current server tokenizer and save input hashes. For MTP A/B tests, compare those hashes. Numerical Q4 tests passed 106/106; small model smoke checks are not broad capability evaluations. A patched Intel Vulkan configuration was tested on the current Qwen weights and was slower than SYCL; stock Vulkan was not retested. Qwen operator timelines identify the main costs but do not establish a hardware ceiling.
 
 Original code: MIT. External models, binaries and patch implementations retain their own terms; see [attribution](THIRD_PARTY_NOTICES.md).
+
+New: [OpenVINO full-attention baseline and rejected sparse prefill experiments](docs/qwen38-openvino.md), including complete cold 96K requests, runtime/model pins, and strict paired long-document quality checks. Experimental presets leave the daily SYCL/MTP service unchanged.
+
+Sparse threshold tuning was stopped after substantial paired quality regressions. Performance gains must pass quality validation before adoption; no sparse preset replaced the daily service.

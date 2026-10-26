@@ -1,0 +1,32 @@
+{
+  "repository": "https://github.com/openvinotoolkit/openvino.genai",
+  "commit": "ab01d1771e4adaa0e1e08e9d630def170572506c",
+  "patch": "openvino-genai-dense-tail.patch",
+  "patch_sha256": "dfc4f028479cd904f89ac826fe276fb38bbfd267a39d12d6179b9fe9f22833b1",
+  "modified_files": {
+    "src/cpp/src/continuous_batching/scheduler.hpp": "bb11951130d2f7e5f94fb6674e31a2a6ea245b1bc5fbda034a36b913c77afa8b",
+    "tests/cpp/scheduler.cpp": "0536e81622f98f6ace2c64a4cd9d43bbe16f2047f5cf0fd8072e60225637f775"
+  },
+  "purpose": "Include final prompt chunk in dense tail and use threshold 1.0 for GPU all-block bypass; retain sparse tail=0 option; three public scheduler regressions.",
+  "upstream_master_inspected": "73c4b0db060c39b6e7c3b7bcdc43e3d69c8a5fb3",
+  "runtime_scope": "Isolated experimental C++ DLL; installed wheel and daily SYCL service are not overwritten.",
+  "source_hash_encoding": "UTF-8 bytes with CRLF normalized to LF",
+  "dll_sha256": "17f0d27c297aa6ae52b959b90de7ff30fdd18e71f5e3f7b9d0ffe0430302e46d",
+  "original_wheel_dll_sha256": "e790d204913f0e5e478592fe27baa235a4e735026dd16cd725e724cb742c36e2",
+  "configure_arguments": [
+    "-DOpenVINO_DIR=C:\\MyLLM\\nemotron-sycl\\openvino-venv\\Lib\\site-packages\\openvino\\cmake",
+    "-DPython3_EXECUTABLE=C:\\MyLLM\\nemotron-sycl\\openvino-venv\\Scripts\\python.exe",
+    "-DCMAKE_CXX_FLAGS=/DWIN32 /D_WINDOWS /W3 /GR /EHsc /utf-8",
+    "-DBUILD_TOKENIZERS=OFF",
+    "-DENABLE_PYTHON=OFF",
+    "-DENABLE_SAMPLES=OFF",
+    "-DENABLE_TESTS=ON",
+    "-DENABLE_TOOLS=OFF",
+    "-DENABLE_XGRAMMAR=OFF",
+    "-DENABLE_GGUF=ON",
+    "-DENABLE_LTO=OFF"
+  ],
+  "test_log_sha256": "e8cccc44f49088020d565c833b2089a68a91594bb6e45235701be2796306c58c",
+  "smoke_version": "2026.4.1.0-3408-ab01d1771e4",
+  "xgrammar": "Disabled in isolated build; not used by these greedy JSON tasks."
+}

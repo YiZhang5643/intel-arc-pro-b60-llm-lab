@@ -1,0 +1,298 @@
+{
+  "suite": "joins-revisions-state-v1",
+  "seed": 20261025,
+  "target_tokens": 98304,
+  "retokenized_tokens": 98295,
+  "token_sha256": "fbe7df536ba34b778a70dd7bfe4a8d0fe33945fcb71cb9e947a97ad43dfe3406",
+  "retokenized_token_sha256": "578e4bf7ae34501929f774fed182849efad6cf807551e506ccbed16222be121e",
+  "text_sha256": "4a271ae4fbe1a7eb2df790896548171d9b67a779cdc06350dcd7664857915ff6",
+  "template": "unmodified model native rendered by Jinja2; enable_thinking=false",
+  "template_sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041",
+  "expected": {
+    "chain_1": "RECOVERY-92B82B4997",
+    "chain_2": "RECOVERY-F15D112F05",
+    "chain_3": "RECOVERY-7056C9F287",
+    "chain_4": "RECOVERY-9F95296FCE",
+    "revision_1": "VALUE-0FEB9CB058",
+    "revision_2": "VALUE-633A5B2519",
+    "revision_3": "VALUE-7477A4FAA9",
+    "revision_4": "VALUE-F62A26F6A5",
+    "stock_1": 253,
+    "stock_2": 139,
+    "stock_3": 224,
+    "stock_4": 230
+  },
+  "tasks": {
+    "chain_1": {
+      "type": "three_hop_join",
+      "project": "PROJ-616C956CA5"
+    },
+    "chain_2": {
+      "type": "three_hop_join",
+      "project": "PROJ-71E10B935D"
+    },
+    "chain_3": {
+      "type": "three_hop_join",
+      "project": "PROJ-C424EEA118"
+    },
+    "chain_4": {
+      "type": "three_hop_join",
+      "project": "PROJ-A063A95297"
+    },
+    "revision_1": {
+      "type": "max_revision",
+      "asset": "ASSET-B115394011"
+    },
+    "revision_2": {
+      "type": "max_revision",
+      "asset": "ASSET-6B41FFCB53"
+    },
+    "revision_3": {
+      "type": "max_revision",
+      "asset": "ASSET-768B208F5D"
+    },
+    "revision_4": {
+      "type": "max_revision",
+      "asset": "ASSET-5C0D00C817"
+    },
+    "stock_1": {
+      "type": "ordered_state_with_reset",
+      "warehouse": "WH-51A8056DD8"
+    },
+    "stock_2": {
+      "type": "ordered_state_with_reset",
+      "warehouse": "WH-47DD69F68F"
+    },
+    "stock_3": {
+      "type": "ordered_state_with_reset",
+      "warehouse": "WH-1EB2C33EFF"
+    },
+    "stock_4": {
+      "type": "ordered_state_with_reset",
+      "warehouse": "WH-87CCE983BC"
+    }
+  },
+  "positions": [
+    {
+      "body_token_offset": 2446,
+      "fraction": 0.024995912361020275,
+      "record": "TEAM_RECOVERY owner_team=TEAM-5BE894D027 recovery_code=RECOVERY-9F95296FCE."
+    },
+    {
+      "body_token_offset": 4608,
+      "fraction": 0.04708960104643558,
+      "record": "STOCK_EVENT warehouse=WH-87CCE983BC sequence=1 operation=SET quantity=176."
+    },
+    {
+      "body_token_offset": 6770,
+      "fraction": 0.06918328973185088,
+      "record": "STOCK_EVENT warehouse=WH-87CCE983BC sequence=4 operation=SUBTRACT quantity=22."
+    },
+    {
+      "body_token_offset": 8932,
+      "fraction": 0.09127697841726619,
+      "record": "ASSET_REVISION asset=ASSET-768B208F5D revision=76 approved_value=VALUE-7477A4FAA9."
+    },
+    {
+      "body_token_offset": 11094,
+      "fraction": 0.1133706671026815,
+      "record": "STOCK_EVENT warehouse=WH-87CCE983BC sequence=3 operation=SET quantity=240."
+    },
+    {
+      "body_token_offset": 13256,
+      "fraction": 0.1354643557880968,
+      "record": "ASSET_REVISION asset=ASSET-5C0D00C817 revision=38 approved_value=VALUE-1EAC721303."
+    },
+    {
+      "body_token_offset": 15418,
+      "fraction": 0.1575580444735121,
+      "record": "STOCK_EVENT warehouse=WH-51A8056DD8 sequence=4 operation=SUBTRACT quantity=21."
+    },
+    {
+      "body_token_offset": 17579,
+      "fraction": 0.1796415140614781,
+      "record": "STOCK_EVENT warehouse=WH-47DD69F68F sequence=4 operation=SUBTRACT quantity=31."
+    },
+    {
+      "body_token_offset": 19741,
+      "fraction": 0.20173520274689338,
+      "record": "STOCK_EVENT warehouse=WH-47DD69F68F sequence=5 operation=ADD quantity=6."
+    },
+    {
+      "body_token_offset": 21903,
+      "fraction": 0.2238288914323087,
+      "record": "PROJECT_BINDING project=PROJ-71E10B935D signing_key=KEY-D11272C9F4."
+    },
+    {
+      "body_token_offset": 24065,
+      "fraction": 0.245922580117724,
+      "record": "STOCK_EVENT warehouse=WH-51A8056DD8 sequence=1 operation=SET quantity=231."
+    },
+    {
+      "body_token_offset": 26227,
+      "fraction": 0.2680162688031393,
+      "record": "STOCK_EVENT warehouse=WH-51A8056DD8 sequence=2 operation=ADD quantity=39."
+    },
+    {
+      "body_token_offset": 28389,
+      "fraction": 0.2901099574885546,
+      "record": "ASSET_REVISION asset=ASSET-B115394011 revision=75 approved_value=VALUE-0FEB9CB058."
+    },
+    {
+      "body_token_offset": 30551,
+      "fraction": 0.3122036461739699,
+      "record": "KEY_OWNER signing_key=KEY-ECB0840072 owner_team=TEAM-0D229449DC."
+    },
+    {
+      "body_token_offset": 32713,
+      "fraction": 0.33429733485938523,
+      "record": "STOCK_EVENT warehouse=WH-47DD69F68F sequence=1 operation=SET quantity=241."
+    },
+    {
+      "body_token_offset": 34875,
+      "fraction": 0.3563910235448005,
+      "record": "TEAM_RECOVERY owner_team=TEAM-68E7793475 recovery_code=RECOVERY-F15D112F05."
+    },
+    {
+      "body_token_offset": 37037,
+      "fraction": 0.37848471223021585,
+      "record": "STOCK_EVENT warehouse=WH-51A8056DD8 sequence=5 operation=ADD quantity=22."
+    },
+    {
+      "body_token_offset": 39199,
+      "fraction": 0.4005784009156311,
+      "record": "STOCK_EVENT warehouse=WH-87CCE983BC sequence=2 operation=ADD quantity=52."
+    },
+    {
+      "body_token_offset": 41361,
+      "fraction": 0.4226720896010464,
+      "record": "STOCK_EVENT warehouse=WH-1EB2C33EFF sequence=5 operation=ADD quantity=6."
+    },
+    {
+      "body_token_offset": 43523,
+      "fraction": 0.44476577828646174,
+      "record": "STOCK_EVENT warehouse=WH-1EB2C33EFF sequence=3 operation=SET quantity=247."
+    },
+    {
+      "body_token_offset": 45685,
+      "fraction": 0.466859466971877,
+      "record": "PROJECT_BINDING project=PROJ-A063A95297 signing_key=KEY-13C1F8CE50."
+    },
+    {
+      "body_token_offset": 47847,
+      "fraction": 0.48895315565729236,
+      "record": "ASSET_REVISION asset=ASSET-B115394011 revision=6 approved_value=VALUE-0819B2D539."
+    },
+    {
+      "body_token_offset": 50008,
+      "fraction": 0.5110366252452584,
+      "record": "ASSET_REVISION asset=ASSET-5C0D00C817 revision=30 approved_value=VALUE-51EB22C64E."
+    },
+    {
+      "body_token_offset": 52170,
+      "fraction": 0.5331303139306737,
+      "record": "KEY_OWNER signing_key=KEY-39C7C964B6 owner_team=TEAM-AD3222F881."
+    },
+    {
+      "body_token_offset": 54332,
+      "fraction": 0.555224002616089,
+      "record": "PROJECT_BINDING project=PROJ-C424EEA118 signing_key=KEY-ECB0840072."
+    },
+    {
+      "body_token_offset": 56494,
+      "fraction": 0.5773176913015042,
+      "record": "STOCK_EVENT warehouse=WH-1EB2C33EFF sequence=1 operation=SET quantity=120."
+    },
+    {
+      "body_token_offset": 58656,
+      "fraction": 0.5994113799869195,
+      "record": "STOCK_EVENT warehouse=WH-1EB2C33EFF sequence=2 operation=ADD quantity=29."
+    },
+    {
+      "body_token_offset": 60818,
+      "fraction": 0.6215050686723349,
+      "record": "ASSET_REVISION asset=ASSET-768B208F5D revision=42 approved_value=VALUE-F5A79559F7."
+    },
+    {
+      "body_token_offset": 62980,
+      "fraction": 0.6435987573577502,
+      "record": "ASSET_REVISION asset=ASSET-768B208F5D revision=35 approved_value=VALUE-2239AF0368."
+    },
+    {
+      "body_token_offset": 65142,
+      "fraction": 0.6656924460431655,
+      "record": "STOCK_EVENT warehouse=WH-47DD69F68F sequence=3 operation=SET quantity=164."
+    },
+    {
+      "body_token_offset": 67304,
+      "fraction": 0.6877861347285807,
+      "record": "KEY_OWNER signing_key=KEY-13C1F8CE50 owner_team=TEAM-5BE894D027."
+    },
+    {
+      "body_token_offset": 69466,
+      "fraction": 0.709879823413996,
+      "record": "PROJECT_BINDING project=PROJ-616C956CA5 signing_key=KEY-39C7C964B6."
+    },
+    {
+      "body_token_offset": 71628,
+      "fraction": 0.7319735120994114,
+      "record": "TEAM_RECOVERY owner_team=TEAM-AD3222F881 recovery_code=RECOVERY-92B82B4997."
+    },
+    {
+      "body_token_offset": 73790,
+      "fraction": 0.7540672007848267,
+      "record": "ASSET_REVISION asset=ASSET-6B41FFCB53 revision=61 approved_value=VALUE-050A4BCEA9."
+    },
+    {
+      "body_token_offset": 75952,
+      "fraction": 0.776160889470242,
+      "record": "STOCK_EVENT warehouse=WH-47DD69F68F sequence=2 operation=ADD quantity=45."
+    },
+    {
+      "body_token_offset": 78114,
+      "fraction": 0.7982545781556573,
+      "record": "ASSET_REVISION asset=ASSET-5C0D00C817 revision=80 approved_value=VALUE-F62A26F6A5."
+    },
+    {
+      "body_token_offset": 80276,
+      "fraction": 0.8203482668410726,
+      "record": "KEY_OWNER signing_key=KEY-D11272C9F4 owner_team=TEAM-68E7793475."
+    },
+    {
+      "body_token_offset": 82437,
+      "fraction": 0.8424317364290386,
+      "record": "STOCK_EVENT warehouse=WH-87CCE983BC sequence=5 operation=ADD quantity=12."
+    },
+    {
+      "body_token_offset": 84599,
+      "fraction": 0.8645254251144538,
+      "record": "ASSET_REVISION asset=ASSET-6B41FFCB53 revision=64 approved_value=VALUE-633A5B2519."
+    },
+    {
+      "body_token_offset": 86761,
+      "fraction": 0.8866191137998692,
+      "record": "ASSET_REVISION asset=ASSET-6B41FFCB53 revision=28 approved_value=VALUE-53AF52A995."
+    },
+    {
+      "body_token_offset": 88923,
+      "fraction": 0.9087128024852845,
+      "record": "STOCK_EVENT warehouse=WH-51A8056DD8 sequence=3 operation=SET quantity=252."
+    },
+    {
+      "body_token_offset": 91085,
+      "fraction": 0.9308064911706998,
+      "record": "TEAM_RECOVERY owner_team=TEAM-0D229449DC recovery_code=RECOVERY-7056C9F287."
+    },
+    {
+      "body_token_offset": 93247,
+      "fraction": 0.9529001798561151,
+      "record": "STOCK_EVENT warehouse=WH-1EB2C33EFF sequence=4 operation=SUBTRACT quantity=29."
+    },
+    {
+      "body_token_offset": 95409,
+      "fraction": 0.9749938685415304,
+      "record": "ASSET_REVISION asset=ASSET-B115394011 revision=62 approved_value=VALUE-A298452CF4."
+    }
+  ],
+  "model_snapshot": "7b20ea8c7df7223a85ff27bab5c473f0cb038943"
+}

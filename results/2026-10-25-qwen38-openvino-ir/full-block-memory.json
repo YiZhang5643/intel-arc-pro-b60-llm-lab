@@ -1,0 +1,2984 @@
+{
+  "scope": "Partial sampling window only, not full-run peaks; shared usage is not proof of paging.",
+  "samples": [
+    {
+      "utc": "2026-10-25T20:34:19.2777550Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 32325791744,
+          "working_set": 7203713024
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 23953936384.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 114.75978969464333
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 283.47718324849836
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:34:23.4848583Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 32329060352,
+          "working_set": 7206977536
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 23953936384.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 93.42417938811911
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 364.91514461595756
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:34:27.8529194Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 32328986624,
+          "working_set": 7206903808
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 23953936384.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 80.41256868583201
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 255.34389640058802
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:34:32.0495907Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 32325758976,
+          "working_set": 7203684352
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 23953936384.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 57.142530379293056
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 146.36286519138176
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:34:36.3060168Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 32325763072,
+          "working_set": 7203688448
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 23953936384.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 82.96897498643479
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 16.835170874578953
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:34:40.3831278Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 32325783552,
+          "working_set": 7203708928
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 23953936384.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 84.89363349616377
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 50.078220081360705
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:34:44.5352993Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 32325804032,
+          "working_set": 7203729408
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 23953936384.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 85.66389393546282
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 205.1208697601302
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:34:48.6693827Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 32325754880,
+          "working_set": 7203680256
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 23953936384.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 60.78234970941758
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 43.736910391208355
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:34:52.7365428Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 32329129984,
+          "working_set": 7207047168
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 23953936384.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 87.62499165031046
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 157.03138438936136
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:34:56.9575209Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 32329027584,
+          "working_set": 7206944768
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 23953936384.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 88.84071526051977
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 72.13465129121465
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:35:01.1046720Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 32329031680,
+          "working_set": 7206948864
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 23953936384.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 89.90860519084048
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 100.24531445547157
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:35:05.2000086Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 32325648384,
+          "working_set": 7203573760
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 23953936384.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 109.80791807404972
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:35:09.2031559Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 32325955584,
+          "working_set": 7203880960
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 23953936384.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 111.5065463066272
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:35:13.2974719Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 32325763072,
+          "working_set": 7203688448
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 23953936384.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 112.7694126033369
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:35:17.6846656Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 32325468160,
+          "working_set": 7203393536
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 23953936384.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 85.52676534338894
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 142.85295564265485
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:35:21.9823065Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 28984406016,
+          "working_set": 7215230976
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 20341895168.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 2327969792.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 9.119474003316764
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 97.09552917215098
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:35:26.2797405Z",
+      "processes": [
+        {
+          "pid": 42620,
+          "private_bytes": 1909559296,
+          "working_set": 434491392
+        }
+      ],
+      "counters": [
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "dedicated usage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "dedicated usage",
+          "value": 101781504.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0",
+          "counter": "shared usage",
+          "value": 1753088.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0",
+          "counter": "shared usage",
+          "value": 21102592.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_10_engtype_legacyoverlay",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_4_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_5_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_6_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_7_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x000175d7_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_0_engtype_3d",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_10_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_11_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_12_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_13_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_14_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_1_engtype_videodecode",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_2_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 3.5424053088057446
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_3_engtype_videoprocessing",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_4_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_5_engtype_compute",
+          "counter": "utilization percentage",
+          "value": 43.999006329097746
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_6_engtype_gsc",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_7_engtype_copy",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_8_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        },
+        {
+          "instance": "pid_42620_luid_0x00000000_0x00017dba_phys_0_eng_9_engtype_",
+          "counter": "utilization percentage",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-25T20:35:31.2012179Z",
+      "processes": [],
+      "counters": []
+    },
+    {
+      "utc": "2026-10-25T20:35:35.8174650Z",
+      "processes": [],
+      "counters": []
+    },
+    {
+      "utc": "2026-10-25T20:35:40.0464226Z",
+      "processes": [],
+      "counters": []
+    },
+    {
+      "utc": "2026-10-25T20:35:44.1141544Z",
+      "processes": [],
+      "counters": []
+    },
+    {
+      "utc": "2026-10-25T20:35:48.1831883Z",
+      "processes": [],
+      "counters": []
+    },
+    {
+      "utc": "2026-10-25T20:35:52.3088139Z",
+      "processes": [],
+      "counters": []
+    },
+    {
+      "utc": "2026-10-25T20:35:56.4168444Z",
+      "processes": [],
+      "counters": []
+    },
+    {
+      "utc": "2026-10-25T20:36:00.6360046Z",
+      "processes": [],
+      "counters": []
+    },
+    {
+      "utc": "2026-10-25T20:36:04.7040748Z",
+      "processes": [],
+      "counters": []
+    },
+    {
+      "utc": "2026-10-25T20:36:08.8182443Z",
+      "processes": [],
+      "counters": []
+    },
+    {
+      "utc": "2026-10-25T20:36:12.8854024Z",
+      "processes": [],
+      "counters": []
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "backend": "openvino-genai",
+  "model_repository": "OpenVINO/Qwen3.8-27B-int4-ov",
+  "model_revision": "7b20ea8c7df7223a85ff27bab5c473f0cb038943",
+  "device": "GPU.1",
+  "mtp": "off",
+  "batch": 2048,
+  "kv_blocks": 400,
+  "dq_group": 128,
+  "xattention_threshold": 0.1,
+  "prefix_caching": false,
+  "cache_capacity_tokens": 102400,
+  "status": "experimental-approximate-requires-quality-review"
+}

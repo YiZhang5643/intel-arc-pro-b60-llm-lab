@@ -1,0 +1,151 @@
+Running main() from C:\MyLLM\nemotron-sycl\toolchain\build-openvino-genai-dense-tail\_deps\googletest-src\googletest\src\gtest_main.cc
+WARNING: CACHE_TYPES_CSV is not set, skipping cache-types tests.
+WARNING: CACHE_TYPES_CSV is not set, skipping LLM backend routing tests.
+WARNING: CACHE_TYPES_CSV is not set, skipping LLM backend routing tests.
+Note: Google Test filter = TestScheduler.*
+[==========] Running 69 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 69 tests from TestScheduler
+[ RUN      ] TestScheduler.adaptive_rkv_zero_size_is_not_marked_available
+[       OK ] TestScheduler.adaptive_rkv_zero_size_is_not_marked_available (0 ms)
+[ RUN      ] TestScheduler.output_keeps_shared_kv_global_data_alive
+[       OK ] TestScheduler.output_keeps_shared_kv_global_data_alive (0 ms)
+[ RUN      ] TestScheduler.general_test
+[       OK ] TestScheduler.general_test (357 ms)
+[ RUN      ] TestScheduler.hybrid_output_fills_linear_attention_block_table_in_prompt_and_generate
+[       OK ] TestScheduler.hybrid_output_fills_linear_attention_block_table_in_prompt_and_generate (59 ms)
+[ RUN      ] TestScheduler.hybrid_non_prefix_linear_attention_returns_aliased_read_write_blocks
+[       OK ] TestScheduler.hybrid_non_prefix_linear_attention_returns_aliased_read_write_blocks (52 ms)
+[ RUN      ] TestScheduler.hybrid_non_prefix_linear_attention_speculative_window_is_atomic_or_deferred_under_megabatch_pressure
+[       OK ] TestScheduler.hybrid_non_prefix_linear_attention_speculative_window_is_atomic_or_deferred_under_megabatch_pressure (52 ms)
+[ RUN      ] TestScheduler.hybrid_non_prefix_linear_attention_speculative_window_too_large_for_megabatch_asserts
+[       OK ] TestScheduler.hybrid_non_prefix_linear_attention_speculative_window_too_large_for_megabatch_asserts (52 ms)
+[ RUN      ] TestScheduler.hybrid_non_prefix_linear_attention_uses_full_preemption_for_fixed_size_victim_state
+[       OK ] TestScheduler.hybrid_non_prefix_linear_attention_uses_full_preemption_for_fixed_size_victim_state (50 ms)
+[ RUN      ] TestScheduler.hybrid_admission_when_la_pool_is_bottleneck
+[       OK ] TestScheduler.hybrid_admission_when_la_pool_is_bottleneck (51 ms)
+[ RUN      ] TestScheduler.hybrid_initialize_cache_grows_fixed_size_by_total_concurrent_sequences
+[       OK ] TestScheduler.hybrid_initialize_cache_grows_fixed_size_by_total_concurrent_sequences (68 ms)
+[ RUN      ] TestScheduler.initialize_cache_uses_sequence_aware_block_rounding
+[       OK ] TestScheduler.initialize_cache_uses_sequence_aware_block_rounding (80 ms)
+[ RUN      ] TestScheduler.dynamic_alloc_reserves_full_capacity_for_later_larger_prompt
+[       OK ] TestScheduler.dynamic_alloc_reserves_full_capacity_for_later_larger_prompt (80 ms)
+[ RUN      ] TestScheduler.dynamic_alloc_reserves_capacity_for_new_prompt_on_top_of_running_sequence
+[       OK ] TestScheduler.dynamic_alloc_reserves_capacity_for_new_prompt_on_top_of_running_sequence (76 ms)
+[ RUN      ] TestScheduler.linear_attention_only_initializes_fixed_size_capacity
+[       OK ] TestScheduler.linear_attention_only_initializes_fixed_size_capacity (58 ms)
+[ RUN      ] TestScheduler.hybrid_runtime_arrival_beyond_initial_fixed_capacity_schedules_after_growth
+[       OK ] TestScheduler.hybrid_runtime_arrival_beyond_initial_fixed_capacity_schedules_after_growth (64 ms)
+[ RUN      ] TestScheduler.hybrid_prefix_caching_prefill_requires_read_and_interval_write_blocks
+[       OK ] TestScheduler.hybrid_prefix_caching_prefill_requires_read_and_interval_write_blocks (62 ms)
+[ RUN      ] TestScheduler.hybrid_prefix_caching_prefill_uses_scheduler_config_cache_interval_multiplier
+[       OK ] TestScheduler.hybrid_prefix_caching_prefill_uses_scheduler_config_cache_interval_multiplier (59 ms)
+[ RUN      ] TestScheduler.hybrid_prefix_caching_reuses_active_complete_linear_attention_checkpoint
+[       OK ] TestScheduler.hybrid_prefix_caching_reuses_active_complete_linear_attention_checkpoint (64 ms)
+[ RUN      ] TestScheduler.hybrid_prefix_caching_reuses_active_incomplete_linear_attention_checkpoint_with_cow
+[       OK ] TestScheduler.hybrid_prefix_caching_reuses_active_incomplete_linear_attention_checkpoint_with_cow (61 ms)
+[ RUN      ] TestScheduler.hybrid_prefix_caching_restore_uses_minimum_common_prefix_across_cache_types
+[       OK ] TestScheduler.hybrid_prefix_caching_restore_uses_minimum_common_prefix_across_cache_types (51 ms)
+[ RUN      ] TestScheduler.hybrid_prefix_caching_prefill_exactly_interval_uses_single_write_block
+[       OK ] TestScheduler.hybrid_prefix_caching_prefill_exactly_interval_uses_single_write_block (52 ms)
+[ RUN      ] TestScheduler.hybrid_prefix_caching_prefill_interval_plus_one_uses_next_write_block
+[       OK ] TestScheduler.hybrid_prefix_caching_prefill_interval_plus_one_uses_next_write_block (52 ms)
+[ RUN      ] TestScheduler.hybrid_prefix_caching_chunked_prefill_crossing_interval_adds_write_block
+[       OK ] TestScheduler.hybrid_prefix_caching_chunked_prefill_crossing_interval_adds_write_block (53 ms)
+[ RUN      ] TestScheduler.direct_scheduler_rejects_prefix_caching_with_tokens_to_validate
+[       OK ] TestScheduler.direct_scheduler_rejects_prefix_caching_with_tokens_to_validate (49 ms)
+[ RUN      ] TestScheduler.hybrid_prefix_caching_cache_interval_multiplier_one_allocates_block_per_kv_block
+[       OK ] TestScheduler.hybrid_prefix_caching_cache_interval_multiplier_one_allocates_block_per_kv_block (53 ms)
+[ RUN      ] TestScheduler.hybrid_prefix_caching_dynamic_allocation_honors_custom_cache_interval_multiplier
+[       OK ] TestScheduler.hybrid_prefix_caching_dynamic_allocation_honors_custom_cache_interval_multiplier (59 ms)
+[ RUN      ] TestScheduler.scheduler_config_zero_cache_interval_multiplier_requires_disabled_prefix_caching
+[       OK ] TestScheduler.scheduler_config_zero_cache_interval_multiplier_requires_disabled_prefix_caching (0 ms)
+[ RUN      ] TestScheduler.scheduler_config_custom_cache_interval_multiplier_is_ignored_for_kv_only_model
+[       OK ] TestScheduler.scheduler_config_custom_cache_interval_multiplier_is_ignored_for_kv_only_model (72 ms)
+[ RUN      ] TestScheduler.hybrid_create_explicit_kv_blocks_derives_single_fixed_linear_attention_block_for_client_scenario
+[       OK ] TestScheduler.hybrid_create_explicit_kv_blocks_derives_single_fixed_linear_attention_block_for_client_scenario (59 ms)
+[ RUN      ] TestScheduler.hybrid_create_explicit_kv_blocks_derives_fixed_linear_attention_capacity_from_max_num_seqs_for_bounded_batching
+[       OK ] TestScheduler.hybrid_create_explicit_kv_blocks_derives_fixed_linear_attention_capacity_from_max_num_seqs_for_bounded_batching (96 ms)
+[ RUN      ] TestScheduler.hybrid_create_explicit_kv_blocks_derives_paged_linear_attention_capacity_from_token_target
+[       OK ] TestScheduler.hybrid_create_explicit_kv_blocks_derives_paged_linear_attention_capacity_from_token_target (61 ms)
+[ RUN      ] TestScheduler.hybrid_create_cache_size_budget_reserves_fixed_linear_attention_bytes_before_kv_blocks
+[       OK ] TestScheduler.hybrid_create_cache_size_budget_reserves_fixed_linear_attention_bytes_before_kv_blocks (75 ms)
+[ RUN      ] TestScheduler.hybrid_create_cache_size_budget_derives_paged_linear_attention_capacity_from_shared_token_target
+[       OK ] TestScheduler.hybrid_create_cache_size_budget_derives_paged_linear_attention_capacity_from_shared_token_target (56 ms)
+[ RUN      ] TestScheduler.hybrid_create_zero_budget_keeps_all_cache_pools_dynamic
+[       OK ] TestScheduler.hybrid_create_zero_budget_keeps_all_cache_pools_dynamic (54 ms)
+[ RUN      ] TestScheduler.scheduler_config_explicit_linear_attention_blocks_require_linear_attention_model
+[       OK ] TestScheduler.scheduler_config_explicit_linear_attention_blocks_require_linear_attention_model (60 ms)
+[ RUN      ] TestScheduler.hybrid_prefix_caching_generation_finishing_interval_reuses_same_write_block
+[       OK ] TestScheduler.hybrid_prefix_caching_generation_finishing_interval_reuses_same_write_block (48 ms)
+[ RUN      ] TestScheduler.hybrid_prefix_caching_generation_after_completed_interval_switches_write_block
+[       OK ] TestScheduler.hybrid_prefix_caching_generation_after_completed_interval_switches_write_block (63 ms)
+[ RUN      ] TestScheduler.hybrid_prefix_caching_generation_inside_interval_reuses_same_write_block
+[       OK ] TestScheduler.hybrid_prefix_caching_generation_inside_interval_reuses_same_write_block (49 ms)
+[ RUN      ] TestScheduler.test_partial_preemption_beam_search
+[       OK ] TestScheduler.test_partial_preemption_beam_search (118 ms)
+[ RUN      ] TestScheduler.test_partially_preempted_prompt
+[       OK ] TestScheduler.test_partially_preempted_prompt (117 ms)
+[ RUN      ] TestScheduler.prefix_caching_test
+[       OK ] TestScheduler.prefix_caching_test (116 ms)
+[ RUN      ] TestScheduler.prefix_caching_test_two_identical_sequences
+[       OK ] TestScheduler.prefix_caching_test_two_identical_sequences (121 ms)
+[ RUN      ] TestScheduler.prefix_caching_with_max_new_tokens_equal_1
+[       OK ] TestScheduler.prefix_caching_with_max_new_tokens_equal_1 (117 ms)
+[ RUN      ] TestScheduler.test_partially_preempted_prompt_not_allowed
+[       OK ] TestScheduler.test_partially_preempted_prompt_not_allowed (59 ms)
+[ RUN      ] TestScheduler.test_partially_preempted_prompt_not_allowed2
+[       OK ] TestScheduler.test_partially_preempted_prompt_not_allowed2 (61 ms)
+[ RUN      ] TestScheduler.FullyPreemptsCacheEvictedSequences
+[       OK ] TestScheduler.FullyPreemptsCacheEvictedSequences (58 ms)
+[ RUN      ] TestScheduler.prefix_caching_embeddings_test
+[       OK ] TestScheduler.prefix_caching_embeddings_test (117 ms)
+[ RUN      ] TestScheduler.expected_num_scheduled_tokens_overrides_default_schedule
+[       OK ] TestScheduler.expected_num_scheduled_tokens_overrides_default_schedule (57 ms)
+[ RUN      ] TestScheduler.expected_num_scheduled_tokens_does_not_override_if_greater_than_available
+[       OK ] TestScheduler.expected_num_scheduled_tokens_does_not_override_if_greater_than_available (60 ms)
+[ RUN      ] TestScheduler.clear_expected_num_scheduled_tokens_restores_default_schedule
+[       OK ] TestScheduler.clear_expected_num_scheduled_tokens_restores_default_schedule (58 ms)
+[ RUN      ] TestScheduler.hybrid_non_prefix_linear_attention_plain_step_rejects_outstanding_scratch
+[       OK ] TestScheduler.hybrid_non_prefix_linear_attention_plain_step_rejects_outstanding_scratch (47 ms)
+[ RUN      ] TestScheduler.hybrid_non_prefix_linear_attention_borrowed_speculative_emits_committed_plus_temporaries
+[       OK ] TestScheduler.hybrid_non_prefix_linear_attention_borrowed_speculative_emits_committed_plus_temporaries (46 ms)
+[ RUN      ] TestScheduler.hybrid_non_prefix_linear_attention_borrowed_admission_reservation_grows_pool_not_owned_rows
+[       OK ] TestScheduler.hybrid_non_prefix_linear_attention_borrowed_admission_reservation_grows_pool_not_owned_rows (46 ms)
+[ RUN      ] TestScheduler.hybrid_non_prefix_linear_attention_borrowed_steady_state_returns_pool_rows_each_step
+[       OK ] TestScheduler.hybrid_non_prefix_linear_attention_borrowed_steady_state_returns_pool_rows_each_step (46 ms)
+[ RUN      ] TestScheduler.linear_attention_borrowed_release_keeps_committed_row
+[       OK ] TestScheduler.linear_attention_borrowed_release_keeps_committed_row (51 ms)
+[ RUN      ] TestScheduler.hybrid_non_prefix_linear_attention_borrowed_speculative_window_deferred_when_pool_is_short
+[       OK ] TestScheduler.hybrid_non_prefix_linear_attention_borrowed_speculative_window_deferred_when_pool_is_short (50 ms)
+[ RUN      ] TestScheduler.hybrid_non_prefix_linear_attention_partial_group_reservation_rolls_back_captured_sequences
+[       OK ] TestScheduler.hybrid_non_prefix_linear_attention_partial_group_reservation_rolls_back_captured_sequences (59 ms)
+[ RUN      ] TestScheduler.linear_attention_can_reserve_temporary_blocks_agrees_with_reservation
+[       OK ] TestScheduler.linear_attention_can_reserve_temporary_blocks_agrees_with_reservation (60 ms)
+[ RUN      ] TestScheduler.hybrid_non_prefix_linear_attention_borrowed_admission_reservation_clamped_to_configured_pool_budget
+[       OK ] TestScheduler.hybrid_non_prefix_linear_attention_borrowed_admission_reservation_clamped_to_configured_pool_budget (62 ms)
+[ RUN      ] TestScheduler.linear_attention_pool_budget_bounds_every_growth_path
+[       OK ] TestScheduler.linear_attention_pool_budget_bounds_every_growth_path (0 ms)
+[ RUN      ] TestScheduler.linear_attention_pool_blocks_high_water_tracks_growth_that_occupancy_metrics_miss
+[       OK ] TestScheduler.linear_attention_pool_blocks_high_water_tracks_growth_that_occupancy_metrics_miss (67 ms)
+[ RUN      ] TestScheduler.hybrid_non_prefix_linear_attention_borrow_pool_budget_below_live_plus_window_asserts
+[       OK ] TestScheduler.hybrid_non_prefix_linear_attention_borrow_pool_budget_below_live_plus_window_asserts (51 ms)
+[ RUN      ] TestScheduler.hybrid_non_prefix_linear_attention_borrow_pool_budget_at_live_plus_window_is_accepted
+[       OK ] TestScheduler.hybrid_non_prefix_linear_attention_borrow_pool_budget_at_live_plus_window_is_accepted (51 ms)
+[ RUN      ] TestScheduler.linear_attention_borrow_pool_floor_silent_while_pool_is_uncapped
+[       OK ] TestScheduler.linear_attention_borrow_pool_floor_silent_while_pool_is_uncapped (51 ms)
+[ RUN      ] TestScheduler.hybrid_non_prefix_linear_attention_borrow_pool_floor_counts_non_verifying_live_sequences
+[       OK ] TestScheduler.hybrid_non_prefix_linear_attention_borrow_pool_floor_counts_non_verifying_live_sequences (49 ms)
+[ RUN      ] TestScheduler.hybrid_non_prefix_linear_attention_borrow_pool_floor_homogeneous_boundary_unchanged
+[       OK ] TestScheduler.hybrid_non_prefix_linear_attention_borrow_pool_floor_homogeneous_boundary_unchanged (150 ms)
+[ RUN      ] TestScheduler.xattention_dense_tail_exact_batch_boundary
+[       OK ] TestScheduler.xattention_dense_tail_exact_batch_boundary (65 ms)
+[ RUN      ] TestScheduler.xattention_dense_tail_ragged_final_chunk
+[       OK ] TestScheduler.xattention_dense_tail_ragged_final_chunk (62 ms)
+[ RUN      ] TestScheduler.xattention_dense_tail_explicitly_disabled
+[       OK ] TestScheduler.xattention_dense_tail_explicitly_disabled (61 ms)
+[----------] 69 tests from TestScheduler (4575 ms total)
+
+[----------] Global test environment tear-down
+[==========] 69 tests from 1 test suite ran. (4575 ms total)
+[  PASSED  ] 69 tests.

@@ -1,0 +1,23 @@
+[
+  {
+    "label": "cold-32767-r1",
+    "input_tokens": 32767,
+    "wall_seconds": 60.57381390000228,
+    "metric_ttft_seconds": 60.42985546875,
+    "callback_first_text_seconds": 60.47279319993686,
+    "prefill_plus_first_token_tps": 542.2319769893335,
+    "effective_tps_to_first_text": 541.8469739220548,
+    "input_tokens_per_wall_second": 540.9433200638993,
+    "generated_tokens": 1,
+    "reported_throughput": -1000.0,
+    "output": "{",
+    "retrieval_correct": 0,
+    "inference_duration_ms": 19509.587890625,
+    "raw_token_infer_durations": [
+      19509588.0
+    ],
+    "raw_times_to_first_token": [
+      60429856.0
+    ]
+  }
+]

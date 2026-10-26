@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-25",
+  "hardware_reference": "../2026-10-25-qwen38-openvino-ir/metadata.json",
+  "model_repository": "OpenVINO/Qwen3.8-27B-int4-ov",
+  "model_revision": "7b20ea8c7df7223a85ff27bab5c473f0cb038943",
+  "runtime_source": "ab01d1771e4adaa0e1e08e9d630def170572506c",
+  "upstream_master_inspected": "73c4b0db060c39b6e7c3b7bcdc43e3d69c8a5fb3",
+  "patch_manifest": "../../manifests/openvino-genai-dense-tail.json",
+  "compiler": {
+    "CMAKE_CXX_COMPILER_ID": "MSVC",
+    "CMAKE_CXX_COMPILER_VERSION": "19.44.35229.0"
+  },
+  "cmake": "cmake version 4.3.1",
+  "scope": "Local experimental correction; no installed wheel or daily service replacement.",
+  "cpp_validation": "69 TestScheduler cases passed, including 3 new dense-tail cases. Other compiled C++ suites not executed.",
+  "python_validation": "27 tool tests passed.",
+  "dense_sentinel": "Include final prefill chunk, return 1.0 for all-block GPU CM bypass. Decode sentinel and explicit tail=0 preserved.",
+  "method": "Same model snapshot and full input hashes as paired released-runtime baseline; different independently built host DLL, XGrammar disabled and unused.",
+  "quality_caveat": "Non-thinking mode, two synthetic long-document seeds; baseline is 16/24, not a general quality certification.",
+  "decision": "Sparse-threshold route stopped on user direction after disproportionate quality regressions. Daily service not changed. Future speed improvements require quality validation first.",
+  "results": {
+    "fixed_005": {
+      "canonical_98304_tps": 1171.2316623271893,
+      "quality_correct": 5,
+      "quality_total": 24,
+      "full_block_baseline_correct": 16
+    },
+    "fixed_03": {
+      "completed_quality_cases": 1,
+      "quality_correct": 5,
+      "quality_total": 12,
+      "matched_full_block_baseline_correct": 8,
+      "second_case": "Interrupted on user direction; no completed score or throughput"
+    }
+  }
+}

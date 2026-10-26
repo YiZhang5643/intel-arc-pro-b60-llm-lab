@@ -1,0 +1,25 @@
+{
+  "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+  "genai": "2026.4.1.0-3408-ab01d1771e4",
+  "device": "GPU.1",
+  "genai_dll_sha256": "17f0d27c297aa6ae52b959b90de7ff30fdd18e71f5e3f7b9d0ffe0430302e46d",
+  "genai_overlay": "runtime-openvino-dense-tail-17f0d27c297a",
+  "device_name": "Intel(R) Arc(TM) Pro B60 Graphics (dGPU)",
+  "model": "Qwen3.8-27B-int4-ov",
+  "mtp": "off",
+  "draft_tokens": 0,
+  "scheduler": "SchedulerConfig { \n  max_num_batched_tokens: 2048\n  num_kv_blocks: 400\n  cache_size: 0\n  num_linear_attention_blocks: 0\n  cache_interval_multiplier: unset\n  dynamic_split_fuse: true\n  use_cache_eviction: false\n  max_num_seqs: 1\n  enable_prefix_caching: false\n  use_sparse_attention: true\nSparseAttentionConfig { \n  sparseAttentionMode: XATTENTION\n  num_last_dense_tokens_in_prefill: 100\n  num_retained_start_tokens_in_cache: 128\n  num_retained_recent_tokens_in_cache: 1920\n  xattention_threshold: 0.3\n  xattention_block_size: 64\n  xattention_stride: 8\n }\n }",
+  "properties": {
+    "KV_CACHE_PRECISION": "u8",
+    "DYNAMIC_QUANTIZATION_GROUP_SIZE": 128,
+    "PERFORMANCE_HINT": "LATENCY"
+  },
+  "input_mode": "same_decoded_text_retokenized",
+  "timing": "TTFT includes prefill and first-token work; throughput is input_tokens / TTFT",
+  "cache_prefix": false,
+  "repeats": 1,
+  "draft_kv_blocks": null,
+  "xattention_threshold": 0.3,
+  "sparse_attention_config": "SparseAttentionConfig { \n  sparseAttentionMode: XATTENTION\n  num_last_dense_tokens_in_prefill: 100\n  num_retained_start_tokens_in_cache: 128\n  num_retained_recent_tokens_in_cache: 1920\n  xattention_threshold: 0.3\n  xattention_block_size: 64\n  xattention_stride: 8\n }",
+  "cache_budget_scope": "explicit_blocks"
+}

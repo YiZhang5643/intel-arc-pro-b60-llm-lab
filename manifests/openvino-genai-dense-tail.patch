@@ -1,0 +1,69 @@
+diff --git a/src/cpp/src/continuous_batching/scheduler.hpp b/src/cpp/src/continuous_batching/scheduler.hpp
+index e23ba717..ebce07c7 100644
+--- a/src/cpp/src/continuous_batching/scheduler.hpp
++++ b/src/cpp/src/continuous_batching/scheduler.hpp
+@@ -1294,9 +1294,10 @@ private:
+         size_t prompt_len = sequence_group->get_prompt_len();
+         size_t num_processed_tokens_after_this_chunk = sequence_group->get_num_processed_tokens() + sequence_group->get_num_scheduled_tokens();
+ 
+-        if (num_processed_tokens_after_this_chunk < prompt_len && (prompt_len - num_processed_tokens_after_this_chunk) < m_config.sparse_attention_config.num_last_dense_tokens_in_prefill) {
+-            // dense attention chunk, potentially overspilling to an extra chunk before that
+-            return 0.0;
++        if (num_processed_tokens_after_this_chunk <= prompt_len && (prompt_len - num_processed_tokens_after_this_chunk) < m_config.sparse_attention_config.num_last_dense_tokens_in_prefill) {
++            // Dense prefill, including the final chunk. Use the explicit all-block
++            // threshold: GPU CM bypasses sparse estimation for >= 1, not for 0.
++            return 1.0;
+         }
+ 
+         return m_config.sparse_attention_config.xattention_threshold;
+diff --git a/tests/cpp/scheduler.cpp b/tests/cpp/scheduler.cpp
+index 0707e093..9d7d1fe5 100644
+--- a/tests/cpp/scheduler.cpp
++++ b/tests/cpp/scheduler.cpp
+@@ -3568,3 +3568,46 @@ TEST(TestScheduler, hybrid_non_prefix_linear_attention_borrow_pool_floor_homogen
+         EXPECT_FALSE(scheduler.ensure_linear_attention_pool_blocks(S_VERIFYING * (1 + WINDOW)));
+     }
+ }
++
++
++// Regression coverage for the final prefill chunk, including exact batch boundaries.
++static void check_xattention_dense_tail(size_t prompt_length, size_t dense_tail,
++                                       const std::vector<float>& thresholds) {
++    SchedulerConfig config;
++    config.max_num_batched_tokens = 32;
++    config.num_kv_blocks = 64;
++    config.max_num_seqs = 1;
++    config.enable_prefix_caching = false;
++    config.use_sparse_attention = true;
++    config.sparse_attention_config.mode = SparseAttentionMode::XATTENTION;
++    config.sparse_attention_config.xattention_threshold = 0.3f;
++    config.sparse_attention_config.num_last_dense_tokens_in_prefill = dense_tail;
++    std::vector<uint64_t> tokens(prompt_length, 42);
++    auto group = std::make_shared<SequenceGroup>(0,
++        ov::Tensor(ov::element::i64, {tokens.size()}, tokens.data()), utils::get_greedy_config());
++    const auto seq_id = (*group)[0]->get_id();
++    std::vector<SequenceGroup::Ptr> requests = {group};
++    Scheduler scheduler(init_cache_orchestrator(config), config);
++    for (float expected : thresholds) {
++        const auto output = scheduler.schedule(requests);
++        ASSERT_GT(group->get_num_scheduled_tokens(), 0u);
++        EXPECT_FLOAT_EQ(output.get_xattention_threshold(seq_id), expected);
++        group->finish_iteration();
++    }
++    EXPECT_EQ(group->get_num_processed_tokens(), prompt_length);
++    (*group)[0]->append_token(42, 0.9f);
++    const auto decode = scheduler.schedule(requests);
++    EXPECT_EQ(group->get_num_scheduled_tokens(), 1u);
++    EXPECT_FLOAT_EQ(decode.get_xattention_threshold(seq_id), 0.0f);
++    scheduler.free_sequence(seq_id);
++}
++
++TEST(TestScheduler, xattention_dense_tail_exact_batch_boundary) {
++    check_xattention_dense_tail(128, 8, {0.3f, 0.3f, 0.3f, 1.0f});
++}
++TEST(TestScheduler, xattention_dense_tail_ragged_final_chunk) {
++    check_xattention_dense_tail(132, 8, {0.3f, 0.3f, 0.3f, 1.0f, 1.0f});
++}
++TEST(TestScheduler, xattention_dense_tail_explicitly_disabled) {
++    check_xattention_dense_tail(128, 0, {0.3f, 0.3f, 0.3f, 0.3f});
++}

@@ -4,9 +4,11 @@
 
 在一台普通 Windows 电脑上，记录 B60 运行本地大模型时真正需要等多久。重点是 **32K–96K 长输入、首字等待、连续对话缓存和 MTP**。每个结论附配置、原始测量和复现脚本，后续可增加不同模型。
 
+阶段成果：[Qwen3.8-27B · OpenVINO 保留全部注意力块](docs/2026-10-25-stage-summary.md)：**32K 约 982 tok/s、首字 33.37 秒；96K 约 646 tok/s、首字 152.19 秒**。固定预设、完整输入、原始计时与脚本已保存。质量明显退化的稀疏候选未采用，1200 tok/s 仍是后续目标。
+
 新增：[Qwen3.8-27B 混合 IQ 权重调优](docs/qwen38.md)，包含 32K/96K、嵌入式 MTP 与独立草稿批量对照；新增 [算子时间线分析](docs/qwen38-profile.md)与完整 trace；后续 [内核改进实测](docs/qwen38-kernel-experiments.md)：保持 MTP 开启，32K 预填充约 53.7 秒、96K 约 208.2 秒。
 
-后续研究：[纯 Q4 与 1200 tok/s 目标](docs/qwen38-1200-target.md)、[OpenVINO 格式兼容与对照准备](docs/qwen38-openvino.md)。
+后续研究：[纯 Q4 与 1200 tok/s 目标](docs/qwen38-1200-target.md)、[OpenVINO 完整注意力基线与稀疏方案失败记录](docs/qwen38-openvino.md)。
 
 首个模型：**NVIDIA Nemotron 3.5 Lightning 30B-A3B，Q4_0 主模型 + 可选 Q8_0 MTP**。这不是模型能力排行榜，也没有证明它是 B60 上最聪明的模型。
 

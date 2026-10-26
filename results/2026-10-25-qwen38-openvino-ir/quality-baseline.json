@@ -1,0 +1,117 @@
+{
+  "cases": [
+    {
+      "input_tokens": 98295,
+      "callback_first_text_seconds": 152.3411846999079,
+      "effective_tps_to_first_text": 645.2293264859941,
+      "generated_tokens": 217,
+      "quality": {
+        "matched": 8,
+        "total": 12,
+        "all_correct": false,
+        "matched_keys": [
+          "chain_1",
+          "chain_2",
+          "chain_3",
+          "chain_4",
+          "revision_2",
+          "revision_3",
+          "revision_4",
+          "stock_4"
+        ],
+        "missing_keys": [],
+        "wrong": {
+          "revision_1": {
+            "expected": "VALUE-0FEB9CB058",
+            "actual": "VALUE-A298452CF4"
+          },
+          "stock_1": {
+            "expected": 253,
+            "actual": 274
+          },
+          "stock_2": {
+            "expected": 139,
+            "actual": 179
+          },
+          "stock_3": {
+            "expected": 224,
+            "actual": 247
+          }
+        },
+        "answer": {
+          "chain_1": "RECOVERY-92B82B4997",
+          "chain_2": "RECOVERY-F15D112F05",
+          "chain_3": "RECOVERY-7056C9F287",
+          "chain_4": "RECOVERY-9F95296FCE",
+          "revision_1": "VALUE-A298452CF4",
+          "revision_2": "VALUE-633A5B2519",
+          "revision_3": "VALUE-7477A4FAA9",
+          "revision_4": "VALUE-F62A26F6A5",
+          "stock_1": 274,
+          "stock_2": 179,
+          "stock_3": 247,
+          "stock_4": 230
+        },
+        "format_exact_json": true
+      }
+    },
+    {
+      "input_tokens": 98301,
+      "callback_first_text_seconds": 151.82309369998984,
+      "effective_tps_to_first_text": 647.4706686865951,
+      "generated_tokens": 213,
+      "quality": {
+        "matched": 8,
+        "total": 12,
+        "all_correct": false,
+        "matched_keys": [
+          "chain_1",
+          "chain_2",
+          "chain_3",
+          "chain_4",
+          "revision_1",
+          "revision_2",
+          "revision_3",
+          "stock_1"
+        ],
+        "missing_keys": [],
+        "wrong": {
+          "revision_4": {
+            "expected": "VALUE-32568A71A7",
+            "actual": "VALUE-8C271CF9D7"
+          },
+          "stock_2": {
+            "expected": 170,
+            "actual": 245
+          },
+          "stock_3": {
+            "expected": 307,
+            "actual": 333
+          },
+          "stock_4": {
+            "expected": 194,
+            "actual": 179
+          }
+        },
+        "answer": {
+          "chain_1": "RECOVERY-677C6DCA51",
+          "chain_2": "RECOVERY-545ACB6473",
+          "chain_3": "RECOVERY-FD7F84525E",
+          "chain_4": "RECOVERY-F40D8AEDA0",
+          "revision_1": "VALUE-C5210B9C5C",
+          "revision_2": "VALUE-5611EC10C7",
+          "revision_3": "VALUE-E7B75DA3F6",
+          "revision_4": "VALUE-8C271CF9D7",
+          "stock_1": 251,
+          "stock_2": 245,
+          "stock_3": 333,
+          "stock_4": 179
+        },
+        "format_exact_json": true
+      }
+    }
+  ],
+  "total": 24,
+  "correct": 16,
+  "note": "Baseline itself fails revision and stock tasks; all failures are preserved, not filtered out."
+}

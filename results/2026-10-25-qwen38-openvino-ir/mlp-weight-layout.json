@@ -1,0 +1,83 @@
+[
+  {
+    "name": "self.model.model.language_model.layers.0.mlp.gate_proj._openvino_orig_weight",
+    "data": {
+      "element_type": "u4",
+      "shape": "17408, 40, 128",
+      "offset": "60293721",
+      "size": "44564480"
+    }
+  },
+  {
+    "name": "self.model.model.language_model.layers.0.mlp.gate_proj._openvino_orig_weight/zero_point",
+    "data": {
+      "element_type": "u4",
+      "shape": "17408, 40, 1",
+      "offset": "104858201",
+      "size": "348160"
+    }
+  },
+  {
+    "name": "self.model.model.language_model.layers.0.mlp.gate_proj._openvino_orig_weight/scale",
+    "data": {
+      "element_type": "f16",
+      "shape": "17408, 40, 1",
+      "offset": "105206361",
+      "size": "1392640"
+    }
+  },
+  {
+    "name": "self.model.model.language_model.layers.0.mlp.up_proj._openvino_orig_weight",
+    "data": {
+      "element_type": "u4",
+      "shape": "17408, 40, 128",
+      "offset": "106599017",
+      "size": "44564480"
+    }
+  },
+  {
+    "name": "self.model.model.language_model.layers.0.mlp.up_proj._openvino_orig_weight/zero_point",
+    "data": {
+      "element_type": "u4",
+      "shape": "17408, 40, 1",
+      "offset": "151163497",
+      "size": "348160"
+    }
+  },
+  {
+    "name": "self.model.model.language_model.layers.0.mlp.up_proj._openvino_orig_weight/scale",
+    "data": {
+      "element_type": "f16",
+      "shape": "17408, 40, 1",
+      "offset": "151511657",
+      "size": "1392640"
+    }
+  },
+  {
+    "name": "self.model.model.language_model.layers.0.mlp.down_proj._openvino_orig_weight",
+    "data": {
+      "element_type": "u4",
+      "shape": "5120, 136, 128",
+      "offset": "152904297",
+      "size": "44564480"
+    }
+  },
+  {
+    "name": "self.model.model.language_model.layers.0.mlp.down_proj._openvino_orig_weight/zero_point",
+    "data": {
+      "element_type": "u4",
+      "shape": "5120, 136, 1",
+      "offset": "197468777",
+      "size": "348160"
+    }
+  },
+  {
+    "name": "self.model.model.language_model.layers.0.mlp.down_proj._openvino_orig_weight/scale",
+    "data": {
+      "element_type": "f16",
+      "shape": "5120, 136, 1",
+      "offset": "197816937",
+      "size": "1392640"
+    }
+  }
+]
